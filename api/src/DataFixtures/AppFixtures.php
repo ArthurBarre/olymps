@@ -28,6 +28,7 @@ class AppFixtures extends Fixture
             $loc->setLat($json[$i]['lat']);
             $loc->setLng($json[$i]['long']);
             $loc->setName($json[$i]['equnom']);
+            $loc->setTypes($json2[$i]['types']);
             $manager->persist($loc);
         }
 

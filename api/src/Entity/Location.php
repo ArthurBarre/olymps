@@ -38,6 +38,11 @@ class Location
      */
     private $name;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $types;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -75,6 +80,18 @@ class Location
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getTypes(): ?int
+    {
+        return $this->types;
+    }
+
+    public function setTypes(int $types): self
+    {
+        $this->types = $types;
 
         return $this;
     }
