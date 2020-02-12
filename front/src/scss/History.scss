@@ -1,0 +1,25 @@
+.Logo {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../assets/fonts/img/OLYLOGO.png);
+}
+
+.History {
+  width: 100%;
+  height: 100%;
+  color: $white;
+  text-align: center;
+  background-image: url(../assets/fonts/img/headerPhoto.png);
+}
+
+  .blackLayer {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.486);
+    display: flex;
+  }
