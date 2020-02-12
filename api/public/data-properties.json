@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "title": "equacceshandimaire",
+        "description": "Accès handicapé mobilité Aire d'évolution"
+    },
+    {
+        "id": 2,
+        "title": "equacceshandisvestiaire",
+        "description": "Accès handicapé sensoriel Vestiaire"
+    },
+    {
+        "id": 3,
+        "title": "equacceshandimvestiaire",
+        "description": "Accès handicapé mobilité Vestiaire"
+    },
+    {
+        "id": 4,
+        "title": "equacceshandisaire",
+        "description": "Accès handicapé sensoriel Aire d'évolution"
+    },
+    {
+        "id": 5,
+        "title": "equacceshandimtribune",
+        "description": "Accès handicapé mobilité Tribune"
+    },
+    {
+        "id": 6,
+        "title": "equacceshandimsanipub",
+        "description": "Accès handicapé mobilité sanitaire public"
+    },
+    {
+        "id": 7,
+        "title": "equacceshandissanipub",
+        "description": "Accès handicapé sensoriel Sanitaire Public"
+    },
+    {
+        "id": 8,
+        "title": "equacceshandissanispo",
+        "description": "Accès handicapé sensoriel Sanitaire sportif"
+    },
+    {
+        "id": 9,
+        "title": "equacceshandimsanispo",
+        "description": "Accès handicapé mobilité sanitaire sportif"
+    },
+    {
+        "id": 10,
+        "title": "equacceshandistribune",
+        "description": "Accès handicapé sensoriel Tribune"
+    },
+    {
+        "id": 11,
+        "title": "insnbplaceparkinghandi",
+        "description": "Nombre total de place de parking handicapés"
+    },
+    {
+        "id": 12,
+        "title": "insaccessibilitehandimoteur",
+        "description": "Accessibilité handicapés à mobilité réduite"
+    },
+    {
+        "id": 13,
+        "title": "insaccessibilitehandisens",
+        "description": "Accessibilité handicapés sensoriels"
+    }
+]
