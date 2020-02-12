@@ -1,21 +1,20 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import '../scss/App.scss';
 import Header from './Header';
 import History from './History';
-import Data from '../data.json';
+import Data from './Data'
 
-class App extends React.Component {
-	render() {
+function App() {
 		return (
 			<div className="Olymps">
-				<div className="heroContainer">
+				{/* <div className="heroContainer">
 					<Header />
 					<History />
-				</div>
+				</div> */}
+				<Data/>
 			</div>
 		)
-	}
 };
 
 export default App;
