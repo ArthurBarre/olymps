@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { api_key } from '../constants';
 
-const Marker = ({text,types}) => {
+const Marker = ({types}) => {
   const typeColor = {
       1: '#007bff',
       2:'#e3e',
@@ -18,7 +18,7 @@ const Marker = ({text,types}) => {
   }
 
   return(
-<div style={{width:'20px',height:'20px',borderRadius:50,backgroundColor:typeColor[types]}}></div>
+    <div style={{width:'20px',height:'20px',borderRadius:50,backgroundColor:typeColor[types]}}></div>
   )
 };
 
@@ -52,9 +52,10 @@ const SimpleMap = (props) => {
           defaultCenter={center}
           defaultZoom={zoom}
         >
-           {data && data.map((d,i)=>{
+          { data && data.map((d,i)=>{
             return(
               <Marker
+                key={i}
                 lat={d.lat}
                 lng={d.lng}
                 // text={d.name}

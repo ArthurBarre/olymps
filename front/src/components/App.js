@@ -4,7 +4,7 @@ import '../scss/App.scss';
 import Header from './Header';
 import History from './History';
 import Data from './Data';
-import Map from './Map/Map';
+// import Map from './Map/Map';
 import TestMap from './Map/TestMap'
 
 function App() {
