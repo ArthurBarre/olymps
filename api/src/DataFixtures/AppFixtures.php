@@ -11,6 +11,9 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 class AppFixtures extends Fixture
 {
+    /**
+     * @param ObjectManager $manager
+     */
     public function load(ObjectManager $manager)
     {
         $typeData = file_get_contents('http://localhost:8000/data-properties.json');

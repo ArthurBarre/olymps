@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="32db5659-f890-4447-84f7-e6d42614ced9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/InfraController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InfraController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Location.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Location.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,11 +153,17 @@
       <workItem from="1581506215978" duration="344000" />
       <workItem from="1581512339416" duration="1463000" />
       <workItem from="1581522655618" duration="2331000" />
-      <workItem from="1581548320959" duration="826000" />
+      <workItem from="1581548320959" duration="2331000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="320" y="127" key="#Inspections" timestamp="1581550137179">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="320" y="127" key="#Inspections/-498.-1417.2560.1417/0.23.1440.877@0.23.1440.877" timestamp="1581550137179" />
   </component>
 </project>

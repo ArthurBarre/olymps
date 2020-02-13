@@ -6,7 +6,7 @@ export default () => {
 
 	useEffect(
 		() => {
-			fetch('http://localhost:8000/infra',{
+			fetch('http://localhost:8000/locations',{
 			})
 			.then(res=>res.json())
 			// .then(res=>console.log(res))
