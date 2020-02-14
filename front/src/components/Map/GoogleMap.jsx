@@ -60,8 +60,8 @@ const SimpleMap = (props) => {
       },[filterData]
     )
     return (
-        <div style={{ height: '100vh', width: '100%' }}>
-            <input type="number" onChange={e=>setPostalCode(e.target.value)}/>
+        <div style={{ height: '150vh', width: '100%',marginTop:"100px" }}>
+            <input style={{color:'black'}} type="number" onChange={e=>setPostalCode(e.target.value)}/>
             <form onSubmit={(e)=>resetData(e)}>
               <button type='submit' onClick={resetData}>Update data</button>
             </form>

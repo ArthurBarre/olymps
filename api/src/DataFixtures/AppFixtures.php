@@ -31,9 +31,6 @@ class AppFixtures extends Fixture
         for ($i = 0; $i < count($json); $i++) {
             $paris_start = 750;
             $district = $districtsJson[$i];
-//            $testDistrict = substr($district, 2, 1);
-//            dd($testDistrict);
-//            $paris_end = substr($district, 3, 2);
             $loc = new Location();
             $loc->setLat($json[$i]['lat']);
             $loc->setLng($json[$i]['long']);
