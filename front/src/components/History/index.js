@@ -1,8 +1,8 @@
 import React from 'react';
-import Data from '../data.json';
-import DateScroll from './DateScroll';
-import Circle from './Circle';
-import Infos from './Infos';
+import Data from '../../data.json';
+import DateScroll from '../DateScroll';
+import Circle from '../Circle/Circle';
+import Infos from '../Infos';
 
 class History extends React.Component {
 

@@ -26,7 +26,7 @@ $black: #000000;
   background-color: $black;
   color: $white;
   text-align: center;
-  background-image: url(../assets/fonts/img/headerPhoto.png);
+  background-image: url(../../assets/img/headerPhoto.png);
   .soundContainer {
     position: absolute;
     top: 2%;
@@ -73,7 +73,7 @@ $black: #000000;
         margin: 0 auto;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url(../assets/fonts/img/loader.svg);
+        background-image: url(../../assets/img/loader.svg);
       }
       .loaderText{
         font-family: $fontText;
@@ -100,7 +100,7 @@ $black: #000000;
       margin: 0 auto;
       background-position: center;
       background-repeat: no-repeat;
-      background-image: url(../assets/fonts/img/headphones.png);
+      background-image: url(../../assets/img/headphones.png);
     }
     .headphoneText {
       font-family: $fontText;
