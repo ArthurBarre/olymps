@@ -1,6 +1,6 @@
 .DS_STORE
 node_modules
-src/components/constants
+src/components/constants/secure
 scripts/flow/*/.flowconfig
 *~
 *.pyc

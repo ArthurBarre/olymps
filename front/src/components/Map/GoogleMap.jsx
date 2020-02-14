@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import GoogleMapReact from 'google-map-react';
-import { api_key } from '../constants';
+import {  api_key } from '../constants/secure';
+import {  api_url } from '../constants';
 
 const Marker = ({types}) => {
   const typeColor = {
@@ -23,28 +24,30 @@ const Marker = ({types}) => {
 };
 
 const SimpleMap = (props) => {
-    const [center, setCenter] = useState({lat: 48.8812,
-      lng: 2.29364 });
+    const [center, setCenter] = useState(
+      {
+        lat: 48.8812,
+        lng: 2.29364 
+      }
+    );
     const [zoom, setZoom] = useState(11);
     const [postalCode,setPostalCode] = useState(75019);
-    const [filterData,setFilterData] = useState([])
-    const [data,setData] = useState([])
+    const [filterData,setFilterData] = useState([]);
+    const [data,setData] = useState([]);
+
     const resetData = (e) =>{
       e.preventDefault();
-      console.log(postalCode)
-      // fetch(`http://127.0.0.1:8000/districts?district=${postalCode}`)
-      fetch(`http://127.0.0.1:8000/districts?district=${postalCode}`)
-      .then(res=>res.json())
-        // .then(res=>console.log(res))
+      fetch(`${api_url}/districts?district=${postalCode}`)
+        .then(res=>res.json())
         .then(res=>setFilterData(res))
     }
 
-  	useEffect(
+  useEffect(
       () => {
-        fetch(`http://127.0.0.1:8000/districts?district=${postalCode}`)
-      .then(res=>res.json())
-        // .then(res=>console.log(res))
-        .then(res=>setFilterData(res))
+        // fetch(`${api_url}/districts?district=${postalCode}`)
+        //   .then(res=>res.json())
+        //   .then(res=>setFilterData(res))
+
         const listener = event => {
           if (event.code === "Enter") {
             resetData(event)
@@ -54,16 +57,8 @@ const SimpleMap = (props) => {
         return () => {
           document.removeEventListener("keydown", listener);
         };
-        
-        fetch('http://127.0.0.1:8000/locations',{
-        })
-        .then(res=>res.json())
-        .then(res=>console.log(res))
-        .then(res=>setData(res))
-        // resetData()
-      },[]
+      },[filterData]
     )
-    console.log(postalCode)
     return (
         <div style={{ height: '100vh', width: '100%' }}>
             <input type="number" onChange={e=>setPostalCode(e.target.value)}/>
