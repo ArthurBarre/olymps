@@ -23,13 +23,6 @@ const Marker = ({types}) => {
 };
 
 const SimpleMap = (props) => {
-  const testData = [
-    {lat:12,lng:12,types:1},
-    {lat:22,lng:22,types:2},
-    {lat:42,lng:42,types:1},
-    {lat:52,lng:52,types:2},
-    {lat:12,lng:11,types:1},
-  ]
     const [center, setCenter] = useState({lat: 48.8812,
       lng: 2.29364 });
     const [zoom, setZoom] = useState(11);
@@ -37,7 +30,8 @@ const SimpleMap = (props) => {
 
   	useEffect(
       () => {
-        fetch('http://localhost:8000/locations',{
+        // fetch('http://127.0.0.1:8000/api/locations.json',{
+        fetch('http://127.0.0.1:8000/locations',{
         })
         .then(res=>res.json())
         // .then(res=>console.log(res))
