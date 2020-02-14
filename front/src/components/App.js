@@ -11,14 +11,14 @@ import TestMap from './Map/GoogleMap'
 function App() {
 		return (
 			<div className="Olymps">
+				<TestMap/>
 				<div className="heroContainer">
 					{/* <Header /> */}
 					{/* <History /> */}
 				</div>
 				{/* <Data/> */}
-				<Map/>
+				{/* <Map/> */}
 				{/* <Loader/> */}
-				{/* <TestMap/> */}
 			</div>
 		)
 };
