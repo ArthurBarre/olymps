@@ -7,7 +7,7 @@ class MapPage extends React.Component {
     return (
       <div className="mapContainer">
         <div className="mapVideo">
-          {/* <MapVideo /> */}
+          <MapVideo />
         </div>
         <div className="svgMap">
           {/* <SvgMap /> */}
