@@ -1,0 +1,14 @@
+.dateScrollContainer {
+  width: 30%;
+  position: relative;
+  ul {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    li {
+      font-family: $fontSerief;
+      font-size: 40px;
+    }
+  }
+}

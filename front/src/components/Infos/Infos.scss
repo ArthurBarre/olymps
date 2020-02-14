@@ -1,0 +1,20 @@
+
+.infosContainer {
+  width: 30%;
+  position: relative;
+  height: 100%;
+  div {
+    padding-top: 70%;
+    p {
+      text-transform: uppercase;
+      font-family: $fontSerief;
+      font-size: 45px;
+    }
+    button {
+      margin-top: 50px;
+      color: white;
+      background-color: transparent;
+      // border: unset;
+    }
+  }
+}
