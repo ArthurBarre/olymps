@@ -1,5 +1,5 @@
 import { Group, ObjectLoader } from 'three';
-// import MODEL from '../assets/fonts/img/lamap.obj';
+import MODEL from '../../assets/obj/lamap.obj';
 import React from 'react';
 import * as THREE from "three";
 var OrbitControls = require('three-orbit-controls')(THREE);

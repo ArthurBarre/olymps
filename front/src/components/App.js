@@ -12,13 +12,13 @@ function App() {
 		return (
 			<div className="Olymps">
 				<div className="heroContainer">
-					<Header />
-					<History />
+					{/* <Header /> */}
+					{/* <History /> */}
 				</div>
-				<Data/>
+				{/* <Data/> */}
 				<Map/>
-				<Loader/>
-				<TestMap/>
+				{/* <Loader/> */}
+				{/* <TestMap/> */}
 			</div>
 		)
 };
