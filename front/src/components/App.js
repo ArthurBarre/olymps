@@ -5,6 +5,7 @@ import Header from './Header';
 import History from './History';
 import Data from './Data';
 // import Map from './Map/Map';
+import Loader  from './Loader'
 import TestMap from './Map/TestMap'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
 				</div> */}
 				{/* <Data/> */}
 				{/* <Map/> */}
+				<Loader/>
 				<TestMap/>
 			</div>
 		)
