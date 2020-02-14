@@ -62,7 +62,7 @@ const SimpleMap = (props) => {
     return (
         <div style={{ height: '100vh', width: '100%' }}>
             <input type="number" onChange={e=>setPostalCode(e.target.value)}/>
-            <form onsubmit={(e)=>resetData(e)}>
+            <form onSubmit={(e)=>resetData(e)}>
               <button type='submit' onClick={resetData}>Update data</button>
             </form>
         <GoogleMapReact

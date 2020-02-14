@@ -6,19 +6,19 @@ import History from './History';
 import Data from './Data';
 import Map from './Map';
 import Loader  from './Loader'
-import TestMap from './Map/GoogleMap'
+import GoogleMap from './Map/GoogleMap'
 
 function App() {
 		return (
 			<div className="Olymps">
-				<TestMap/>
 				<div className="heroContainer">
-					{/* <Header /> */}
-					{/* <History /> */}
+					<Header /> 
+					<History />
 				</div>
-				{/* <Data/> */}
-				{/* <Map/> */}
-				{/* <Loader/> */}
+				<Loader/>
+				<GoogleMap/>
+				<Map/>
+				<Data/>
 			</div>
 		)
 };

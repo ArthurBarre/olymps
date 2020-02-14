@@ -1,15 +1,14 @@
 import React, { useEffect, useState} from 'react';
-
+import {api_url} from './constants'
 
 export default () => {
   const [infra,setInfra] = useState([])
 
 	useEffect(
 		() => {
-			fetch('http://localhost:8000/locations',{
+			fetch(`${api_url}/locations`,{
 			})
 			.then(res=>res.json())
-			// .then(res=>console.log(res))
 			.then(res=>setInfra(res))
 		},[]
 	)
@@ -22,6 +21,7 @@ export default () => {
             <th scope="col">lat</th>
             <th scope="col">lng</th>
             <th scope="col">types</th>
+            <th scope="col">district</th>
           </tr>
         </thead>
         <tbody>
@@ -33,6 +33,7 @@ export default () => {
                     <td>{i.lat}</td>
                     <td>{i.lng}</td>
                     <td>{i.types}</td>
+                    <td>{i.district}</td>
                   </tr>
                   )
         })

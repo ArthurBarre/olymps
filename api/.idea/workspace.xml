@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="32db5659-f890-4447-84f7-e6d42614ced9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Location.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Location.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/LocationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/LocationRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/components/Map/GoogleMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/Map/GoogleMap.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
