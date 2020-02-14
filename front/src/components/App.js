@@ -4,18 +4,20 @@ import '../scss/App.scss';
 import Header from './Header';
 import History from './History';
 import Data from './Data';
-// import Map from './Map/Map';
-import TestMap from './Map/TestMap'
+import Map from './Map';
+import Loader  from './Loader'
+import TestMap from './Map/GoogleMap'
 
 function App() {
 		return (
 			<div className="Olymps">
-				{/* <div className="heroContainer">
+				<div className="heroContainer">
 					<Header />
 					<History />
-				</div> */}
-				{/* <Data/> */}
-				{/* <Map/> */}
+				</div>
+				<Data/>
+				<Map/>
+				<Loader/>
 				<TestMap/>
 			</div>
 		)
