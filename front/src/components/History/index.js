@@ -22,7 +22,7 @@ class History extends React.Component {
     const date = this.state.date;
     return (
       <div className="History">
-        <div className="Logo"></div>
+        <div className="Logo"/>
         <div className="blackLayer">
           <div>
             <DateScroll onDateChange={this.handleDateChange} />

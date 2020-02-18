@@ -7,14 +7,17 @@ import Data from './Data';
 import Map from './Map';
 import Loader  from './Loader'
 import GoogleMap from './Map/GoogleMap'
+import GameHistory from "./GameHistory";
 
 function App() {
 		return (
+
 			<div className="Olymps">
+				<History />
 				<div className="heroContainer">
-					<Header /> 
-					<History />
+					<Header />
 				</div>
+				<GameHistory/>
 				<Loader/>
 				<GoogleMap/>
 				<Map/>
