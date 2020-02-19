@@ -2,10 +2,10 @@ import React, {useContext, useEffect, useRef, useState} from "react";
 import useInterval from "../hooks/use-interval"
 import useMouseOfRef from "../Mouse/use-mouse-ref";
 import BoxContext from "./box-context";
-import jo from "../jo-years";
 import { TweenLite, TweenMax, Circ} from "gsap/all";
+import jo from '../../data.json';
 
-export default function Box() {
+export default function Box(props) {
     const [refContainer, position] = useMouseOfRef();
     const {positionInBox, setPositionInBox} = useContext(BoxContext);
     const [currentYearId, setCurrentYearId] = useState(0);
@@ -56,8 +56,16 @@ export default function Box() {
         }
     }
 
+    function handleYearChange() {
+        console.log(currentYearId);
+        props.onYearChange(currentYearId);
+    }
+
     // Update prev/current/next class on current year ID change
     useEffect(() => {
+
+        handleYearChange();
+
         // reinitialize
         jo.forEach(year => tweenYear.current[jo.indexOf(year)].classList.remove('prev-year'));
         jo.forEach(year => tweenYear.current[jo.indexOf(year)].classList.remove('current-year'));
@@ -90,7 +98,8 @@ export default function Box() {
         position.inside && ((position.y < boxMiddleY) ? setPositionInBox({
             isTop: true,
             isEnter: true,
-            isBottom: false
+            isBottom: false,
+            yearId: true,
         }) : setPositionInBox({isTop: false, isEnter: true, isBottom: true}));
     }, [position.inside, position.y]);
 
@@ -101,6 +110,7 @@ export default function Box() {
             positionInBox.isTop ? yearBack() : yearProgress();
         }
     }, 1500);
+
 
 
     return (

@@ -9,6 +9,7 @@ import TopArrow from '../../assets/img/arrow-top.png';
 import BottomArrow from '../../assets/img/arrow-bottom.png'
 import BoxContext from "../Box/box-context";
 import '../Box/Box.scss';
+import GameCircle from "../GameCircle";
 
 
 export default function GameHistory()
@@ -16,8 +17,14 @@ export default function GameHistory()
     const [insideRef, isInside] = useInside();
     const [position, setMousePosition] = useMouse();
     const [positionInBox, setPositionInBox] = useState({isTop: false} );
+    const [currentYearId, handleCurrentYearId] = useState(0);
     const value = { positionInBox, setPositionInBox };
     let cursorCircle = useRef(null);
+
+    function handleYearChange(currentYearId) {
+    handleCurrentYearId(currentYearId);
+    console.log('new'+currentYearId);
+}
 
 
     // GSAP Animations
@@ -71,7 +78,8 @@ export default function GameHistory()
             <div onMouseEnter={appear} onMouseLeave={disapear} onMouseMove={setMousePosition} ref={insideRef} className="history-container blackLayer History">
                 <div className="cursor" ref={element => {cursorCircle = element}}   style={{ left: position.x, top:
                     position.y }} />
-                <Box/>
+                <Box onYearChange={handleYearChange} />
+                <GameCircle year={currentYearId}/>
             </div>
         </BoxContext.Provider>
     );
