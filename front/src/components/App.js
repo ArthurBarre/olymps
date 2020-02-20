@@ -13,7 +13,7 @@ function App() {
 		return (
 
 			<div className="Olymps">
-				<History />
+				{/*<History />*/}
 				<div className="heroContainer">
 					<Header />
 				</div>

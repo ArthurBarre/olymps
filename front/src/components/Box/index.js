@@ -57,7 +57,6 @@ export default function Box(props) {
     }
 
     function handleYearChange() {
-        console.log(currentYearId);
         props.onYearChange(currentYearId);
     }
 

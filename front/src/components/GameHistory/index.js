@@ -23,7 +23,6 @@ export default function GameHistory()
 
     function handleYearChange(currentYearId) {
     handleCurrentYearId(currentYearId);
-    console.log('new'+currentYearId);
 }
 
 
@@ -75,11 +74,13 @@ export default function GameHistory()
 
     return (
         <BoxContext.Provider value={value}>
-            <div onMouseEnter={appear} onMouseLeave={disapear} onMouseMove={setMousePosition} ref={insideRef} className="history-container blackLayer History">
+            <div className="History">
+            <div onMouseEnter={appear} onMouseLeave={disapear} onMouseMove={setMousePosition} ref={insideRef} className="history-container blackLayer">
                 <div className="cursor" ref={element => {cursorCircle = element}}   style={{ left: position.x, top:
                     position.y }} />
                 <Box onYearChange={handleYearChange} />
                 <GameCircle year={currentYearId}/>
+            </div>
             </div>
         </BoxContext.Provider>
     );

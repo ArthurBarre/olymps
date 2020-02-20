@@ -1,37 +1,27 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import jo from '../../data.json';
 export default function GameCircle(year) {
 
-    const [displayedYear, setDisplayYear] = useState(0);
-
-
-    useEffect(() => {
-        console.log(year);
-        console.log(displayedYear);
-    }, [year]);
+    const yearSports = jo.map((data, index) => {
+        return (
+            <li key={index}>
+                {data.sports.sportsList}
+            </li>
+        )
+    });
 
 
 
     return (
         <div style={{fontSize : '40px'} }>
-            {
-               /*console.log(jo[displayedYear])*/
-            }
+            <ul>
+                {yearSports[year.year]}
+            </ul>
+
         </div>
 
     );
 }
-
-{/*<ul>
-            {jo.map((jo, index) =>
-                <li key={index}>
-                    {
-                        jo.year
-                    }
-                </li>
-            )
-            }
-        </ul>*/}
 
 
 
