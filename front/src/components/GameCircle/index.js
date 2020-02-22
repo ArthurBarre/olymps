@@ -1,23 +1,15 @@
-import React from "react";
+import React, {useContext, useEffect} from "react";
 import jo from '../../data.json';
-export default function GameCircle(year) {
+import * as d3 from "d3";
+import YearContext from "../GameHistory/year-context";
 
-    const yearSports = jo.map((data, index) => {
-        return (
-            <li key={index}>
-                {data.sports.sportsList}
-            </li>
-        )
-    });
-
+export default function GameCircle() {
+    const {currentYear, setCurrentYear} = useContext(YearContext);
 
 
     return (
-        <div style={{fontSize : '40px'} }>
-            <ul>
-                {yearSports[year.year]}
-            </ul>
-
+        <div className="circle">
+                {jo[currentYear.id].sports.sportsList}
         </div>
 
     );
