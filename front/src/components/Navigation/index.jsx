@@ -5,10 +5,10 @@ import GoogleMap from '../Map/GoogleMap'
 import Header from '../Header'
 import History from '../History'
 import Data from '../Data'
-import Map from '../Map'
+import Three from '../ThreeJs/Three'
 import Loader from '../Loader'
 import Home from '../../pages/Home'
-import Audio from '../Audio'
+// import Audio from '../Audio'
 export default () => {
   return (
     <Switch>
@@ -16,14 +16,14 @@ export default () => {
         <History />
       </Route>
       <Route path="/map">
-        <GoogleMap />
+        <Three />
       </Route>
       <Route exact path="/home">
         <Home />
       </Route>
-      <Route exact path="/audio">
+      {/* <Route exact path="/audio">
         <Audio />
-      </Route>
+      </Route> */}
     </Switch>
   )
 }
