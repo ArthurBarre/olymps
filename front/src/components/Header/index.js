@@ -1,4 +1,5 @@
 import React from 'react';
+import Nav from './Nav';
 
 class Header extends React.Component {
   render() {
@@ -8,6 +9,7 @@ class Header extends React.Component {
         <div className="blackLayer">
           <div className="Intro">
             <h1 className="Title">Olymps</h1>
+            <Nav/>
             <p className="Subtitle">An interactive Paralympics games data visualization</p>
             <p className="textIntro">Using data collected from the city of Paris and others differents sources like , this experiment analyses and visualizes the history of paralympics games from the start to now.</p>
             <div className="loaderContainer">
