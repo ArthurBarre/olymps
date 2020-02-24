@@ -1,19 +1,18 @@
-import React, { useEffect, useState} from 'react';
-
+import React, { useEffect, useState } from 'react';
+import { api_url } from './constants';
 
 export default () => {
-  const [infra,setInfra] = useState([])
+  const [infra, setInfra] = useState([]);
 
-	useEffect(
-		() => {
-			fetch('http://localhost:8000/locations',{
-			})
-			.then(res=>res.json())
-			// .then(res=>console.log(res))
-			.then(res=>setInfra(res))
-		},[]
-	)
-  return(
+  useEffect(
+    () => {
+      fetch(`${api_url}/locations`, {
+      })
+        .then(res => res.json())
+        .then(res => setInfra(res));
+    }, []
+  );
+  return (
     <div>
       <table class="table table-dark">
         <thead>
@@ -22,21 +21,23 @@ export default () => {
             <th scope="col">lat</th>
             <th scope="col">lng</th>
             <th scope="col">types</th>
+            <th scope="col">district</th>
           </tr>
         </thead>
         <tbody>
-        {
-        infra && infra.map(i=>{
-          return(
-                  <tr>
-                    <td>{i.id}</td>
-                    <td>{i.lat}</td>
-                    <td>{i.lng}</td>
-                    <td>{i.types}</td>
-                  </tr>
-                  )
-        })
-      }
+          {
+            infra && infra.map(i => {
+              return (
+                <tr>
+                  <td>{i.id}</td>
+                  <td>{i.lat}</td>
+                  <td>{i.lng}</td>
+                  <td>{i.types}</td>
+                  <td>{i.district}</td>
+                </tr>
+              )
+            })
+          }
         </tbody>
       </table>
     </div>

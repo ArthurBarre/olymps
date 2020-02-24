@@ -43,6 +43,11 @@ class Location
      */
     private $types;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $district;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -92,6 +97,18 @@ class Location
     public function setTypes(int $types): self
     {
         $this->types = $types;
+
+        return $this;
+    }
+
+    public function getDistrict(): ?int
+    {
+        return $this->district;
+    }
+
+    public function setDistrict(int $district): self
+    {
+        $this->district = $district;
 
         return $this;
     }

@@ -20,18 +20,30 @@ class AppFixtures extends Fixture
         $infra = file_get_contents('http://localhost:8000/data.json');
         $types = file_get_contents('http://localhost:8000/data-types.json');
         $joint = file_get_contents('http://localhost:8000/joint-data.json');
+        $districts = file_get_contents('http://localhost:8000/district.json');
 
+        $districtsJson = json_decode($districts, true);
         $typeDataJson = json_decode($typeData, true);
         $json = json_decode($infra, true);
         $json2 = json_decode($types, true);
         $joint2 = json_decode($joint, true);
 
         for ($i = 0; $i < count($json); $i++) {
+            $paris_start = 750;
+            $district = $districtsJson[$i];
             $loc = new Location();
             $loc->setLat($json[$i]['lat']);
             $loc->setLng($json[$i]['long']);
             $loc->setName($json[$i]['equnom']);
             $loc->setTypes($json2[$i]['types']);
+            if (is_null($district)) {
+                $loc->setDistrict(75013);
+            }
+            else {
+                $paris_end = substr($district, 3, 2);
+                $goodDistrict = $paris_start .$paris_end;
+                $loc->setDistrict(intval($goodDistrict));
+            }
             $manager->persist($loc);
         }
 
@@ -52,3 +64,4 @@ class AppFixtures extends Fixture
         $manager->flush();
     }
 }
+
