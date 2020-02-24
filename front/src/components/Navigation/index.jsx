@@ -8,12 +8,13 @@ import Data from '../Data'
 import Three from '../ThreeJs/Three'
 import Loader from '../Loader'
 import Home from '../../pages/Home'
+import GameHistory from "../GameHistory";
 // import Audio from '../Audio'
 export default () => {
   return (
     <Switch>
       <Route path="/history">
-        <History />
+        <GameHistory />
       </Route>
       <Route path="/map">
         <Three />
