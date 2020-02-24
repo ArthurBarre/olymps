@@ -29,12 +29,11 @@ function Canvas() {
     );
     camera.position.set(0, 0, 200);
     // CANVAS ON RESIZE
-    renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0x000000, 0);
+    renderer.setClearColor(0x000000, 0); //default
     container.appendChild(renderer.domElement);
-
     // ORBITE CONTROLS
     let controls = new OrbitControls(camera, renderer.domElement);
     controls.enableZoom = false;
@@ -52,7 +51,7 @@ function Canvas() {
 
     //SVG URL
     currentURL =
-      'https://upload.wikimedia.org/wikipedia/commons/8/8f/Paris_blank_map.svg';
+      './themap.svg';
     loadSVG(currentURL, () => {
       console.log('scene', scene.getObjectByName('testgroup').children[0]);
     });
@@ -79,13 +78,12 @@ function Canvas() {
         for (let j = 0; j < shapes.length; j++) {
           let shape = shapes[j];
           let extrGeometry = new THREE.ExtrudeGeometry(shape, {
-            depth: 8,
+            depth: 10,
             steps: 20,
-            bevelThickness: 1,
-            bevelSize: 10,
+            bevelThickness: 3,
+            bevelSize: 2,
             bevelEnabled: true,
-            bevelSegments: 50,
-            curveSegments: 100
+            bevelSegments: 50
           });
           let uvs = extrGeometry.faceVertexUvs[0];
           for (let ii = 0; ii < uvs.length; ii++) {
@@ -96,10 +94,11 @@ function Canvas() {
               u.y = (u.y - 0) / 700;
             }
           }
-          let material2 = new THREE.MeshBasicMaterial({ color: 0x1c1c1c });
-          let material = new THREE.MeshBasicMaterial({ color: 0xfcfcfc });
-          let mesh = new THREE.Mesh(extrGeometry, [material, material2]);
+          let material1 = new THREE.MeshBasicMaterial({ color: 0x7A7A7A, opacity: 0.5 });
+          let material2 = new THREE.MeshBasicMaterial({ color: 0xfcfcfc });
+          let mesh = new THREE.Mesh(extrGeometry, [material1, material2]);
           group.add(mesh);
+
         }
       }
       scene.add(group);
@@ -140,13 +139,15 @@ function Canvas() {
   window.addEventListener('click', () => {
     if (intersects && intersects.length > 0) {
       for (let i = 0; i < intersects.length; i++) {
-        intersects[i].object.material[0].color.set(0xff0000);
-        intersects[i].object.scale.set(1, 1, 1);
+        intersects[i].object.material[0].color.set(0x545454);
+
       }
     }
     renderer.render(scene, camera);
   });
-  return <div id='container' style={{ width: '100%', height: '100%', background: 'transparent' }} ></div>
+  return <div id='container' ></div>
 }
 
 export default Canvas
+
+

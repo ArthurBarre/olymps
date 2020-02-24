@@ -1,11 +1,17 @@
 import React from 'react';
-import Canvas from './Canvas.js';
+import Canvas from './Canvas';
+import MapVideo from './MapVideo';
 
 class Three extends React.Component {
   render() {
     return (
-      <div className="canvasContainer">
-        <Canvas />
+      <div className="threeContainer">
+        <div className="canvas">
+          <Canvas svg={this.props.svg} />
+        </div>
+        <div className="threeVideo">
+          <MapVideo />
+        </div>
       </div>
     )
   }
