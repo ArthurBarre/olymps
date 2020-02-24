@@ -11,6 +11,8 @@ function Canvas() {
   let raycaster = new THREE.Raycaster();
   let mouse = new THREE.Vector2();
   let intersects = null;
+  let controls = null;
+  let fitOffset = 1.2;
 
   useEffect(_ => {
     init();
@@ -35,7 +37,7 @@ function Canvas() {
     renderer.setClearColor(0x000000, 0); //default
     container.appendChild(renderer.domElement);
     // ORBITE CONTROLS
-    let controls = new OrbitControls(camera, renderer.domElement);
+    controls = new OrbitControls(camera, renderer.domElement);
     controls.enableZoom = false;
     controls.minPolarAngle = 1.4;
     controls.maxPolarAngle = 2.5;
@@ -48,10 +50,8 @@ function Canvas() {
     controls.panSpeed = 1 * control_factor;
 
     window.addEventListener('resize', onWindowResize, false);
-
     //SVG URL
-    currentURL =
-      './themap.svg';
+    currentURL = './themap.svg';
     loadSVG(currentURL, () => {
       console.log('scene', scene.getObjectByName('testgroup').children[0]);
     });
@@ -98,7 +98,6 @@ function Canvas() {
           let material2 = new THREE.MeshBasicMaterial({ color: 0xfcfcfc });
           let mesh = new THREE.Mesh(extrGeometry, [material1, material2]);
           group.add(mesh);
-
         }
       }
       scene.add(group);
@@ -107,6 +106,28 @@ function Canvas() {
       }
     });
   };
+
+  // const fitCameraToObject = (camera, object, offset) => {
+  //   offset = offset || 1.5;
+  //   const boundingBox = new THREE.Box3();
+  //   boundingBox.setFromObject(object);
+  //   const center = boundingBox.getCenter(new THREE.Vector3());
+  //   const size = boundingBox.getSize(new THREE.Vector3());
+  //   const startDistance = center.distanceTo(camera.position);
+  //   // here we must check if the screen is horizontal or vertical, because camera.fov is
+  //   // based on the vertical direction.
+  //   const endDistance = camera.aspect > 1 ?
+  //     ((size.y / 2) + offset) / Math.abs(Math.tan(camera.fov / 2)) :
+  //     ((size.y / 2) + offset) / Math.abs(Math.tan(camera.fov / 2)) / camera.aspect;
+  //   camera.position.set(
+  //     camera.position.x * endDistance / startDistance,
+  //     camera.position.y * endDistance / startDistance,
+  //     camera.position.z * endDistance / startDistance
+  //   );
+  //   camera.lookAt(center);
+  // };
+
+
 
   const onMouseMove = event => {
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -137,14 +158,37 @@ function Canvas() {
   };
 
   window.addEventListener('click', () => {
+    // console.log('cameraPos', camera.position);
+    // console.log('camerZoom', cameraZoom);
+    console.log('controls', controls);
     if (intersects && intersects.length > 0) {
       for (let i = 0; i < intersects.length; i++) {
+        const box = new THREE.Box3();
         intersects[i].object.material[0].color.set(0x545454);
-
+        box.expandByObject(intersects[i].object);
+        const size = box.getSize(new THREE.Vector3());
+        const center = box.getCenter(new THREE.Vector3());
+        const maxSize = Math.max(size.x, size.y, size.z);
+        const fitHeightDistance = maxSize / (2 * Math.atan(Math.PI * camera.fov / 360));
+        const fitWidthDistance = fitHeightDistance / camera.aspect;
+        const distance = fitOffset * Math.max(fitHeightDistance, fitWidthDistance);
+        const direction = controls.target.clone()
+          .sub(camera.position)
+          .normalize()
+          .multiplyScalar(distance);
+        controls.maxDistance = distance * 10;
+        controls.target.copy(center);
+        camera.near = distance / 100;
+        camera.far = distance * 100;
+        camera.updateProjectionMatrix();
+        camera.position.copy(controls.target).sub(direction);
+        controls.update();
       }
     }
     renderer.render(scene, camera);
+    console.log('fukncamera', camera);
   });
+
   return <div id='container' ></div>
 }
 
