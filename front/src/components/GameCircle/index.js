@@ -3,6 +3,7 @@ import jo from '../../data.json';
 import * as d3 from "d3";
 import './GameCircle.scss';
 import YearContext from "../GameHistory/year-context";
+import {TimelineMax} from 'gsap';
 
 // First inizialisation of circle
 let circle;
@@ -14,10 +15,8 @@ export default function GameCircle() {
         height = 600,
         radius = 90;
 
-
-
-
     useEffect(() => {
+
 
         //remove svg if is defined
         (circle !== undefined) && d3.select("svg").remove();
@@ -25,6 +24,9 @@ export default function GameCircle() {
         let numSports = jo[currentYear.id].sports.sportsList.length;
         let step = 360/numSports;
         let sportId = 0;
+        let tl = new TimelineMax();
+
+        tl.fromTo(".circle", {opacity: 0}, {opacity: 1}, 0.5 );
 
         circle = d3.select(".circle").append("svg")
             .attr("width", width)
@@ -49,6 +51,7 @@ export default function GameCircle() {
                 return jo[currentYear.id].sports.sportsList[sportId-1];
             })
             .attr('fill','#fff');
+
     },[currentYear.id]);
 
 
