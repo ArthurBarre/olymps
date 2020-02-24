@@ -6,37 +6,6 @@ import GameHistory from '../GameHistory'
 import './switcher.scss'
 
 const heightScreen = window.innerHeight
-const duration = 300
-const defaultStyle = {
-  transition: `opacity ${duration}ms ease-in-out`,
-  opacity: 0,
-}
-const transitionStyles = {
-  entering: { opacity: 1 },
-  entered: { opacity: 1 },
-  exiting: { opacity: 0 },
-  exited: { opacity: 0 },
-}
-
-const AnimWrapper = ({ Children }) => {
-  return (
-    <ReactCSSTransitionGroup
-      transitionName="example"
-      transitionEnterTimeout={500}
-      transitionLeaveTimeout={300}
-    >
-      {Children}
-    </ReactCSSTransitionGroup>
-  )
-}
-
-const Test = () => {
-  return (
-    <div
-      style={{ width: '100vw', height: '100vh', backgroundColor: 'red' }}
-    ></div>
-  )
-}
 
 export default function Switcher() {
   const [scrollTop, setScrollTop] = useState(0)
