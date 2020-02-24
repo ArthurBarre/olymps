@@ -1,15 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import '../scss/App.scss';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import '../scss/App.scss'
 import Navigation from './Navigation'
-import { BrowserRouter as Router} from "react-router-dom";
+import Switcher from './Switcher'
+import { BrowserRouter as Router } from 'react-router-dom'
 function App() {
-		return (
-			<Router>
-				<Navigation/>
-			</Router>
-		)
-};
+  return (
+    <Router>
+      <Switcher />
+      {/* <Navigation /> */}
+    </Router>
+  )
+}
 
-export default App;
-
+export default App
