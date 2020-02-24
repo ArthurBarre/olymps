@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
-import GoogleMap from '../Map/GoogleMap'
 import Header from '../Header'
 import History from '../History'
 import Data from '../Data'
