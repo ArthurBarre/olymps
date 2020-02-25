@@ -14,18 +14,23 @@ export default function GameHistograms() {
         //remove svg if is defined
         (barsWrapper !== undefined) && d3.select(".bars-wrapper").remove();
 
-        barsWrapper = d3.select('.histograms-wrapper')
-            .append('div')
-            .attr('class', 'bars-wrapper');
-
         let rectHeight = 200;
+        let rectWidth = 13;
+        let histogramsWrapperWidth = 300;
+
+        barsWrapper = d3.select('.histograms-wrapper')
+            .style('width', `${histogramsWrapperWidth}px`)
+            .append('div')
+            .attr('class', 'bars-wrapper')
+            .attr('height', 200);
+
 
 
         //Athlete Bar
         let athleteBar = barsWrapper.append('svg')
             .attr('class', 'athlete-bar')
-            .attr('height', 500)
-            .attr('width', 100);
+            .attr('height', 200)
+            .attr('width', histogramsWrapperWidth/3);
         let maxAthlete = 4400;
         let currentAthlete = jo[currentYear.id].participants.athletesNumber;
         let athleteRatio = currentAthlete/maxAthlete;
@@ -33,16 +38,17 @@ export default function GameHistograms() {
         athleteBar.append('rect')
             .attr('fill', 'transparent')
             .style('stroke', 'rgba(196, 196, 196, 0.37)')
-            .attr('width', 13)
+            .attr('x', 50-(rectWidth/2))
+            .attr('width', rectWidth)
             .attr('height', function(){
                 return rectHeight;
-            })
-            .attr('x', 0);
+            });
 
         let athleteProgress = athleteBar.append('rect')
             .style('transform', 'scaleY(-1)')
             .attr('fill', 'rgba(196, 196, 196, 0.37)')
-            .attr('width', 13)
+            .attr('x', 50-(rectWidth/2))
+            .attr('width', rectWidth)
             .attr('height', 0)
             .attr('y', -rectHeight);
 
@@ -51,22 +57,13 @@ export default function GameHistograms() {
             .attr('height', function(){
                 return athleteRatio * rectHeight;
             });
-            /*.attr('height', 180);*/
 
-        athleteBar.append('text')
-        .text('Nombre d\'\athlètes')
-        .attr('x', 0)
-            .attr('y', 0)
-
-            .attr("dy", "2em")
-            .attr('width', 13)
-        .attr('fill', 'white');
 
         //Country Bar
         let countryBar = barsWrapper.append('svg')
             .attr('class', 'country-bar')
-            .attr('height', 500)
-            .attr('width', 100);
+            .attr('height', 200)
+            .attr('width', histogramsWrapperWidth/3);
         let maxCountry = 164;
         let currentCountry = jo[currentYear.id].participants.countryNumber;
         let countryRatio = currentCountry/maxCountry;
@@ -74,18 +71,18 @@ export default function GameHistograms() {
         countryBar.append('rect')
             .attr('fill', 'transparent')
             .style('stroke', 'rgba(196, 196, 196, 0.37)')
-            .attr('width', 13)
+            .attr('width', rectWidth)
             .attr('height', function(){
                 return rectHeight;
             })
-            .attr('x', 0);
+            .attr('x', 50-(rectWidth/2));
 
         let countryProgress = countryBar.append('rect')
             .style('transform', 'scaleY(-1)')
             .attr('fill', 'rgba(196, 196, 196, 0.37)')
-            .attr('width', 13)
+            .attr('width', rectWidth)
             .attr('height', 0)
-            .attr('x', 0)
+            .attr('x', 50-(rectWidth/2))
             .attr('y', -rectHeight);
 
         countryProgress.transition()
@@ -97,8 +94,8 @@ export default function GameHistograms() {
         //Disciplines Bar
         let disciplineBar = barsWrapper.append('svg')
             .attr('class', 'discipline-bar')
-            .attr('height', 500)
-            .attr('width', 100);
+            .attr('height', 200)
+            .attr('width', histogramsWrapperWidth/3);
         let maxDiscipline = 22;
         let currentDiscipline = jo[currentYear.id].sports.sportsNumber;
         let disciplineRatio = currentDiscipline/maxDiscipline;
@@ -106,18 +103,18 @@ export default function GameHistograms() {
         disciplineBar.append('rect')
             .attr('fill', 'transparent')
             .style('stroke', 'rgba(196, 196, 196, 0.37)')
-            .attr('width', 13)
+            .attr('width', rectWidth)
             .attr('height', function(){
                 return rectHeight;
             })
-            .attr('x', 0);
+            .attr('x', 50-(rectWidth/2));
 
         let disciplineProgress = disciplineBar.append('rect')
             .style('transform', 'scaleY(-1)')
             .attr('fill', 'rgba(196, 196, 196, 0.37)')
-            .attr('width', 13)
+            .attr('width', rectWidth)
             .attr('height', 0)
-            .attr('x', 0)
+            .attr('x', 50-(rectWidth/2))
             .attr('y', -rectHeight);
 
         disciplineProgress.transition()
@@ -135,6 +132,18 @@ export default function GameHistograms() {
 
     return (
         <div className="histograms-wrapper">
+            <div className="titles">
+                <div className="title">
+                    <h3>Nombre d'athlètes</h3>
+                </div>
+                <div className="title">
+                    <h3>Pays participants</h3>
+                </div>
+                <div className="title">
+                    <h3>Nombre de disciplines</h3>
+                </div>
+            </div>
+
         </div>
 
     );

@@ -80,8 +80,10 @@ export default function GameHistory()
                     position.y }} />
                 <Box/>
                 <GameCircle/>
-                <GameHost/>
-                <GameHistograms/>
+                <div className="game-data-container">
+                    <GameHost/>
+                    <GameHistograms/>
+                </div>
             </div>
             </div>
         </BoxContext.Provider>
