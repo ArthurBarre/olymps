@@ -11,12 +11,10 @@ services:
     networks:
       - web
     ports:
-      - 3307:3306
+      - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: paris-jo
-    volumes:
-      - /Users/$USER/mysql:/var/lib/mysql
 
   adminer:
     image: adminer
