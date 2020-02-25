@@ -30,17 +30,18 @@ export default function Switcher() {
   // console.log(components)
   function checkIndex() {
     console.log(scrollTop)
-    if (scrollTop < 200) {
-      setIndexComp(0)
-    }
-    if ((scrollTop > 200) | (scrollTop > 499)) {
-      setIndexComp(1)
-    }
-    if ((scrollTop > 500) | (scrollTop > 699)) {
-      setIndexComp(2)
-    }
-    if ((scrollTop > 700) | (scrollTop > 900)) {
-      setIndexComp(3)
+    if (indexComp > 2) {
+      return;
+    } else {
+      if (scrollTop < 200) {
+        setIndexComp(0)
+      }
+      if ((scrollTop > 200) | (scrollTop > 499)) {
+        setIndexComp(1)
+      }
+      if ((scrollTop > 500) | (scrollTop > 699)) {
+        setIndexComp(2)
+      }
     }
   }
 
