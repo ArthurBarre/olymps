@@ -9,11 +9,16 @@ function Canvas() {
     scene,
     camera,
     currentURL = null;
+  let group = new THREE.Group();
   let raycaster = new THREE.Raycaster();
   let mouse = new THREE.Vector2();
   let intersects = null;
   let controls = null;
   let fitOffset = 1.2;
+  let target = new THREE.Vector2();
+  var windowHalfX = window.innerWidth / 2;
+  var windowHalfY = window.innerHeight / 2;
+  const windowHalf = new THREE.Vector2(window.innerWidth / 2, window.innerHeight / 2);
 
   useEffect(_ => {
     init();
@@ -21,41 +26,30 @@ function Canvas() {
   }, []);
 
   const init = () => {
+
     let container = document.getElementById('container');
+
     // INITIATE CAMERA
-    camera = new THREE.PerspectiveCamera(
-      70,
-      window.innerWidth / window.innerHeight,
-      1,
-      1000
-    );
-    camera.position.set(0, -100, 200);
+    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 250;
+    console.log('camera', camera);
+
     // CANVAS ON RESIZE
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(0x000000, 0);
     container.appendChild(renderer.domElement);
-    // ORBITE CONTROLS
-    controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableZoom = false;
-    controls.minPolarAngle = 2;
-    controls.maxPolarAngle = 2;
-    controls.minAzimuthAngle = -Math.PI / 10;
-    controls.maxAzimuthAngle = Math.PI / 10;
-    controls.dynamicDampingFactor = 4.5;
-    let control_factor = 0.5;
-    controls.rotateSpeed = -0.1 * control_factor;
-    controls.zoomSpeed = 0.2 * control_factor;
-    controls.panSpeed = 0.5 * control_factor;
-
     window.addEventListener('resize', onWindowResize, false);
+
     //SVG URL
     currentURL = './themap.svg';
     loadSVG(currentURL, () => {
       console.log('scene', scene.getObjectByName('testgroup').children[0]);
     });
-    window.addEventListener('mousemove', onMouseMove, false);
+
+    document.addEventListener('mousemove', onMouseMove, false);
+    document.addEventListener('wheel', onMouseWheel, false);
     window.requestAnimationFrame(render);
   };
 
@@ -65,11 +59,11 @@ function Canvas() {
     //SVG LOADER
     let loader = new SVGLoader();
     loader.load(url, function (paths) {
-      let group = new THREE.Group();
       group.scale.multiplyScalar(0.25);
-      group.position.x = -130;
+      group.position.x = -160;
       group.position.y = 90;
       group.scale.y *= -1;
+      group.rotateX(-0.5);
       group.name = 'testgroup';
       //EXTRUDE FUNCTION
       for (let i = 0; i < paths.paths.length; i++) {
@@ -78,7 +72,7 @@ function Canvas() {
         for (let j = 0; j < shapes.length; j++) {
           let shape = shapes[j];
           let extrGeometry = new THREE.ExtrudeGeometry(shape, {
-            depth: 10,
+            depth: 13,
             steps: 20,
             bevelThickness: 3,
             bevelSize: 2,
@@ -108,17 +102,33 @@ function Canvas() {
   };
 
   const onMouseMove = event => {
-    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    mouse.x = (event.clientX - windowHalf.x);
+    mouse.y = (event.clientY - windowHalf.x);
+  };
+
+  const onMouseWheel = event => {
+    camera.position.z += event.deltaY * 0.1;
   };
 
   const onWindowResize = () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    windowHalf.set(width / 2, height / 2);
+    camera.aspect = width / height;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(width, height);
   };
 
+
   const animate = () => {
+    target.x = (1 - mouse.x) * 0.002;
+    target.y = (1 - mouse.y) * 0.002;
+
+    camera.rotation.x += 0.05 * (target.y - camera.rotation.x);
+    camera.rotation.y += 0.05 * (target.x - camera.rotation.y);
+
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
     requestAnimationFrame(animate);
     render();
   };
@@ -134,45 +144,35 @@ function Canvas() {
   };
 
   window.addEventListener('click', () => {
-    console.log('controls', controls);
     if (intersects && intersects.length > 0) {
       for (let i = 0; i < intersects.length; i++) {
         const box = new THREE.Box3();
         intersects[0].object.material[0].color.set(0x545454);
         intersects[0].object.translateZ(100);
+        // console.log(character);
         // character.group.position.copy(intersection.point);
         // character.group.updateMatrix();
-        // SET OBJECT BOX
-        box.expandByObject(intersects[i].object);
-        const size = box.getSize(new THREE.Vector3());
-        const center = box.getCenter(new THREE.Vector3());
-        const maxSize = Math.max(size.x, size.y, size.z);
-        const fitHeightDistance = maxSize / (2 * Math.atan(Math.PI * camera.fov / 360));
-        const fitWidthDistance = fitHeightDistance / camera.aspect;
-        const distance = fitOffset * Math.max(fitHeightDistance, fitWidthDistance);
-        // CHANGE CONTROLE TO FIXE ON BOX
-        const direction = controls.target.clone()
-          .sub(camera.position)
-          .normalize()
-          .multiplyScalar(distance);
-        controls.maxDistance = distance * 10;
-        controls.target.copy(center);
-        camera.near = distance / 100;
-        camera.far = distance * 100;
-        camera.updateProjectionMatrix();
-        camera.position.copy(controls.target).sub(direction);
-        camera.translateY(-140);
-        controls.update();
+        // // SET OBJECT BOX
+        // box.expandByObject(intersects[i].object);
+        // const size = box.getSize(new THREE.Vector3());
+        // const center = box.getCenter(new THREE.Vector3());
+        // const maxSize = Math.max(size.x, size.y, size.z);
+        // const fitHeightDistance = maxSize / (2 * Math.atan(Math.PI * camera.fov / 360));
+        // const fitWidthDistance = fitHeightDistance / camera.aspect;
+        // const distance = fitOffset * Math.max(fitHeightDistance, fitWidthDistance);
+        // // // CHANGE CONTROLE TO FIXE ON BOX
+        // const direction = controls.target.clone()
+        //   .sub(camera.position)
+        //   .normalize()
+        //   .multiplyScalar(distance);
       }
     }
     renderer.render(scene, camera);
   });
 
-  return <div id='container'>
-    <div id='topContainer'></div>
-    <div id='bottonContainer'></div>
-  </div>
+  return <div id='container'></div>
 }
+
 
 export default Canvas
 
