@@ -2,9 +2,11 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Entity\HandyType;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToMany;
 use Doctrine\ORM\Mapping\JoinColumn;
@@ -118,21 +120,17 @@ class Location
     }
 
     /**
-     * @ManyToMany(targetEntity="HandyType",fetch="EAGER",
-     *     orphanRemoval=true,
-     *     cascade={"persist"})
-     * @JoinTable(name="LocationType",
+     * @ManyToMany(targetEntity="HandyType")
+     * @JoinTable(name="location_type",
      *      joinColumns={@JoinColumn(name="id_loc", referencedColumnName="id")},
      *      inverseJoinColumns={@JoinColumn(name="id_type", referencedColumnName="id")}
-     *      )
+     * )
      */
     private $typesList;
-
 
    public function getTypesList() :Collection
    {
        return $this->typesList;
    }
-
 
 }
