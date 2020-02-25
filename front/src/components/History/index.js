@@ -3,6 +3,7 @@ import Data from '../../data.json';
 import DateScroll from '../DateScroll';
 import Circle from '../Circle/Circle';
 import Infos from '../Infos';
+import Paris2024 from '../Paris2024/Paris2024';
 
 class History extends React.Component {
 

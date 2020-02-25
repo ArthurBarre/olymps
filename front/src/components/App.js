@@ -5,9 +5,11 @@ import Navigation from './Navigation'
 import { BrowserRouter as Router} from "react-router-dom";
 function App() {
 		return (
-			<Router>
-				<Navigation/>
-			</Router>
+			<div>
+				<Router>
+					<Navigation/>
+				</Router>
+			</div>
 		)
 };
 
