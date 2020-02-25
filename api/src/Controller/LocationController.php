@@ -28,7 +28,7 @@ class LocationController extends AbstractController
 
         return $this->json($locFiltered);
     }
-    
+
     /**
      * @Route("/districts", name="districts")
      * @param LocationRepository $locRep
