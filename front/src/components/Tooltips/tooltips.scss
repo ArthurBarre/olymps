@@ -1,0 +1,31 @@
+.adjust {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.tooltipContainer {
+  width: 400px;
+  height: 300px;
+  border: 1px solid black;
+}
+
+.test {
+  width: 400px;
+  height: 300px;
+  border: 1px solid black;
+}
+
+.position {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > span {
+    font-size: 30px;
+  }
+}
