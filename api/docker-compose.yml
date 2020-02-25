@@ -1,4 +1,4 @@
-version: "3"
+version: "3.7"
 
 networks:
   web:
@@ -6,7 +6,6 @@ networks:
 
 services:
   db:
-    container_name: mysql
     image: mysql:5.7
     restart: always
     networks:
@@ -15,8 +14,7 @@ services:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
-    volumes:
-      - /Users/macarthur/mysql:/var/lib/mysql
+      MYSQL_DATABASE: paris-jo
 
   adminer:
     image: adminer

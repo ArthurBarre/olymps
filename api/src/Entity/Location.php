@@ -2,9 +2,15 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Entity\HandyType;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToMany;
+use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\JoinTable;
 
 /**
  * @ApiResource()
@@ -14,7 +20,7 @@ class Location
 {
     public function __construct()
     {
-//        $this->types = new ArrayCollection();
+       $this->typesList = new ArrayCollection();
     }
     /**
      * @ORM\Id()
@@ -113,28 +119,18 @@ class Location
         return $this;
     }
 
-//    /**
-//     * @ORM\ManyToMany(targetEntity=HandyType::class, cascade={"persist"})
-//     */
-//
-//    private $types;
-//
-//    public function addTypes(Types $types)
-//    {
-//        $this->types[] = $types;
-//
-//        return $this;
-//    }
-//
-//    public function removeTypes(Types $types)
-//    {
-//        $this->types->removeElement($types);
-//    }
-//
-//    public function getTypes()
-//    {
-//        return $this->types;
-//    }
+    /**
+     * @ManyToMany(targetEntity="HandyType")
+     * @JoinTable(name="location_type",
+     *      joinColumns={@JoinColumn(name="id_loc", referencedColumnName="id")},
+     *      inverseJoinColumns={@JoinColumn(name="id_type", referencedColumnName="id")}
+     * )
+     */
+    private $typesList;
 
+   public function getTypesList() :Collection
+   {
+       return $this->typesList;
+   }
 
 }
