@@ -1,11 +1,11 @@
 <?php
 
+
 namespace App\Controller;
 
 use App\Entity\Location;
 use App\Repository\LocationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,26 +23,7 @@ class LocationController extends AbstractController
         $district = $request->query->get('district');
         $locations = $locRep;
         $locFiltered = $locations->findByDistrict($district);
+//        dd($locFiltered);
         return $this->json($locFiltered);
     }
-
-//    /**
-//     * @Route("/types", name="types")
-//     * @param LocationRepository $locRep
-//     * @param Request $request
-//     * @return JsonResponse
-//     */
-//    public function types(LocationRepository $locRep, Request $request)
-//    {
-//        // GET http://localhost:8000/types?district=75019
-//        $district = $request->query->get('district');
-//        $locations = $locRep;
-//
-//        $locFiltered = $locations->findByDistrict($district);
-//
-////        /** @var Location $test */
-////        $test = $locFiltered[0];
-////        dd($locFiltered);
-//        return $this->json($locFiltered);
-//    }
 }

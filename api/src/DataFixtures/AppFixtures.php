@@ -2,7 +2,7 @@
 
 namespace App\DataFixtures;
 use App\Entity\Infrastructure;
-use App\Entity\HandyType;
+use App\Entity\HandiType;
 use App\Entity\Location;
 use App\Entity\LocationType;
 
@@ -34,7 +34,7 @@ class AppFixtures extends Fixture
             $loc = new Location();
             $loc->setLat($json[$i]['lat']);
             $loc->setLng($json[$i]['long']);
-            $loc->setName($json[$i]['equnom']);
+            $loc->setNames($json[$i]['equnom']);
             $loc->setTypes($json2[$i]['types']);
             if (is_null($district)) {
                 $loc->setDistrict(75013);
@@ -48,18 +48,18 @@ class AppFixtures extends Fixture
         }
 
         for ($i = 0; $i < count($typeDataJson); $i++) {
-            $loc = new HandyType();
+            $loc = new HandiType();
             $loc->setTitle($typeDataJson[$i]['title']);
             $loc->setDescription($typeDataJson[$i]['description']);
             $manager->persist($loc);
         }
 
-        for ($i = 0; $i < count($joint2); $i++) {
-            $loc = new LocationType();
-            $loc->setIdLoc($joint2[$i]['gym_id']);
-            $loc->setIdType($joint2[$i]['property_id']);
-            $manager->persist($loc);
-        }
+//        for ($i = 0; $i < count($joint2); $i++) {
+//            $loc = new LocationType();
+//            $loc->setIdLocation($joint2[$i]['gym_id']);
+//            $loc->setIdHandi($joint2[$i]['property_id']);
+//            $manager->persist($loc);
+//        }
 
         $manager->flush();
     }

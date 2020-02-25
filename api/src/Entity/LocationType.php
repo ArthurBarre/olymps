@@ -5,53 +5,70 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\LocationTypeRepository")
+ * LocationType
+ *
+ * @ORM\Table(name="location_type", indexes={@ORM\Index(name="id_handi", columns={"id_handi"}), @ORM\Index(name="id_location", columns={"id_location"})})
+ * @ORM\Entity
  */
 class LocationType
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="id_relation", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    private $idRelation;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var \Location
+     *
+     * @ORM\ManyToOne(targetEntity="Location")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_location", referencedColumnName="id_location")
+     * })
      */
-    private $id_loc;
+    private $idLocation;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var \HandiType
+     *
+     * @ORM\ManyToOne(targetEntity="HandiType")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_handi", referencedColumnName="id_handi")
+     * })
      */
-    private $id_type;
+    private $idHandi;
 
-    public function getId(): ?int
+    public function getIdRelation(): ?int
     {
-        return $this->id;
+        return $this->idRelation;
     }
 
-    public function getIdLoc(): ?int
+    public function getIdLocation(): ?Location
     {
-        return $this->id_loc;
+        return $this->idLocation;
     }
 
-    public function setIdLoc(int $id_loc): self
+    public function setIdLocation(?Location $idLocation): self
     {
-        $this->id_loc = $id_loc;
+        $this->idLocation = $idLocation;
 
         return $this;
     }
 
-    public function getIdType(): ?int
+    public function getIdHandi(): ?HandiType
     {
-        return $this->id_type;
+        return $this->idHandi;
     }
 
-    public function setIdType(int $id_type): self
+    public function setIdHandi(?HandiType $idHandi): self
     {
-        $this->id_type = $id_type;
+        $this->idHandi = $idHandi;
 
         return $this;
     }
+
+
 }
