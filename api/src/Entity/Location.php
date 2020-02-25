@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Entity\HandyType;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToMany;
 use Doctrine\ORM\Mapping\JoinColumn;
@@ -117,8 +118,9 @@ class Location
     }
 
     /**
-     * Many User have Many Phonenumbers.
-     * @ManyToMany(targetEntity="HandyType")
+     * @ManyToMany(targetEntity="HandyType",fetch="EAGER",
+     *     orphanRemoval=true,
+     *     cascade={"persist"})
      * @JoinTable(name="LocationType",
      *      joinColumns={@JoinColumn(name="id_loc", referencedColumnName="id")},
      *      inverseJoinColumns={@JoinColumn(name="id_type", referencedColumnName="id")}
@@ -126,7 +128,8 @@ class Location
      */
     private $typesList;
 
-   public function getTypesList()
+
+   public function getTypesList() :Collection
    {
        return $this->typesList;
    }
