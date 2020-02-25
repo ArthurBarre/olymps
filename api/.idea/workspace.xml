@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32db5659-f890-4447-84f7-e6d42614ced9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/components/Map/GoogleMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/Map/GoogleMap.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/LocationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LocationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Location.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Location.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/components/Switcher/switcher.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/components/Switcher/switcher.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,6 +157,7 @@
       <workItem from="1581522655618" duration="2331000" />
       <workItem from="1581548320959" duration="2331000" />
       <workItem from="1581612749794" duration="570000" />
+      <workItem from="1582618650260" duration="2825000" />
     </task>
     <servers />
   </component>
