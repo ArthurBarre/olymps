@@ -20,7 +20,7 @@ export default function GameCircle() {
     useEffect(() => {
 
         //remove svg if is defined
-        (circle !== undefined) && d3.select("svg").remove();
+        (circle !== undefined) && d3.select(".circle svg").remove();
 
         let numSports = allSports.length;
         let step = 360/numSports;

@@ -11,6 +11,8 @@ import BoxContext from "../Box/box-context";
 import '../Box/Box.scss';
 import GameCircle from "../GameCircle";
 import YearContext from "./year-context";
+import GameHost from "../GameHost";
+import GameHistograms from "../GameHistograms";
 
 
 export default function GameHistory()
@@ -78,6 +80,8 @@ export default function GameHistory()
                     position.y }} />
                 <Box/>
                 <GameCircle/>
+                <GameHost/>
+                <GameHistograms/>
             </div>
             </div>
         </BoxContext.Provider>
