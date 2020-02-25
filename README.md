@@ -6,7 +6,7 @@
 
 - Php@7.3
 
-- composer and symfony in latest version 
+- composer and symfony in latest version
 
 ---
 
@@ -29,21 +29,7 @@ php bin/console doctrine:database:create
 
 ```
 
-```bash
-php bin/console doctrine:database:create
-```
-
-```bash
-php bin/console make:migration
-```
-
-```bash
-php bin/console make:migrations:migrate
-```
-
-```bash
-php bin/console doctrine:fixtures:load
-```
+- Import paris-jo.sql in your Mysql Database
 
 ```bash
 symfony serve
