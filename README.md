@@ -33,17 +33,8 @@ php bin/console doctrine:database:create
 php bin/console doctrine:database:create
 ```
 
-```bash
-php bin/console make:migration
-```
+- Import paris-jo.sql in your database
 
-```bash
-php bin/console make:migrations:migrate
-```
-
-```bash
-php bin/console doctrine:fixtures:load
-```
 
 ```bash
 symfony serve
