@@ -44,4 +44,12 @@ class LocationRepository extends ServiceEntityRepository
             ->getQuery()
             ->execute();
     }
+    public function findById($value)
+    {
+        return $this->createQueryBuilder('loc')
+            ->andWhere('loc.id = :id')
+            ->setParameter('id', $value)
+            ->getQuery()
+            ->execute();
+    }
 }
