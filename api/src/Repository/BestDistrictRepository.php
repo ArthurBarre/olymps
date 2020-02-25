@@ -36,15 +36,12 @@ class BestDistrictRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?BestDistrict
+    public function findByDistrict($value)
     {
-        return $this->createQueryBuilder('b')
-            ->andWhere('b.exampleField = :val')
-            ->setParameter('val', $value)
+        return $this->createQueryBuilder('bd')
+            ->andWhere('bd.district = :district')
+            ->setParameter('district', $value)
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->execute();
     }
-    */
 }
