@@ -1,7 +1,7 @@
 $fontSerif: 'Suranna', serif;
 $fontSans: 'Teko', sans-serif;
 $sports_list_height: 100px;
-$sports_list_width: 75vw;
+$sports_list_width: 75%;
 $white: #ffffff;
 .general{
   background-color: black;
@@ -12,21 +12,23 @@ $white: #ffffff;
 		transform: translate(-50%, -0%);
 		border-bottom: 1px solid $white;
 		padding-bottom: 40px;
+		padding-left: 50px;
+		padding-right: 50px;
 		height: $sports_list_height;
 		width: $sports_list_width;
 		display: flex;
 		align-items: flex-end;
-		justify-content: space-evenly;
-    li{
+		justify-content: space-around;
+    .sports_list_li{
 			font-family: $fontSans;
 			line-height: 29px;
       color: $white;
-      height: $sports_list_width/22;
+			width: $sports_list_width/23;
 			transform: rotate(-62.74deg) translate(50%, -0%);
 			font-size: 20px;
 			//border: yellow solid 1px;
 			white-space: nowrap;
-			margin: -50px;
+			margin: 0px;
 		}
 	}
   .title{
@@ -40,7 +42,7 @@ $white: #ffffff;
     left: 50%;
     transform: translate(-50%, -0%);
   }
-  button{
+  .map_button{
     position: absolute;
     bottom: 5vh;
     left: 50vw;
@@ -50,8 +52,6 @@ $white: #ffffff;
     border: 1px solid white;
     background-color: #999999;
     border-radius: 100%;
-	}
-	button:hover{
-
+		background-image: url("/assets/img/arrow-bottom.png");
 	}
 }
