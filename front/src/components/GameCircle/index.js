@@ -26,8 +26,7 @@ export default function GameCircle() {
         let sportTextCount = 0;
         let circleValueCount = 0;
         let sportFillCount = 0;
-
-        /*tl.fromTo(".circle", {opacity: 0}, {opacity: 1}, 0.5 );*/
+        let detectMidCount = 0;
 
         circle = d3.select(".circle").append("svg")
             .attr("width", width)
@@ -42,16 +41,17 @@ export default function GameCircle() {
             .enter().append("g")
             .attr("transform", function(d) { return "rotate(" + -d + ")"; });
 
-        ga.append("text")
+        let text = ga.append("text")
             .attr("x", radius + 6)
-            .attr("dy", ".35em")
+            .attr('dy', '.35em')
             .style("text-anchor", function(d) { return d < 270 && d > 90 ? "end" : null; })
             .attr("transform", function(d) { return d < 270 && d > 90 ? "rotate(180 " + (radius + 6) + ",0)" : null; })
             .text(function () {
                 circleValueCount++;
-                if(circleValueCount-1 === numSports/2 || circleValueCount-1 === numSports/2+1){
+                if(circleValueCount-1 === numSports/2+1 || circleValueCount-1 === numSports/2 || circleValueCount-1 === numSports/2+2){
                     return '';
-                } else {
+                }
+                else {
                     sportTextCount++;
                     return allSports[sportTextCount-1];
                 }
@@ -64,8 +64,24 @@ export default function GameCircle() {
                     sportFillCount++;
                     return 'rgba(255,255,255,0.42)';
                 }
-            })
-        console.log('allsports', numSports/2);
+            });
+
+        let border = ga.append('line')
+            .attr("x1", radius + 6)
+            .attr("y1", 1.6)
+            .attr("x2", -60)
+            .attr("y2", 1.6)
+            .attr("stroke-width", 1)
+            .attr("transform", function(d) { return d < 270 && d > 90 ? "rotate(180 " + (radius + 6) + ",0)" : null; })
+            .attr("stroke", "#BEBEBE")
+            .style("visibility", function () {
+                detectMidCount++;
+                if (detectMidCount - 1 !== ((numSports / 2)+1)) {
+                    return 'hidden';
+                } else {
+                    return 'visible';
+                }
+            });
 
     },[currentYear.id]);
 
