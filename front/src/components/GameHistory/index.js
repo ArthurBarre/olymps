@@ -39,13 +39,13 @@ export default function GameHistory() {
                 cursorCircle.style.backgroundImage = `url(${BottomArrow})`;
             cursorCircle.style.backgroundColor = 'rgba(196, 196, 196, 0.32)';
             cursorCircle.style.border = '2px solid #9C9C9C';
-            t.timeScale(0.2);
+            /*t.timeScale(0.2);*/
 
         } else {
             cursorCircle.style.backgroundImage = 'none';
             cursorCircle.style.backgroundColor = 'white';
             cursorCircle.style.border = 'none';
-            t.timeScale(1);
+            /*t.timeScale(1);*/
         }
 
 
@@ -57,24 +57,6 @@ export default function GameHistory() {
             positionInBox.isEnter ? scaleUp() : appear();
         }
     }, [positionInBox.isEnter]);
-
-    /*useEffect(() => {
-        {
-            positionInBox.isEnter ? TweenLite.to(cursorCircle, 0.6, {
-                css: {
-                    left: position.x,
-                    top: position.y
-                }
-
-            }) : TweenLite.to(cursorCircle, 0.1, {
-                css: {
-                    left: position.x,
-                    top: position.y
-                }
-
-            });
-        }
-    });*/
 
     function scaleUp() {
         TweenMax.to(cursorCircle, 0.5, {
