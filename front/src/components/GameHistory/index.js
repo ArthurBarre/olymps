@@ -11,6 +11,7 @@ import BoxContext from "../Box/box-context";
 import '../Box/Box.scss';
 import GameCircle from "../GameCircle";
 import YearContext from "./year-context";
+import Paris2024 from '../Paris2024';
 
 
 export default function GameHistory()
@@ -73,12 +74,13 @@ export default function GameHistory()
         <YearContext.Provider value={valueYear}>
         <BoxContext.Provider value={valueBox}>
             <div className="History">
-            <div onMouseEnter={appear} onMouseLeave={disapear} onMouseMove={setMousePosition} ref={insideRef} className="history-container blackLayer">
-                <div className="cursor" ref={element => {cursorCircle = element}}   style={{ left: position.x, top:
+                <div onMouseEnter={appear} onMouseLeave={disapear} onMouseMove={setMousePosition} ref={insideRef} className="history-container blackLayer">
+                    <div className="cursor" ref={element => {cursorCircle = element}}   style={{ left: position.x, top:
                     position.y }} />
-                <Box/>
-                <GameCircle/>
-            </div>
+                    <Box/>
+                    <GameCircle/>
+                    <Paris2024 />
+                </div>
             </div>
         </BoxContext.Provider>
         </YearContext.Provider>

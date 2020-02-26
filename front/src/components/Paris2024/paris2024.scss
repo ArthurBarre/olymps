@@ -1,8 +1,8 @@
 .paris2024_display{
-    height: 100vh;
+    height: 110px;
     width: 100vw;
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     overflow: hidden;
 }
@@ -43,6 +43,7 @@
     top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
+    cursor: default;
 }
 .paris2024_a:hover{
     text-decoration: none;

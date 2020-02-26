@@ -49,9 +49,11 @@ $white: #ffffff;
     transform: translate(-50%, -0%);
     height: 50px;
     width: 50px;
-    border: 1px solid white;
-    background-color: #999999;
+		border: 1px solid white;
+		background: rgba(196, 196, 196, 0.32);
     border-radius: 100%;
-		background-image: url("/assets/img/arrow-bottom.png");
+	}
+	.map_button:hover{
+		background: url("../../assets/img/arrow-bottom.png") no-repeat center;
 	}
 }
