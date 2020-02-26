@@ -29,6 +29,7 @@ export default function Practice () {
           <li className="sports_list_li">Sitting volleyball</li>
       </ul>
       <h1 className="title">Where can you practice in paris ?</h1>
+      <div className="test_map_button"></div>
       <button className="map_button"></button>
     </div>
   )
