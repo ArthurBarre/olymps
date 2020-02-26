@@ -4,7 +4,7 @@ class MapInfos extends React.Component {
 
   render() {
     return (
-      <div class="infos-container">
+      <div id="infos-container" class="infos-container">
         <div class="aera-name"></div>
         <div class="aera-infos">
           <ul>

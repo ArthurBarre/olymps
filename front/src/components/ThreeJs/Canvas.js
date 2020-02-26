@@ -4,9 +4,11 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader';
 import { Vector3 } from 'three';
+import { CSS3DObject } from 'three-css3drenderer';
 
 function Canvas() {
   let renderer = null;
+  let renderer2 = null;
   let group = new THREE.Group();
   let camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1000);
   let scene = new THREE.Scene();
@@ -22,6 +24,7 @@ function Canvas() {
   let tampon = null;
   let light = null;
 
+
   useEffect(_ => {
     init();
     animate();
@@ -29,9 +32,12 @@ function Canvas() {
 
   const init = () => {
     let container = document.getElementById('container');
-    //
+    /////
+
+
     // INITIATE CAMERA
     camera.position.set(40, 0, 260);
+
     // CANVAS ON RESIZE
     raycaster = new THREE.Raycaster();
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -43,6 +49,7 @@ function Canvas() {
     window.addEventListener('resize', onWindowResize, false);
     document.addEventListener('mousemove', onMouseMove, false);
     document.addEventListener('wheel', onMouseWheel, false);
+
 
     //SVG URL
     currentURL = './themap.svg';
@@ -150,14 +157,14 @@ function Canvas() {
             tampon.material[0].color.set(0x5B5B5B); // color base
             intersects[0].object.material[0].color.set(0xB3B3B3); // color on hover
             if (intersects[0].object.position.z > 60) {
-              return
+              return;
             }
             intersects[0].object.translateZ(1); // position on hover
             console.log('intersdectPosX', intersects[0].object.position.x);
             tampon = intersects[0].object;
           } else {
             if (intersects[0].object.position.z > 60) {
-              return
+              return;
             }
             intersects[0].object.translateZ(1); // position on hover
             intersects[0].object.material[0].color.set(0xB3B3B3);// color on hover
