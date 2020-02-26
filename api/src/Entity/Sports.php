@@ -28,4 +28,22 @@ class Sports
      */
     private $title;
 
+    public function getIdSport(): ?int
+    {
+        return $this->idSport;
+    }
+
+    public function getTitle(): ?int
+    {
+        return $this->title;
+    }
+
+    public function setTitle(int $title): self
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+
 }

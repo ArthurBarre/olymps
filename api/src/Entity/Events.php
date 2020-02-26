@@ -56,6 +56,71 @@ class Events
      */
     private $countrynumber;
 
+    public function getIdEvent(): ?int
+    {
+        return $this->idEvent;
+    }
+
+    public function getYear(): ?string
+    {
+        return $this->year;
+    }
+
+    public function setYear(string $year): self
+    {
+        $this->year = $year;
+
+        return $this;
+    }
+
+    public function getCountry(): ?string
+    {
+        return $this->country;
+    }
+
+    public function setCountry(string $country): self
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(string $city): self
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    public function getAthletesnumber(): ?int
+    {
+        return $this->athletesnumber;
+    }
+
+    public function setAthletesnumber(int $athletesnumber): self
+    {
+        $this->athletesnumber = $athletesnumber;
+
+        return $this;
+    }
+
+    public function getCountrynumber(): ?int
+    {
+        return $this->countrynumber;
+    }
+
+    public function setCountrynumber(int $countrynumber): self
+    {
+        $this->countrynumber = $countrynumber;
+
+        return $this;
+    }
+
 //    /**
 //     * @ManyToMany(targetEntity="EventSport")
 //     * @JoinTable(name="event-sport",

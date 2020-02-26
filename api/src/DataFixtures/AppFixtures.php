@@ -75,7 +75,8 @@ class AppFixtures extends Fixture
 //        }
         for ($i = 0; $i < count($sportsJson); $i++) {
             $sport = new Sports();
-            $sport->set
+            $sport->setTitle($sportsJson[i]["sport"]);
+            $manager->persist($sport);
         }
 
         $manager->flush();

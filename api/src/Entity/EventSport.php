@@ -35,5 +35,34 @@ class EventSport
      */
     private $idSport;
 
+    public function getIdEventSport(): ?int
+    {
+        return $this->idEventSport;
+    }
+
+    public function getIdEvent(): ?int
+    {
+        return $this->idEvent;
+    }
+
+    public function setIdEvent(int $idEvent): self
+    {
+        $this->idEvent = $idEvent;
+
+        return $this;
+    }
+
+    public function getIdSport(): ?int
+    {
+        return $this->idSport;
+    }
+
+    public function setIdSport(int $idSport): self
+    {
+        $this->idSport = $idSport;
+
+        return $this;
+    }
+
 
 }
