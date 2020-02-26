@@ -5,6 +5,7 @@ import './GameCircle.scss'
 import YearContext from '../GameHistory/year-context'
 import { allSports } from '../constants/index'
 console.log('test', allSports)
+
 // First inizialisation of circle
 let circle
 
@@ -32,7 +33,6 @@ export default function GameCircle() {
             .attr("height", height)
             .append("g")
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
 
         let ga = circle.append("g")
             .selectAll("g")
