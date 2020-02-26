@@ -11,8 +11,10 @@ import BoxContext from "../Box/box-context";
 import '../Box/Box.scss';
 import GameCircle from "../GameCircle";
 import YearContext from "./year-context";
+import Paris2024 from '../Paris2024';
 import GameHost from "../GameHost";
 import GameHistograms from "../GameHistograms";
+
 
 
 export default function GameHistory() {
@@ -98,6 +100,7 @@ export default function GameHistory() {
                         <div className="game-data-container">
                             <GameHost/>
                             <GameHistograms/>
+                            <Paris2024 />
                         </div>
                     </div>
                 </div>
