@@ -2,61 +2,76 @@
 
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiFilter;
-use ApiPlatform\Core\Annotation\ApiResource;
-use App\Entity\HandyType;
-use Doctrine\Common\Collections\ArrayCollection;
+//use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\ManyToMany;
-use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\JoinColumn;
+
 
 /**
- * @ApiResource()
- * @ORM\Entity(repositoryClass="App\Repository\LocationRepository")
+ * Location
+ *
+ * @ORM\Table(name="location")
+ * @ORM\Entity
+ *
  */
 class Location
 {
     public function __construct()
     {
-       $this->typesList = new ArrayCollection();
+        $this->typesList = new ArrayCollection();
     }
-    /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+        /**
+     * @var int
+     *
+     * @ORM\Column(name="id_location", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    private $idLocation;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="lat", type="string", length=255, nullable=false)
      */
     private $lat;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="lng", type="string", length=255, nullable=false)
      */
     private $lng;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="names", type="string", length=255, nullable=false)
      */
-    private $name;
+    private $names;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="types", type="integer", nullable=false)
      */
     private $types;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="district", type="integer", nullable=false)
      */
     private $district;
 
-    public function getId(): ?int
+    public function getIdLocation(): ?int
     {
-        return $this->id;
+        return $this->idLocation;
     }
 
     public function getLat(): ?string
@@ -83,14 +98,14 @@ class Location
         return $this;
     }
 
-    public function getName(): ?string
+    public function getNames(): ?string
     {
-        return $this->name;
+        return $this->names;
     }
 
-    public function setName(string $name): self
+    public function setNames(string $names): self
     {
-        $this->name = $name;
+        $this->names = $names;
 
         return $this;
     }
@@ -118,19 +133,36 @@ class Location
 
         return $this;
     }
-
+//    /**
+//     * @OneToMany(targetEntity="HandiType")
+//     * @JoinTable(name="location_type",
+//     *      joinColumns={@JoinColumn(name="id_location", referencedColumnName="id_location")},
+//     *      inverseJoinColumns={@JoinColumn(name="id_handi", referencedColumnName="id_handi")}
+//     * )
+//     */
+//    /**
+//     * Many Categories have One Category.
+//     * @OneToMany(targetEntity="HandiType", inversedBy="id_location")
+//     * @JoinColumn(name="id_handi", referencedColumnName="id_handi")
+//     */
+//    /**
+//     * One product has many features. This is the inverse side.
+//     * @OneToMany(targetEntity="HandiType", mappedBy="id_location")
+//     */
     /**
-     * @ManyToMany(targetEntity="HandyType")
+     * Many User have Many Phonenumbers.
+     * @ManyToMany(targetEntity="HandiType")
      * @JoinTable(name="location_type",
-     *      joinColumns={@JoinColumn(name="id_loc", referencedColumnName="id")},
-     *      inverseJoinColumns={@JoinColumn(name="id_type", referencedColumnName="id")}
-     * )
+     *      joinColumns={@JoinColumn(name="id_location", referencedColumnName="id_location")},
+     *      inverseJoinColumns={@JoinColumn(name="id_handi", referencedColumnName="id_handi")}
+     *      )
      */
     private $typesList;
 
-   public function getTypesList() :Collection
-   {
-       return $this->typesList;
-   }
+    public function getTypesList() :Collection
+    {
+        return $this->typesList;
+    }
+
 
 }

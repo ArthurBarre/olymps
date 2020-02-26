@@ -5,30 +5,39 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\HandyTypeRepository")
+ * HandiType
+ *
+ * @ORM\Table(name="handi_type")
+ * @ORM\Entity
  */
-class HandyType
+class HandiType
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="id_handi", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    private $idHandi;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255, nullable=false)
      */
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255, nullable=false)
      */
     private $description;
 
-    public function getId(): ?int
+    public function getIdHandi(): ?int
     {
-        return $this->id;
+        return $this->idHandi;
     }
 
     public function getTitle(): ?string
@@ -54,4 +63,6 @@ class HandyType
 
         return $this;
     }
+
+
 }
