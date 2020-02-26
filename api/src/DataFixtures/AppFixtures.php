@@ -1,6 +1,7 @@
 <?php
 
 namespace App\DataFixtures;
+use App\Entity\BestDistrict;
 use App\Entity\Infrastructure;
 use App\Entity\HandiType;
 use App\Entity\Location;
@@ -21,7 +22,9 @@ class AppFixtures extends Fixture
         $types = file_get_contents('http://localhost:8000/data-types.json');
         $joint = file_get_contents('http://localhost:8000/joint-data.json');
         $districts = file_get_contents('http://localhost:8000/district.json');
+        $bestDistricts = file_get_contents('http://localhost:8000/count-types.json');
 
+        $bestDistrictsJson = json_decode($bestDistricts, true);
         $districtsJson = json_decode($districts, true);
         $typeDataJson = json_decode($typeData, true);
         $json = json_decode($infra, true);
@@ -54,12 +57,15 @@ class AppFixtures extends Fixture
             $manager->persist($loc);
         }
 
-//        for ($i = 0; $i < count($joint2); $i++) {
-//            $loc = new LocationType();
-//            $loc->setIdLocation($joint2[$i]['gym_id']);
-//            $loc->setIdHandi($joint2[$i]['property_id']);
-//            $manager->persist($loc);
-//        }
+        for ($i = 0; $i < count($bestDistrictsJson); $i++) {
+            $loc = new BestDistrict();
+            $loc->setDistrict($bestDistrictsJson[$i]['value']['district']);
+            $loc->setCount($bestDistrictsJson[$i]['value']['count']);
+            $loc->setMoy($bestDistrictsJson[$i]['value']['moy']);
+            $loc->setNbrLocation($bestDistrictsJson[$i]['value']['all']);
+            $loc->setPosition($bestDistrictsJson[$i]['value']['position']);
+            $manager->persist($loc);
+        }
 
         $manager->flush();
     }
