@@ -27,20 +27,15 @@ const districtsList = [
 ]
 
 export default function ToolTips() {
-  const [district, setDistrict] = useState(75019)
-  const [districtData, setDistrictData] = useState([])
-
-  useEffect(() => {
-    fetch(`http://localhost:8000/district_info?district=${district}`, {})
-      .then(res => res.json())
-      .then(res => setDistrictData(res))
-  }, [])
+  const [district, setDistrict] = useState(75019);
+  const [districtData, setDistrictData] = useState([]);
 
   const selectDistrict = d => {
     setDistrict(d)
-    fetch(`http://localhost:8000/district_info?district=${district}`, {})
+    fetch(`${api_url}/district_info?district=${district}`, {})
       .then(res => res.json())
       .then(res => setDistrictData(res))
+      .then(res => console.log(res))
   }
 
   return (
