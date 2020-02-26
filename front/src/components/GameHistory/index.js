@@ -43,6 +43,13 @@ export default function GameHistory() {
             cursorCircle.style.backgroundImage = 'none';
             cursorCircle.style.backgroundColor = 'white';
             cursorCircle.style.border = 'none';
+            TweenLite.to(cursorCircle, 0.1, {
+                css: {
+                    left: position.x,
+                    top: position.y
+                }
+
+            });
         }
 
 
