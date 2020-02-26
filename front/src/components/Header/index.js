@@ -1,5 +1,7 @@
 import React from 'react';
 import Nav from './Nav';
+import Loader from 'react-loader-spinner';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 class Header extends React.Component {
   render() {
@@ -9,13 +11,29 @@ class Header extends React.Component {
         <div className="blackLayer">
           <div className="Intro">
             <h1 className="Title">Olymps</h1>
-            <Nav/>
+            {/*<Nav/>*/}
             <p className="Subtitle">An interactive Paralympics games data visualization</p>
             <p className="textIntro">Using data collected from the city of Paris and others differents sources like , this experiment analyses and visualizes the history of paralympics games from the start to now.</p>
             <div className="loaderContainer">
-              <div className="loaderImg"></div>
+              <div class="loader_div">
+                <div class="loader blue_loader">    
+                    <Loader type="Oval" color="#fff" height="100%" width="100%" /*timeout={1000000}*/  />
+                </div>
+                <div class="loader yellow_loader bottom">    
+                    <Loader type="Oval" color="#fff" height="100%" width="100%" /*timeout={1000000}*/  />
+                </div>
+                <div class="loader black_loader">    
+                    <Loader type="Oval" color="#fff" height="100%" width="100%" /*timeout={1000000}*/  />
+                </div>
+                <div class=" loader green_loader bottom">
+                    <Loader type="Oval" color="#fff" height="100%" width="100%" /*timeout={1000000}*/  />
+                </div>
+                <div class="loader red_loader">
+                    <Loader type="Oval" color="#fff" height="100%" width="100%" /*timeout={1000000}*/  />
+                </div>
+              </div>
               <p className="loaderText">Loading ...</p>
-              <p className="Next">Continue</p>
+              {/*<p className="Next">Continue</p>*/}
             </div>
           </div>
           <div className="headphoneContainer">

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import Home from '../../pages/Home'
 import Map from '../ThreeJs/Three'
 import GameHistory from '../GameHistory'
+import Practice from '../Practice/index'
 import './switcher.scss'
 
 const heightScreen = window.innerHeight
@@ -24,6 +25,10 @@ export default function Switcher() {
     },
     {
       id: 2,
+      comp: <Practice />,
+    },
+    {
+      id: 3,
       comp: <Map />,
     },
   ]
