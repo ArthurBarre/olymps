@@ -5,104 +5,56 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\BestDistrictRepository")
+ * BestDistrict
+ *
+ * @ORM\Table(name="best_district")
+ * @ORM\Entity
  */
 class BestDistrict
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="id_district", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idDistrict;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="position", type="integer", nullable=false)
      */
     private $position;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="count", type="integer", nullable=false)
      */
     private $count;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="nbr_location", type="integer", nullable=false)
      */
     private $nbrLocation;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="moy", type="integer", nullable=false)
      */
     private $moy;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="district", type="string", length=255, nullable=false)
      */
     private $district;
 
-    public function getIdDistrict(): ?int
-    {
-        return $this->idDistrict;
-    }
 
-    public function getPosition(): ?int
-    {
-        return $this->position;
-    }
-
-    public function setPosition(int $position): self
-    {
-        $this->position = $position;
-
-        return $this;
-    }
-
-    public function getCount(): ?int
-    {
-        return $this->count;
-    }
-
-    public function setCount(int $count): self
-    {
-        $this->count = $count;
-
-        return $this;
-    }
-
-    public function getNbrLocation(): ?int
-    {
-        return $this->nbrLocation;
-    }
-
-    public function setNbrLocation(int $nbrLocation): self
-    {
-        $this->nbrLocation = $nbrLocation;
-
-        return $this;
-    }
-
-    public function getMoy(): ?int
-    {
-        return $this->moy;
-    }
-
-    public function setMoy(int $moy): self
-    {
-        $this->moy = $moy;
-
-        return $this;
-    }
-
-    public function getDistrict(): ?string
-    {
-        return $this->district;
-    }
-
-    public function setDistrict(string $district): self
-    {
-        $this->district = $district;
-
-        return $this;
-    }
 }
