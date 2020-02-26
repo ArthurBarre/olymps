@@ -4,7 +4,7 @@ import * as d3 from "d3";
 import './GameCircle.scss';
 import YearContext from "../GameHistory/year-context";
 import {TimelineMax} from 'gsap';
-import allSports from '../constants/index'
+import {allSports} from '../constants/index'
 
 // First inizialisation of circle
 let circle;

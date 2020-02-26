@@ -3,7 +3,9 @@ import YearContext from "../GameHistory/year-context";
 import jo from "../../data";
 import './GameHistograms.scss';
 import * as d3 from "d3";
-import allSports from "../constants";
+import {maxAthlete} from "../constants";
+import {maxDiscipline} from "../constants";
+import {maxCountry} from "../constants";
 
 let barsWrapper;
 export default function GameHistograms() {
@@ -31,7 +33,6 @@ export default function GameHistograms() {
             .attr('class', 'athlete-bar')
             .attr('height', 200)
             .attr('width', histogramsWrapperWidth/3);
-        let maxAthlete = 4400;
         let currentAthlete = jo[currentYear.id].participants.athletesNumber;
         let athleteRatio = currentAthlete/maxAthlete;
 
@@ -64,7 +65,6 @@ export default function GameHistograms() {
             .attr('class', 'country-bar')
             .attr('height', 200)
             .attr('width', histogramsWrapperWidth/3);
-        let maxCountry = 164;
         let currentCountry = jo[currentYear.id].participants.countryNumber;
         let countryRatio = currentCountry/maxCountry;
 
@@ -96,7 +96,6 @@ export default function GameHistograms() {
             .attr('class', 'discipline-bar')
             .attr('height', 200)
             .attr('width', histogramsWrapperWidth/3);
-        let maxDiscipline = 22;
         let currentDiscipline = jo[currentYear.id].sports.sportsNumber;
         let disciplineRatio = currentDiscipline/maxDiscipline;
 
