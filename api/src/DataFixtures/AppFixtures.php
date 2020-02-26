@@ -2,6 +2,8 @@
 
 namespace App\DataFixtures;
 use App\Entity\BestDistrict;
+use App\Entity\Events;
+use App\Entity\EventSport;
 use App\Entity\Infrastructure;
 use App\Entity\HandiType;
 use App\Entity\Location;
@@ -77,6 +79,24 @@ class AppFixtures extends Fixture
             $sport = new Sports();
             $sport->setTitle($sportsJson[$i]["sport"]);
             $manager->persist($sport);
+        }
+        for ($i = 0; $i < count($eventsJson); $i++) {
+            $sport = new Events();
+            $sport->setYear($eventsJson[$i]["year"]);
+            $sport->setCity($eventsJson[$i]["city"]);
+            $sport->setCountry($eventsJson[$i]["country"]);
+            $sport->setCountrynumber($eventsJson[$i]["countryNumber"]);
+            $sport->setAthletesnumber($eventsJson[$i]["athletesNumber"]);
+            $sport->setSportNumber($eventsJson[$i]["sportNumber"]);
+
+            $manager->persist($sport);
+        }
+        for ($i = 0; $i < count($sportsEventJson); $i++) {
+            $es = new EventSport();
+            $es->setIdEvent(intval($sportsEventJson[$i]["id_events"]));
+            $es->setIdSport(intval($sportsEventJson[$i]["id_sport"]));
+            $manager->persist($es);
+
         }
 
         $manager->flush();

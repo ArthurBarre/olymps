@@ -56,6 +56,11 @@ class Events
      */
     private $countrynumber;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $sportNumber;
+
     public function getIdEvent(): ?int
     {
         return $this->idEvent;
@@ -117,6 +122,18 @@ class Events
     public function setCountrynumber(int $countrynumber): self
     {
         $this->countrynumber = $countrynumber;
+
+        return $this;
+    }
+
+    public function getSportNumber(): ?int
+    {
+        return $this->sportNumber;
+    }
+
+    public function setSportNumber(int $sportNumber): self
+    {
+        $this->sportNumber = $sportNumber;
 
         return $this;
     }

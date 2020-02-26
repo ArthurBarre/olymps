@@ -21,10 +21,10 @@ use Doctrine\ORM\Mapping\JoinColumn;
  */
 class Location
 {
-    public function __construct()
-    {
-        $this->typesList = new ArrayCollection();
-    }
+//    public function __construct()
+//    {
+//        $this->typesList = new ArrayCollection();
+//    }
         /**
      * @var int
      *
@@ -134,13 +134,13 @@ class Location
         return $this;
     }
 
-    /**
-     * @ManyToMany(targetEntity="HandiType")
-     * @JoinTable(name="location_type",
-     *      joinColumns={@JoinColumn(name="id_location", referencedColumnName="id_location")},
-     *      inverseJoinColumns={@JoinColumn(name="id_handi", referencedColumnName="id_handi")}
-     *      )
-     */
+//    /**
+//     * @ManyToMany(targetEntity="HandiType")
+//     * @JoinTable(name="location_type",
+//     *      joinColumns={@JoinColumn(name="id_location", referencedColumnName="id_location")},
+//     *      inverseJoinColumns={@JoinColumn(name="id_handi", referencedColumnName="id_handi")}
+//     *      )
+//     */
     private $typesList;
 
     public function getTypesList() :Collection
