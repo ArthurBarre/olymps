@@ -51,9 +51,9 @@ class Location
     /**
      * @var string
      *
-     * @ORM\Column(name="names", type="string", length=255, nullable=false)
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
      */
-    private $names;
+    private $name;
 
     /**
      * @var int
@@ -98,14 +98,14 @@ class Location
         return $this;
     }
 
-    public function getNames(): ?string
+    public function getName(): ?string
     {
-        return $this->names;
+        return $this->name;
     }
 
-    public function setNames(string $names): self
+    public function setName(string $name): self
     {
-        $this->names = $names;
+        $this->name = $name;
 
         return $this;
     }
@@ -133,24 +133,8 @@ class Location
 
         return $this;
     }
-//    /**
-//     * @OneToMany(targetEntity="HandiType")
-//     * @JoinTable(name="location_type",
-//     *      joinColumns={@JoinColumn(name="id_location", referencedColumnName="id_location")},
-//     *      inverseJoinColumns={@JoinColumn(name="id_handi", referencedColumnName="id_handi")}
-//     * )
-//     */
-//    /**
-//     * Many Categories have One Category.
-//     * @OneToMany(targetEntity="HandiType", inversedBy="id_location")
-//     * @JoinColumn(name="id_handi", referencedColumnName="id_handi")
-//     */
-//    /**
-//     * One product has many features. This is the inverse side.
-//     * @OneToMany(targetEntity="HandiType", mappedBy="id_location")
-//     */
+
     /**
-     * Many User have Many Phonenumbers.
      * @ManyToMany(targetEntity="HandiType")
      * @JoinTable(name="location_type",
      *      joinColumns={@JoinColumn(name="id_location", referencedColumnName="id_location")},
