@@ -1,13 +1,12 @@
-import React, {useContext, useEffect} from "react";
-import jo from '../../data.json';
-import * as d3 from "d3";
-import './GameCircle.scss';
-import YearContext from "../GameHistory/year-context";
-import {allSports} from '../constants/index'
-
+import React, { useContext, useEffect } from 'react'
+import jo from '../../data.json'
+import * as d3 from 'd3'
+import './GameCircle.scss'
+import YearContext from '../GameHistory/year-context'
+import { allSports } from '../constants/index'
+console.log('test', allSports)
 // First inizialisation of circle
-let circle;
-
+let circle
 
 export default function GameCircle() {
     const {currentYear, setCurrentYear} = useContext(YearContext);
@@ -95,10 +94,3 @@ export default function GameCircle() {
 
     );
 }
-
-
-
-
-
-
-

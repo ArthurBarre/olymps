@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       {/*<ToolTips />*/}
-       <Switcher />
+      <Switcher />
       {/* <Navigation /> */}
     </Router>
   )
