@@ -14,7 +14,7 @@ class BestDistrict
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private $idDistrict;
 
     /**
      * @ORM\Column(type="integer")
@@ -41,9 +41,9 @@ class BestDistrict
      */
     private $district;
 
-    public function getId(): ?int
+    public function getIdDistrict(): ?int
     {
-        return $this->id;
+        return $this->idDistrict;
     }
 
     public function getPosition(): ?int
