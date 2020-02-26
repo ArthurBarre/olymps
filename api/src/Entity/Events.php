@@ -121,17 +121,5 @@ class Events
         return $this;
     }
 
-//    /**
-//     * @ManyToMany(targetEntity="EventSport")
-//     * @JoinTable(name="event-sport",
-//     *      joinColumns={@JoinColumn(name="id_event", referencedColumnName="id_event")},
-//     *      inverseJoinColumns={@JoinColumn(name="id_sport", referencedColumnName="id_sport")}
-//     *      )
-//     */
-//    private $typesList;
-//
-//    public function getTypesList() :Collection
-//    {
-//        return $this->typesList;
-//    }
+
 }

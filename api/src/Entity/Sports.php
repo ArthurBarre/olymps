@@ -22,9 +22,9 @@ class Sports
     private $idSport;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="title", type="integer", nullable=false)
+     * @ORM\Column(name="title", type="string", length=255, nullable=false)
      */
     private $title;
 
@@ -33,12 +33,12 @@ class Sports
         return $this->idSport;
     }
 
-    public function getTitle(): ?int
+    public function getTitle(): ?string
     {
         return $this->title;
     }
 
-    public function setTitle(int $title): self
+    public function setTitle(string $title): self
     {
         $this->title = $title;
 
