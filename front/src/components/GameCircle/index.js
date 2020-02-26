@@ -4,9 +4,11 @@ import * as d3 from "d3";
 import './GameCircle.scss';
 import YearContext from "../GameHistory/year-context";
 import {TimelineMax} from 'gsap';
+import allSports from '../constants/index'
 
 // First inizialisation of circle
 let circle;
+
 
 export default function GameCircle() {
     const {currentYear, setCurrentYear} = useContext(YearContext);
@@ -17,16 +19,16 @@ export default function GameCircle() {
 
     useEffect(() => {
 
-
         //remove svg if is defined
         (circle !== undefined) && d3.select("svg").remove();
 
-        let numSports = jo[currentYear.id].sports.sportsList.length;
+        let numSports = allSports.length;
         let step = 360/numSports;
-        let sportId = 0;
+        let sportTextCount = 0;
+        let sportFillCount = 0;
         let tl = new TimelineMax();
 
-        tl.fromTo(".circle", {opacity: 0}, {opacity: 1}, 0.5 );
+        /*tl.fromTo(".circle", {opacity: 0}, {opacity: 1}, 0.5 );*/
 
         circle = d3.select(".circle").append("svg")
             .attr("width", width)
@@ -47,10 +49,18 @@ export default function GameCircle() {
             .style("text-anchor", function(d) { return d < 270 && d > 90 ? "end" : null; })
             .attr("transform", function(d) { return d < 270 && d > 90 ? "rotate(180 " + (radius + 6) + ",0)" : null; })
             .text(function () {
-                sportId++;
-                return jo[currentYear.id].sports.sportsList[sportId-1];
+                sportTextCount++;
+                return allSports[sportTextCount-1];
             })
-            .attr('fill','#fff');
+            .attr('fill', function () {
+                if (jo[currentYear.id].sports.sportsList.includes(allSports[sportFillCount])){
+                    sportFillCount++;
+                    return '#fff';
+                } else {
+                    sportFillCount++;
+                    return 'rgba(255,255,255,0.42)';
+                }
+            })
 
     },[currentYear.id]);
 
