@@ -73,10 +73,10 @@ class AppFixtures extends Fixture
 //            $loc->setPosition($bestDistrictsJson[$i]['value']['position']);
 //            $manager->persist($loc);
 //        }
-//        for ($i = 0; $i < count($sportsJson); $i++) {
-//            $sport = new Sports();
-//            $sport->set
-//        }
+        for ($i = 0; $i < count($sportsJson); $i++) {
+            $sport = new Sports();
+            $sport->set
+        }
 
         $manager->flush();
     }
