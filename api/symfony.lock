@@ -99,7 +99,7 @@
         "version": "2.2.1"
     },
     "doctrine/orm": {
-        "version": "v2.7.0"
+        "version": "v2.7.1"
     },
     "doctrine/persistence": {
         "version": "1.3.6"
@@ -266,14 +266,17 @@
     "symfony/mime": {
         "version": "v5.0.4"
     },
+    "symfony/orm-pack": {
+        "version": "v1.0.8"
+    },
     "symfony/polyfill-intl-idn": {
-        "version": "v1.13.1"
+        "version": "v1.14.0"
     },
     "symfony/polyfill-mbstring": {
-        "version": "v1.13.1"
+        "version": "v1.14.0"
     },
     "symfony/polyfill-php73": {
-        "version": "v1.13.1"
+        "version": "v1.14.0"
     },
     "symfony/property-access": {
         "version": "v5.0.4"
@@ -301,7 +304,7 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "4.4",
-            "ref": "30efd98dd3b4ead6e9ad4713b1efc43bbe94bf77"
+            "ref": "7b4408dc203049666fe23fabed23cbadc6d8440f"
         },
         "files": [
             "config/packages/security.yaml"
@@ -374,10 +377,10 @@
         "version": "v5.0.4"
     },
     "twig/twig": {
-        "version": "v3.0.1"
+        "version": "v3.0.3"
     },
     "webmozart/assert": {
-        "version": "1.6.0"
+        "version": "1.7.0"
     },
     "willdurand/negotiation": {
         "version": "v2.3.1"

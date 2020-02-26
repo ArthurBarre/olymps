@@ -2,55 +2,76 @@
 
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiResource;
-use App\Entity\HandyType;
+//use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\ManyToMany;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\JoinColumn;
+
 
 /**
- * @ApiResource()
- * @ORM\Entity(repositoryClass="App\Repository\LocationRepository")
+ * Location
+ *
+ * @ORM\Table(name="location")
+ * @ORM\Entity
+ *
  */
 class Location
 {
     public function __construct()
     {
-//        $this->types = new ArrayCollection();
+        $this->typesList = new ArrayCollection();
     }
-    /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+        /**
+     * @var int
+     *
+     * @ORM\Column(name="id_location", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    private $idLocation;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="lat", type="string", length=255, nullable=false)
      */
     private $lat;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="lng", type="string", length=255, nullable=false)
      */
     private $lng;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
      */
     private $name;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="types", type="integer", nullable=false)
      */
     private $types;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="district", type="integer", nullable=false)
      */
     private $district;
 
-    public function getId(): ?int
+    public function getIdLocation(): ?int
     {
-        return $this->id;
+        return $this->idLocation;
     }
 
     public function getLat(): ?string
@@ -113,28 +134,19 @@ class Location
         return $this;
     }
 
-//    /**
-//     * @ORM\ManyToMany(targetEntity=HandyType::class, cascade={"persist"})
-//     */
-//
-//    private $types;
-//
-//    public function addTypes(Types $types)
-//    {
-//        $this->types[] = $types;
-//
-//        return $this;
-//    }
-//
-//    public function removeTypes(Types $types)
-//    {
-//        $this->types->removeElement($types);
-//    }
-//
-//    public function getTypes()
-//    {
-//        return $this->types;
-//    }
+    /**
+     * @ManyToMany(targetEntity="HandiType")
+     * @JoinTable(name="location_type",
+     *      joinColumns={@JoinColumn(name="id_location", referencedColumnName="id_location")},
+     *      inverseJoinColumns={@JoinColumn(name="id_handi", referencedColumnName="id_handi")}
+     *      )
+     */
+    private $typesList;
+
+    public function getTypesList() :Collection
+    {
+        return $this->typesList;
+    }
 
 
 }
