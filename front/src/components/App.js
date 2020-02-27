@@ -9,8 +9,8 @@ function App() {
   }, [])
   return (
     <Router>
-      {/*<ToolTips />*/}
-       <Switcher />
+      {/* <ToolTips /> */}
+      <Switcher />
       {/* <Navigation /> */}
     </Router>
   )

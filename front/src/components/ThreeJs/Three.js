@@ -6,11 +6,8 @@ class Three extends React.Component {
   render() {
     return (
       <div className="threeContainer">
-        <div className="infos-place">
-          <MapInfos />
-        </div>
         <div className="canvas">
-          <Canvas svg={this.props.svg} />
+          <Canvas />
         </div>
       </div>
     )
