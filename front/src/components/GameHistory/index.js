@@ -87,7 +87,7 @@ export default function GameHistory() {
     return (
         <YearContext.Provider value={valueYear}>
             <div className="videoheader">
-                {/* <Video /> */}
+                <Video />
             </div>
             <BoxContext.Provider value={valueBox}>
                 <div className="History">

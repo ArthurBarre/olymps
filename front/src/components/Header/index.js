@@ -4,7 +4,6 @@ import Loader from 'react-loader-spinner';
 import VideoHeader from './Video';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import PlayerAudio from '../Audio/Audio';
-import sound from '../../assets/audios/soundbg.mp3';
 
 // import Audio from '../Audio';
 
@@ -48,9 +47,6 @@ class Header extends React.Component {
             <div className="headphoneImg"></div>
             <p className="headphoneText">Headphones Recommended</p>
           </div>
-        </div>
-        <div className="soundContainer">
-          <PlayerAudio url={sound} />
         </div>
       </div>
     )

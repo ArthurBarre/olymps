@@ -1,7 +1,7 @@
 import React from 'react';
-import sample from '../../assets/videos/first-video.mp4';
+import sample from '../../assets/videos/third-video.mp4';
 
-function videoHistory() {
+function videoPractice() {
   return (
     <div className='videoheader-background' >
       <div className="layer-video"></div>
@@ -12,4 +12,4 @@ function videoHistory() {
   )
 }
 
-export default videoHistory
+export default videoPractice
