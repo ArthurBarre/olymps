@@ -61,39 +61,62 @@ export default function GameCircle() {
             })
             .transition().duration(0)
             .attr('fill', function () {
-                if (jo[currentYear.id].sports.sportsList.includes(allSports[sportFillCount])){
-                    if(stockedData.prevSports.includes(sportFillCount)){
-                        currentSports.push(sportFillCount);
-                        sportFillCount++;
-                        return '#fff';
-                    } else {
-                        currentSports.push(sportFillCount);
-                        currentNewSports.push(sportFillCount);
+                /*if(sportFillCount === (numSports/2+3)) {
+                    sportFillCount++;
+                    return 'red';
+                }
+                 else {*/
+                    //si mon sport actuel est contenu dans la sport liste
+                    if (jo[currentYear.id].sports.sportsList.includes(allSports[sportFillCount])){
+                        // test si l'id du sport actuel est contenu dans les anciens sports ids
+                        if(stockedData.prevSports.includes(sportFillCount)){
+                            //si oui push l'id dans un tableau currentSports
+                            currentSports.push(sportFillCount);
+                            //all sport suivant et ce sport est blanc
+                            sportFillCount++;
+                            return '#fff';
+                        } //sinon (pas id d'ancien sport)
+                        else {
+                            // push l'id dans les current Sports
+                            currentSports.push(sportFillCount);
+                            // et push aussi l'id dans les new sports
+                            currentNewSports.push(sportFillCount);
+                            //all sport suivant et ce sport est gris dans un premier temps
+                            sportFillCount++;
+                            return 'white';
+                        }
+
+                    } // sinon mon sport actuel n'est pas dans la sport list
+                    else {
+                        //all sport suivant et ce sport est gris
                         sportFillCount++;
                         return 'rgba(255,255,255,0.32)';
                     }
 
-                } else {
-                    sportFillCount++;
-                    return 'rgba(255,255,255,0.32)';
-                }
-            })
-            .transition().duration(1000)
+                /*}*/
+            });
+            /*.transition().duration(1000)
             .attr('fill', function () {
-                if (currentNewSports.includes(allSports[newFillCount]) || currentSports.includes(newFillCount)){
+                // si mon id est contenu dans mon tableau d'id currentNewSports
+                if (currentSports.includes(newFillCount) || currentNewSports.includes(newFillCount)){
+                    //allsport suivant et l'actuel devient blanc (transition pour les news qui ne l'étaient pas déjà)
                     newFillCount++;
                     return '#fff';
-                } else {
+                } // allSport suivant et le sport actuel devient gris
+                else {
+                    //sinon si mon id n'est pas dans mes current sport
                     newFillCount++;
                     return 'rgba(255,255,255,0.32)';
                 }
-            });
+            });*/
+
+        /*console.log('current sport', currentSports);
+        console.log('anciens sports', stockedData.prevSports);*/
         //ici
 
 
         setStockedData({prevSports: currentSports});
 
-        console.log(stockedData.prevSports);
 
 
         let border = ga.append('line')
