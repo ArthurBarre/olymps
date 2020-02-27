@@ -14,7 +14,7 @@
       "sportsNumber": "8",
       "sportsList": [
         "Athletics",
-        "basketball armchair",
+        "Basketball armchair",
         "Dartchery",
         "Chair fencing",
         "Swimming",
@@ -27,8 +27,8 @@
   {
     "year": "1964",
     "host": {
-      "country": "Japan",
-      "city": "Tokyo"
+      "country": "Tokyo",
+      "city": "Japon"
     },
     "participants": {
       "athletesNumber": "375",
@@ -39,7 +39,7 @@
       "sportsNumber": "9",
       "sportsList": [
         "Athletics",
-        "basketball armchair",
+        "Basketball armchair",
         "Dartchery",
         "Chair fencing",
         "weight lifting",
@@ -53,7 +53,7 @@
   {
     "year": "1968",
     "host": {
-      "country": "Israel",
+      "country": "Israël",
       "city": "Tel-Aviv"
     },
     "participants": {
@@ -65,7 +65,7 @@
       "sportsNumber": "9",
       "sportsList": [
         "Athletics",
-        "basketball armchair",
+        "Basketball armchair",
         "Dartchery",
         "Chair fencing",
         "weight lifting",
@@ -79,7 +79,7 @@
   {
     "year": "1972",
     "host": {
-      "country": "Germany",
+      "country": "Allemagne",
       "city": "Heidelberg"
     },
     "participants": {
@@ -91,7 +91,7 @@
       "sportsNumber": "13",
       "sportsList": [
         "Athletics",
-        "basketball armchair",
+        "Basketball armchair",
         "Dartchery",
         "Chair fencing",
         "weight lifting",
@@ -117,7 +117,7 @@
       "sportsNumber": "13",
       "sportsList": [
         "Athletics",
-        "basketball armchair",
+        "Basketball armchair",
         "Boulingrin",
         "Dartchery",
         "Chair fencing",
@@ -135,7 +135,7 @@
   {
     "year": "1980",
     "host": {
-      "country": "Netherlands",
+      "country": "Pays-Bas",
       "city": "Arnhem"
     },
     "participants": {
@@ -147,7 +147,7 @@
       "sportsNumber": "13",
       "sportsList": [
         "Athletics",
-        "basketball armchair",
+        "Basketball armchair",
         "Boulingrin",
         "Dartchery",
         "Chair fencing",
@@ -165,7 +165,7 @@
   {
     "year": "1984",
     "host": {
-      "country": "USA",
+      "country": "Etats-Unis",
       "city": "New-York"
     },
     "participants": {
@@ -177,7 +177,7 @@
       "sportsNumber": "16",
       "sportsList": [
         "Athletics",
-        "basketball armchair",
+        "Basketball armchair",
         "Boccia",
         "Bowls",
         "Cycling",
@@ -198,8 +198,8 @@
   {
     "year": "1988",
     "host": {
-      "country": "South-Korea",
-      "city": "Seoul"
+      "country": "Corée du Nord",
+      "city": "Séoul"
     },
     "participants": {
       "athletesNumber": "3053",
@@ -210,7 +210,7 @@
       "sportsNumber": "17",
       "sportsList": [
         "Athletics",
-        "basketball armchair",
+        "Basketball armchair",
         "Boccia",
         "Bowls",
         "Cycling",
@@ -232,8 +232,8 @@
   {
     "year": "1992",
     "host": {
-      "country": "Spain",
-      "city": "Barcelona"
+      "country": "Espagne",
+      "city": "Barcelone"
     },
     "participants": {
       "athletesNumber": "3020",
@@ -244,7 +244,7 @@
       "sportsNumber": "15",
       "sportsList": [
         "Athletics",
-        "basketball armchair",
+        "Basketball armchair",
         "Boccia",
         "Cycling",
         "Chair fencing",
@@ -264,7 +264,7 @@
   {
     "year": "1996",
     "host": {
-      "country": "USA",
+      "country": "Etats-Unis",
       "city": "Atlanta"
     },
     "participants": {
@@ -276,7 +276,7 @@
       "sportsNumber": "20",
       "sportsList": [
         "Athletics",
-        "basketball armchair",
+        "Basketball armchair",
         "Boccia",
         "Bowls",
         "Cycling",
@@ -301,8 +301,8 @@
   {
     "year": "2000",
     "host": {
-      "country": "Australia",
-      "city": "Sydney"
+      "country": "Australie",
+      "city": "Sidney"
     },
     "participants": {
       "athletesNumber": "3843",
@@ -313,7 +313,7 @@
       "sportsNumber": "18",
       "sportsList": [
         "Athletics",
-        "basketball armchair",
+        "Basketball armchair",
         "Boccia",
         "Cycling",
         "Horse riding",
@@ -336,8 +336,8 @@
   {
     "year": "2004",
     "host": {
-      "country": "Greece",
-      "city": "Athens"
+      "country": "Grèce",
+      "city": "Athènes"
     },
     "participants": {
       "athletesNumber": "3969",
@@ -348,7 +348,7 @@
       "sportsNumber": "19",
       "sportsList": [
         "Athletics",
-        "basketball armchair",
+        "Basketball armchair",
         "Boccia",
         "Cycling",
         "Horse riding",
@@ -371,7 +371,7 @@
   {
     "year": "2008",
     "host": {
-      "country": "China",
+      "country": "Chine",
       "city": "Beijing"
     },
     "participants": {
@@ -384,7 +384,7 @@
       "sportsList": [
         "Athletics",
         "Rowing",
-        "basketball armchair",
+        "Basketball armchair",
         "Boccia",
         "Bowls",
         "Cycling",
@@ -409,8 +409,8 @@
   {
     "year": "2012",
     "host": {
-      "country": "United-Kingdom",
-      "city": "London"
+      "country": "Angleterre",
+      "city": "Londres"
     },
     "participants": {
       "athletesNumber": "4302",
@@ -422,7 +422,7 @@
       "sportsList": [
         "Athletics",
         "Rowing",
-        "basketball armchair",
+        "Basketball armchair",
         "Boccia",
         "Cycling",
         "Horse riding",
@@ -446,7 +446,7 @@
   {
     "year": "2016",
     "host": {
-      "country": "Brazil",
+      "country": "Bresil",
       "city": "Rio"
     },
     "participants": {
@@ -459,10 +459,10 @@
       "sportsList": [
         "Athletics",
         "Rowing",
-        "basketball armchair",
+        "Basketball armchair",
         "Boccia",
         "Bowls",
-        "Canoe",
+        "Canoë",
         "Cycling",
         "Horse riding",
         "Chair fencing",
@@ -485,7 +485,7 @@
   {
     "year": "2020",
     "host": {
-      "country": "Japan",
+      "country": "Japon",
       "city": "Tokyo"
     },
     "participants": {
@@ -498,10 +498,10 @@
       "sportsList": [
         "Athletics",
         "Rowing",
-        "basketball armchair",
+        "Basketball armchair",
         "Badminton",
         "Boccia",
-        "Canoe",
+        "Canoë",
         "Cycling",
         "Horse riding",
         "Chair fencing",
@@ -537,10 +537,10 @@
       "sportsList": [
         "Athletics",
         "Rowing",
-        "basketball armchair",
+        "Basketball armchair",
         "Badminton",
         "Boccia",
-        "Canoe",
+        "Canoë",
         "Cycling",
         "Horse riding",
         "Chair fencing",
@@ -556,7 +556,7 @@
         "Table tennis",
         "Archery",
         "Sportive shoot",
-        "Sitting volleyball"
+        "Volley-ball assis"
       ]
     }
   }
