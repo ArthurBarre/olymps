@@ -132,7 +132,7 @@ class Location
      */
     private $typesList;
 
-    public function getTypesList() :Collection
+    public function getTypesList()
     {
         return $this->typesList;
     }
