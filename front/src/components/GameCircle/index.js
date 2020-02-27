@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import jo from '../../data.json'
 import * as d3 from 'd3'
 import './GameCircle.scss'
@@ -7,10 +7,11 @@ import { allSports } from '../constants/index'
 console.log('test', allSports)
 
 // First inizialisation of circle
-let circle
+let circle;
 
 export default function GameCircle() {
     const {currentYear, setCurrentYear} = useContext(YearContext);
+    const [stockedData, setStockedData] = useState({prevSports: []});
 
     let width = 600,
         height = 600,
@@ -27,6 +28,9 @@ export default function GameCircle() {
         let circleValueCount = 0;
         let sportFillCount = 0;
         let detectMidCount = 0;
+        let newFillCount= 0 ;
+        let currentSports = [];
+        let currentNewSports = [];
 
         circle = d3.select(".circle").append("svg")
             .attr("width", width)
@@ -40,7 +44,7 @@ export default function GameCircle() {
             .enter().append("g")
             .attr("transform", function(d) { return "rotate(" + -d + ")"; });
 
-        let text = ga.append("text")
+        let sportsNames = ga.append("text")
             .attr("x", radius + 6)
             .attr('dy', '.35em')
             .style("text-anchor", function(d) { return d < 270 && d > 90 ? "end" : null; })
@@ -55,15 +59,42 @@ export default function GameCircle() {
                     return allSports[sportTextCount-1];
                 }
             })
+            .transition().duration(0)
             .attr('fill', function () {
                 if (jo[currentYear.id].sports.sportsList.includes(allSports[sportFillCount])){
-                    sportFillCount++;
-                    return '#fff';
+                    if(stockedData.prevSports.includes(sportFillCount)){
+                        currentSports.push(sportFillCount);
+                        sportFillCount++;
+                        return '#fff';
+                    } else {
+                        currentSports.push(sportFillCount);
+                        currentNewSports.push(sportFillCount);
+                        sportFillCount++;
+                        return 'rgba(255,255,255,0.32)';
+                    }
+
                 } else {
                     sportFillCount++;
-                    return 'rgba(255,255,255,0.42)';
+                    return 'rgba(255,255,255,0.32)';
+                }
+            })
+            .transition().duration(1000)
+            .attr('fill', function () {
+                if (currentNewSports.includes(allSports[newFillCount]) || currentSports.includes(newFillCount)){
+                    newFillCount++;
+                    return '#fff';
+                } else {
+                    newFillCount++;
+                    return 'rgba(255,255,255,0.32)';
                 }
             });
+        //ici
+
+
+        setStockedData({prevSports: currentSports});
+
+        console.log(stockedData.prevSports);
+
 
         let border = ga.append('line')
             .attr("x1", radius + 6)
