@@ -18,7 +18,7 @@ $white: #ffffff;
 		width: $sports_list_width;
 		display: flex;
 		align-items: flex-end;
-		justify-content: space-around;
+		justify-content: space-evenly;
     .sports_list_li{
 			font-family: $fontSans;
 			line-height: 29px;
