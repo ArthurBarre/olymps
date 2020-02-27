@@ -2,30 +2,17 @@
 
 namespace App\Entity;
 
-//use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\Mapping\ManyToOne;
-use Doctrine\ORM\Mapping\OneToMany;
-use Doctrine\ORM\Mapping\ManyToMany;
-use Doctrine\ORM\Mapping\JoinTable;
-use Doctrine\ORM\Mapping\JoinColumn;
-
 
 /**
  * Location
  *
  * @ORM\Table(name="location")
  * @ORM\Entity
- *
  */
 class Location
 {
-//    public function __construct()
-//    {
-//        $this->typesList = new ArrayCollection();
-//    }
-        /**
+    /**
      * @var int
      *
      * @ORM\Column(name="id_location", type="integer", nullable=false)
@@ -132,20 +119,6 @@ class Location
         $this->district = $district;
 
         return $this;
-    }
-
-//    /**
-//     * @ManyToMany(targetEntity="HandiType")
-//     * @JoinTable(name="location_type",
-//     *      joinColumns={@JoinColumn(name="id_location", referencedColumnName="id_location")},
-//     *      inverseJoinColumns={@JoinColumn(name="id_handi", referencedColumnName="id_handi")}
-//     *      )
-//     */
-    private $typesList;
-
-    public function getTypesList() :Collection
-    {
-        return $this->typesList;
     }
 
 

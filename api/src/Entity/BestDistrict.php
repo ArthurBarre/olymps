@@ -5,39 +5,54 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\BestDistrictRepository")
+ * BestDistrict
+ *
+ * @ORM\Table(name="best_district")
+ * @ORM\Entity
  */
 class BestDistrict
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="id_district", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idDistrict;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="position", type="integer", nullable=false)
      */
     private $position;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="count", type="integer", nullable=false)
      */
     private $count;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="nbr_location", type="integer", nullable=false)
      */
     private $nbrLocation;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="moy", type="integer", nullable=false)
      */
     private $moy;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="district", type="string", length=255, nullable=false)
      */
     private $district;
 
@@ -105,4 +120,6 @@ class BestDistrict
 
         return $this;
     }
+
+
 }

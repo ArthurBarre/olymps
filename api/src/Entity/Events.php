@@ -2,7 +2,11 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToMany;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\JoinColumn;
 
 /**
  * Events
@@ -12,6 +16,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Events
 {
+
     /**
      * @var int
      *
@@ -57,7 +62,9 @@ class Events
     private $countrynumber;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="sport_number", type="integer", nullable=false)
      */
     private $sportNumber;
 
@@ -136,6 +143,19 @@ class Events
         $this->sportNumber = $sportNumber;
 
         return $this;
+    }
+    /**
+     * @ManyToMany(targetEntity="Sports")
+     * @JoinTable(name="event_sport",
+     *      joinColumns={@JoinColumn(name="id_event", referencedColumnName="id_event")},
+     *      inverseJoinColumns={@JoinColumn(name="id_sport", referencedColumnName="id_sport")}
+     *      )
+     */
+    private $sportList;
+
+    public function getSportList() :Collection
+    {
+        return $this->sportList;
     }
 
 
