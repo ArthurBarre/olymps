@@ -2,7 +2,10 @@ import React, { useEffect } from 'react'
 import Navigation from './Navigation'
 import Switcher from './Switcher'
 import { BrowserRouter as Router } from 'react-router-dom'
-import ToolTips from './Tooltips'
+import ToolTips from './Tooltips';
+import PlayerAudio from './Audio/Audio';
+
+
 function App() {
   useEffect(() => {
     window.scrollTo(0, 0)
