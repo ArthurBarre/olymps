@@ -1,15 +1,15 @@
-import React, {useContext, useEffect} from "react";
+import React, { useContext, useEffect } from "react";
 import YearContext from "../GameHistory/year-context";
 import jo from "../../data";
 import './GameHistograms.scss';
 import * as d3 from "d3";
-import {maxAthlete} from "../constants";
-import {maxDiscipline} from "../constants";
-import {maxCountry} from "../constants";
+import { maxAthlete } from "../constants";
+import { maxDiscipline } from "../constants";
+import { maxCountry } from "../constants";
 
 let barsWrapper;
 export default function GameHistograms() {
-    const {currentYear, setCurrentYear} = useContext(YearContext);
+    const { currentYear, setCurrentYear } = useContext(YearContext);
 
     useEffect(() => {
 
@@ -32,30 +32,30 @@ export default function GameHistograms() {
         let athleteBar = barsWrapper.append('svg')
             .attr('class', 'athlete-bar')
             .attr('height', 200)
-            .attr('width', histogramsWrapperWidth/3);
+            .attr('width', histogramsWrapperWidth / 3);
         let currentAthlete = jo[currentYear.id].participants.athletesNumber;
-        let athleteRatio = currentAthlete/maxAthlete;
+        let athleteRatio = currentAthlete / maxAthlete;
 
         athleteBar.append('rect')
             .attr('fill', 'transparent')
             .style('stroke', 'rgba(196, 196, 196, 0.37)')
-            .attr('x', 50-(rectWidth/2))
+            .attr('x', 50 - (rectWidth / 2))
             .attr('width', rectWidth)
-            .attr('height', function(){
+            .attr('height', function () {
                 return rectHeight;
             });
 
         let athleteProgress = athleteBar.append('rect')
             .style('transform', 'scaleY(-1)')
             .attr('fill', 'rgba(196, 196, 196, 0.37)')
-            .attr('x', 50-(rectWidth/2))
+            .attr('x', 50 - (rectWidth / 2))
             .attr('width', rectWidth)
             .attr('height', 0)
             .attr('y', -rectHeight);
 
         athleteProgress.transition()
             .duration(2000)
-            .attr('height', function(){
+            .attr('height', function () {
                 return athleteRatio * rectHeight;
             });
 
@@ -64,30 +64,30 @@ export default function GameHistograms() {
         let countryBar = barsWrapper.append('svg')
             .attr('class', 'country-bar')
             .attr('height', 200)
-            .attr('width', histogramsWrapperWidth/3);
+            .attr('width', histogramsWrapperWidth / 3);
         let currentCountry = jo[currentYear.id].participants.countryNumber;
-        let countryRatio = currentCountry/maxCountry;
+        let countryRatio = currentCountry / maxCountry;
 
         countryBar.append('rect')
             .attr('fill', 'transparent')
             .style('stroke', 'rgba(196, 196, 196, 0.37)')
             .attr('width', rectWidth)
-            .attr('height', function(){
+            .attr('height', function () {
                 return rectHeight;
             })
-            .attr('x', 50-(rectWidth/2));
+            .attr('x', 50 - (rectWidth / 2));
 
         let countryProgress = countryBar.append('rect')
             .style('transform', 'scaleY(-1)')
             .attr('fill', 'rgba(196, 196, 196, 0.37)')
             .attr('width', rectWidth)
             .attr('height', 0)
-            .attr('x', 50-(rectWidth/2))
+            .attr('x', 50 - (rectWidth / 2))
             .attr('y', -rectHeight);
 
         countryProgress.transition()
             .duration(2000)
-            .attr('height', function(){
+            .attr('height', function () {
                 return countryRatio * rectHeight;
             });
 
@@ -95,36 +95,36 @@ export default function GameHistograms() {
         let disciplineBar = barsWrapper.append('svg')
             .attr('class', 'discipline-bar')
             .attr('height', 200)
-            .attr('width', histogramsWrapperWidth/3);
+            .attr('width', histogramsWrapperWidth / 3);
         let currentDiscipline = jo[currentYear.id].sports.sportsNumber;
-        let disciplineRatio = currentDiscipline/maxDiscipline;
+        let disciplineRatio = currentDiscipline / maxDiscipline;
 
         disciplineBar.append('rect')
             .attr('fill', 'transparent')
             .style('stroke', 'rgba(196, 196, 196, 0.37)')
             .attr('width', rectWidth)
-            .attr('height', function(){
+            .attr('height', function () {
                 return rectHeight;
             })
-            .attr('x', 50-(rectWidth/2));
+            .attr('x', 50 - (rectWidth / 2));
 
         let disciplineProgress = disciplineBar.append('rect')
             .style('transform', 'scaleY(-1)')
             .attr('fill', 'rgba(196, 196, 196, 0.37)')
             .attr('width', rectWidth)
             .attr('height', 0)
-            .attr('x', 50-(rectWidth/2))
+            .attr('x', 50 - (rectWidth / 2))
             .attr('y', -rectHeight);
 
         disciplineProgress.transition()
             .duration(2000)
-            .attr('height', function(){
+            .attr('height', function () {
                 return disciplineRatio * rectHeight;
             });
 
 
 
-    },[currentYear.id]);
+    }, [currentYear.id]);
 
 
 
@@ -142,7 +142,6 @@ export default function GameHistograms() {
                     <h3>Nombre de disciplines</h3>
                 </div>
             </div>
-
         </div>
 
     );

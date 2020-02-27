@@ -9,7 +9,7 @@ function App() {
   }, [])
   return (
     <Router>
-      {/* <ToolTips /> */}
+      {/*<ToolTips />*/}
       <Switcher />
       {/* <Navigation /> */}
     </Router>
