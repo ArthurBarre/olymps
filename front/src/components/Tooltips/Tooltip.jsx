@@ -1,19 +1,19 @@
 import React from 'react'
 import './tooltips.scss'
 
-const ToolTip = ({ count, numberLocation, moy, position }) => {
+const ToolTip = ({ count, numberLocation, moy, arrdt }) => {
   return (
     <div className="tooltipContainer">
-      <div className="position">
-        <span>{position}</span>ème
+      <div className="aera-name">
+        {arrdt}
       </div>
-      <br />
-      <div>Nombre de centres sportifs adaptés : {numberLocation}</div>
-      <br />
-      <div>Nombre de type d'accessibilité totale : {count}</div>
-      <br />
-      <div>Nombre de type d'accessibilité moyen : {moy}</div>
-      <br />
+      <div className="aera-infos">
+        <ul>
+          <li><span>I dont remember</span><span className="graph">{numberLocation}</span></li>
+          <li><span>Accessible Gymnase </span><span className="graph">{count}</span></li>
+          <li><span>Accessibility types </span><span className="graph">{moy}</span></li>
+        </ul>
+      </div>
     </div>
   )
 }
