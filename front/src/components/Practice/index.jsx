@@ -9,30 +9,30 @@ export default function Practice() {
         <VideoHeader />
       </div>
       <ul className="sports_list">
-        <li className="sports_list_li">Armchair basket</li>
+        <li className="sports_list_li">Athletics</li>
+        <li className="sports_list_li">Rowing</li>
+        <li className="sports_list_li">basketball armchair</li>
+        <li className="sports_list_li">Badminton</li>
         <li className="sports_list_li">Boccia</li>
-        <li className="sports_list_li">Blind Football</li>
+        <li className="sports_list_li">Canoe</li>
+        <li className="sports_list_li">Cycling</li>
+        <li className="sports_list_li">Horse riding</li>
+        <li className="sports_list_li">Chair fencing</li>
+        <li className="sports_list_li">Five-a-side football</li>
         <li className="sports_list_li">Goalball</li>
-        <li className="sports_list_li">Para athletics</li>
-        <li className="sports_list_li">Para rowing</li>
-        <li className="sports_list_li">Para badminton</li>
-        <li className="sports_list_li">Para canoe</li>
-        <li className="sports_list_li">Para cycling</li>
-        <li className="sports_list_li">Para horse riding</li>
-        <li className="sports_list_li">Para fencing</li>
-        <li className="sports_list_li">Para weightlifting</li>
-        <li className="sports_list_li">Para judo</li>
-        <li className="sports_list_li">Para swimming</li>
-        <li className="sports_list_li">Para taekwondo</li>
-        <li className="sports_list_li">Para table tennis</li>
-        <li className="sports_list_li">Para archery</li>
-        <li className="sports_list_li">Para shooting sport</li>
-        <li className="sports_list_li">Para triathlon</li>
-        <li className="sports_list_li">Armchair rugby</li>
-        <li className="sports_list_li">Chair tennis</li>
+        <li className="sports_list_li">weight lifting</li>
+        <li className="sports_list_li">Judo</li>
+        <li className="sports_list_li">Swimming</li>
+        <li className="sports_list_li">Paratriathlon</li>
+        <li className="sports_list_li">Wheelchair rugby</li>
+        <li className="sports_list_li">Taekwondo</li>
+        <li className="sports_list_li">Wheelchair tennis</li>
+        <li className="sports_list_li">Table tennis</li>
+        <li className="sports_list_li">Archery</li>
+        <li className="sports_list_li">Sportive shoot</li>
         <li className="sports_list_li">Sitting volleyball</li>
       </ul>
-      <h1 className="title">Where can you practice in paris ?</h1>
+      <h1 className="title">Where can you practice <br /> in paris ?</h1>
       <div className="test_map_button"></div>
       <button className="map_button"></button>
     </div>
