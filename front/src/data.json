@@ -27,8 +27,8 @@
   {
     "year": "1964",
     "host": {
-      "country": "Tokyo",
-      "city": "Japon"
+      "country": "Japan",
+      "city": "Tokyo"
     },
     "participants": {
       "athletesNumber": "375",
@@ -53,7 +53,7 @@
   {
     "year": "1968",
     "host": {
-      "country": "Israël",
+      "country": "Israel",
       "city": "Tel-Aviv"
     },
     "participants": {
@@ -79,7 +79,7 @@
   {
     "year": "1972",
     "host": {
-      "country": "Allemagne",
+      "country": "Germany",
       "city": "Heidelberg"
     },
     "participants": {
@@ -135,7 +135,7 @@
   {
     "year": "1980",
     "host": {
-      "country": "Pays-Bas",
+      "country": "Netherlands",
       "city": "Arnhem"
     },
     "participants": {
@@ -165,7 +165,7 @@
   {
     "year": "1984",
     "host": {
-      "country": "Etats-Unis",
+      "country": "USA",
       "city": "New-York"
     },
     "participants": {
@@ -198,8 +198,8 @@
   {
     "year": "1988",
     "host": {
-      "country": "Corée du Nord",
-      "city": "Séoul"
+      "country": "South Korea",
+      "city": "Seoul"
     },
     "participants": {
       "athletesNumber": "3053",
@@ -232,8 +232,8 @@
   {
     "year": "1992",
     "host": {
-      "country": "Espagne",
-      "city": "Barcelone"
+      "country": "Spain",
+      "city": "Barcelona"
     },
     "participants": {
       "athletesNumber": "3020",
@@ -264,7 +264,7 @@
   {
     "year": "1996",
     "host": {
-      "country": "Etats-Unis",
+      "country": "USA",
       "city": "Atlanta"
     },
     "participants": {
@@ -301,8 +301,8 @@
   {
     "year": "2000",
     "host": {
-      "country": "Australie",
-      "city": "Sidney"
+      "country": "Australia",
+      "city": "Sydney"
     },
     "participants": {
       "athletesNumber": "3843",
@@ -336,8 +336,8 @@
   {
     "year": "2004",
     "host": {
-      "country": "Grèce",
-      "city": "Athènes"
+      "country": "Greece",
+      "city": "Athens"
     },
     "participants": {
       "athletesNumber": "3969",
@@ -371,7 +371,7 @@
   {
     "year": "2008",
     "host": {
-      "country": "Chine",
+      "country": "China",
       "city": "Beijing"
     },
     "participants": {
@@ -409,8 +409,8 @@
   {
     "year": "2012",
     "host": {
-      "country": "Angleterre",
-      "city": "Londres"
+      "country": "England",
+      "city": "London"
     },
     "participants": {
       "athletesNumber": "4302",
@@ -446,7 +446,7 @@
   {
     "year": "2016",
     "host": {
-      "country": "Bresil",
+      "country": "Brazil",
       "city": "Rio"
     },
     "participants": {
@@ -485,7 +485,7 @@
   {
     "year": "2020",
     "host": {
-      "country": "Japon",
+      "country": "Japan",
       "city": "Tokyo"
     },
     "participants": {
