@@ -1,6 +1,6 @@
-import React from 'react'
-import Canvas from './Canvas'
-import MapVideo from './MapVideo'
+import React from 'react';
+import Canvas from './Canvas';
+import MapInfos from './MapInfos';
 
 class Three extends React.Component {
   render() {
@@ -12,11 +12,8 @@ class Three extends React.Component {
           </div>
         </div>
         <div className="canvas">
-          <Canvas svg={this.props.svg} />
+          <Canvas />
         </div>
-        {/* <div className="threeVideo">
-          <MapVideo />
-        </div> */}
       </div>
     )
   }

@@ -1,11 +1,11 @@
-import React from 'react'; 
+import React from 'react';
 import {
   BrowserRouter as Router,
   Link
 } from "react-router-dom";
 import './Header.scss'
 export default () => {
-  return(
+  return (
     <Router>
       <nav>
         <ul>
