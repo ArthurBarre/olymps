@@ -101,8 +101,8 @@ export default function GameHistory() {
                         <div className="game-data-container">
                             <GameHost/>
                             <GameHistograms/>
-                            <Paris2024 />
                         </div>
+                        <Paris2024 />
                     </div>
                 </div>
             </BoxContext.Provider>
