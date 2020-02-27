@@ -13,22 +13,22 @@
     "sports": {
       "sportsNumber": "8",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "basketball armchair",
         "Dartchery",
-        "Escrime en fauteuil",
-        "Natation",
+        "Chair fencing",
+        "Swimming",
         "Snooker",
-        "Tennis de table",
-        "Tir à l'arc"
+        "Table tennis",
+        "Archery"
       ]
     }
   },
   {
     "year": "1964",
     "host": {
-      "country": "Tokyo",
-      "city": "Japon"
+      "country": "Japan",
+      "city": "Tokyo"
     },
     "participants": {
       "athletesNumber": "375",
@@ -38,22 +38,22 @@
     "sports": {
       "sportsNumber": "9",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "basketball armchair",
         "Dartchery",
-        "Escrime en fauteuil",
-        "Haltérophilie",
-        "Natation",
+        "Chair fencing",
+        "weight lifting",
+        "Swimming",
         "Snooker",
-        "Tennis de table",
-        "Tir à l'arc"
+        "Table tennis",
+        "Archery"
       ]
     }
   },
   {
     "year": "1968",
     "host": {
-      "country": "Israël",
+      "country": "Israel",
       "city": "Tel-Aviv"
     },
     "participants": {
@@ -64,22 +64,22 @@
     "sports": {
       "sportsNumber": "9",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "basketball armchair",
         "Dartchery",
-        "Escrime en fauteuil",
-        "Haltérophilie",
-        "Natation",
+        "Chair fencing",
+        "weight lifting",
+        "Swimming",
         "Snooker",
-        "Tennis de table",
-        "Tir à l'arc"
+        "Table tennis",
+        "Archery"
       ]
     }
   },
   {
     "year": "1972",
     "host": {
-      "country": "Allemagne",
+      "country": "Germany",
       "city": "Heidelberg"
     },
     "participants": {
@@ -90,15 +90,15 @@
     "sports": {
       "sportsNumber": "13",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "basketball armchair",
         "Dartchery",
-        "Escrime en fauteuil",
-        "Haltérophilie",
-        "Natation",
+        "Chair fencing",
+        "weight lifting",
+        "Swimming",
         "Snooker",
-        "Tennis de table",
-        "Tir à l'arc"
+        "Table tennis",
+        "Archery"
       ]
     }
   },
@@ -116,26 +116,26 @@
     "sports": {
       "sportsNumber": "13",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "basketball armchair",
         "Boulingrin",
         "Dartchery",
-        "Escrime en fauteuil",
+        "Chair fencing",
         "Goalball",
-        "Haltérophilie",
-        "Natation",
+        "weight lifting",
+        "Swimming",
         "Snooker",
-        "Tennis de table",
-        "Tir",
-        "Tir à l'arc",
-        "Volleyball assis"
+        "Table tennis",
+        "Shoot",
+        "Archery",
+        "Sitting volleyball"
       ]
     }
   },
   {
     "year": "1980",
     "host": {
-      "country": "Pays-Bas",
+      "country": "Netherlands",
       "city": "Arnhem"
     },
     "participants": {
@@ -146,26 +146,26 @@
     "sports": {
       "sportsNumber": "13",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "basketball armchair",
         "Boulingrin",
         "Dartchery",
-        "Escrime en fauteuil",
+        "Chair fencing",
         "Goalball",
-        "Haltérophilie",
-        "Natation",
+        "weight lifting",
+        "Swimming",
         "Snooker",
-        "Tennis de table",
-        "Tir",
-        "Tir à l'arc",
-        "Volleyball assis"
+        "Table tennis",
+        "Shoot",
+        "Archery",
+        "Sitting volleyball"
       ]
     }
   },
   {
     "year": "1984",
     "host": {
-      "country": "Etats-Unis",
+      "country": "USA",
       "city": "New-York"
     },
     "participants": {
@@ -176,30 +176,30 @@
     "sports": {
       "sportsNumber": "16",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "basketball armchair",
         "Boccia",
         "Bowls",
-        "Cyclisme",
-        "Escrime en fauteuil",
+        "Cycling",
+        "Chair fencing",
         "Goalball",
-        "Football à sept",
-        "Haltérophilie",
-        "Lutte",
-        "Natation",
+        "Seven-a-side football",
+        "weight lifting",
+        "Fight",
+        "Swimming",
         "Snooker",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Volleyball assis"
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sitting volleyball"
       ]
     }
   },
   {
     "year": "1988",
     "host": {
-      "country": "Corée du Nord",
-      "city": "Séoul"
+      "country": "South-Korea",
+      "city": "Seoul"
     },
     "participants": {
       "athletesNumber": "3053",
@@ -209,31 +209,31 @@
     "sports": {
       "sportsNumber": "17",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "basketball armchair",
         "Boccia",
         "Bowls",
-        "Cyclisme",
-        "Escrime en fauteuil",
+        "Cycling",
+        "Chair fencing",
         "Goalball",
-        "Football à sept",
-        "Haltérophilie",
+        "Seven-a-side football",
+        "weight lifting",
         "Judo",
-        "Lutte",
-        "Natation",
+        "Fight",
+        "Swimming",
         "Snooker",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Volleyball assis"
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sitting volleyball"
       ]
     }
   },
   {
     "year": "1992",
     "host": {
-      "country": "Espagne",
-      "city": "Barcelone"
+      "country": "Spain",
+      "city": "Barcelona"
     },
     "participants": {
       "athletesNumber": "3020",
@@ -243,28 +243,28 @@
     "sports": {
       "sportsNumber": "15",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "basketball armchair",
         "Boccia",
-        "Cyclisme",
-        "Escrime en fauteuil",
+        "Cycling",
+        "Chair fencing",
         "Goalball",
-        "Haltérophilie",
+        "weight lifting",
         "Judo",
-        "Lutte",
-        "Natation",
-        "Tennis en fauteuil",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Volleyball assis"
+        "Fight",
+        "Swimming",
+        "Wheelchair tennis",
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sitting volleyball"
       ]
     }
   },
   {
     "year": "1996",
     "host": {
-      "country": "Etats-Unis",
+      "country": "USA",
       "city": "Atlanta"
     },
     "participants": {
@@ -275,34 +275,34 @@
     "sports": {
       "sportsNumber": "20",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "basketball armchair",
         "Boccia",
         "Bowls",
-        "Cyclisme",
-        "Équitation",
-        "Escrime en fauteuil",
-        "Football à sept",
+        "Cycling",
+        "Horse riding",
+        "Chair fencing",
+        "Seven-a-side football",
         "Goalball",
-        "Haltérophilie",
+        "weight lifting",
         "Judo",
-        "Natation",
+        "Swimming",
         "Racquetball",
-        "Rugby en fauteuil",
-        "Tennis en fauteuil",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Voile",
-        "Volleyball assis"
+        "Wheelchair rugby",
+        "Wheelchair tennis",
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sail",
+        "Sitting volleyball"
       ]
     }
   },
   {
     "year": "2000",
     "host": {
-      "country": "Australie",
-      "city": "Sidney"
+      "country": "Australia",
+      "city": "Sydney"
     },
     "participants": {
       "athletesNumber": "3843",
@@ -312,32 +312,32 @@
     "sports": {
       "sportsNumber": "18",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "basketball armchair",
         "Boccia",
-        "Cyclisme",
-        "Équitation",
-        "Escrime en fauteuil",
-        "Football à sept",
+        "Cycling",
+        "Horse riding",
+        "Chair fencing",
+        "Seven-a-side football",
         "Goalball",
-        "Haltérophilie",
+        "weight lifting",
         "Judo",
-        "Natation",
-        "Rugby en fauteuil",
-        "Tennis en fauteuil",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Voile",
-        "Volleyball assis"
+        "Swimming",
+        "Wheelchair rugby",
+        "Wheelchair tennis",
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sail",
+        "Sitting volleyball"
       ]
     }
   },
   {
     "year": "2004",
     "host": {
-      "country": "Grèce",
-      "city": "Athènes"
+      "country": "Greece",
+      "city": "Athens"
     },
     "participants": {
       "athletesNumber": "3969",
@@ -347,31 +347,31 @@
     "sports": {
       "sportsNumber": "19",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "basketball armchair",
         "Boccia",
-        "Cyclisme",
-        "Équitation",
-        "Escrime en fauteuil",
-        "Football à cinq",
-        "Football à sept",
+        "Cycling",
+        "Horse riding",
+        "Chair fencing",
+        "Five-a-side football",
+        "Seven-a-side football",
         "Goalball",
-        "Haltérophilie",
+        "weight lifting",
         "Judo",
-        "Natation",
-        "Rugby en fauteuil",
-        "Tennis en fauteuil",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Voile"
+        "Swimming",
+        "Wheelchair rugby",
+        "Wheelchair tennis",
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sail"
       ]
     }
   },
   {
     "year": "2008",
     "host": {
-      "country": "Chine",
+      "country": "China",
       "city": "Beijing"
     },
     "participants": {
@@ -382,35 +382,35 @@
     "sports": {
       "sportsNumber": "21",
       "sportsList": [
-        "Athlétisme",
-        "Aviron",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Rowing",
+        "basketball armchair",
         "Boccia",
         "Bowls",
-        "Cyclisme",
-        "Équitation",
-        "Escrime en fauteuil",
-        "Football à sept",
+        "Cycling",
+        "Horse riding",
+        "Chair fencing",
+        "Seven-a-side football",
         "Goalball",
-        "Haltérophilie",
+        "weight lifting",
         "Judo",
-        "Natation",
+        "Swimming",
         "Racquetball",
-        "Rugby en fauteuil",
-        "Tennis en fauteuil",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Voile",
-        "Volley-ball assis"
+        "Wheelchair rugby",
+        "Wheelchair tennis",
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sail",
+        "Sitting volleyball"
       ]
     }
   },
   {
     "year": "2012",
     "host": {
-      "country": "Angleterre",
-      "city": "Londres"
+      "country": "United-Kingdom",
+      "city": "London"
     },
     "participants": {
       "athletesNumber": "4302",
@@ -420,33 +420,33 @@
     "sports": {
       "sportsNumber": "20",
       "sportsList": [
-        "Athlétisme",
-        "Aviron",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Rowing",
+        "basketball armchair",
         "Boccia",
-        "Cyclisme",
-        "Équitation",
-        "Escrime en fauteuil",
-        "Football à cinq",
-        "Football à sept",
+        "Cycling",
+        "Horse riding",
+        "Chair fencing",
+        "Five-a-side football",
+        "Seven-a-side football",
         "Goalball",
-        "Haltérophilie",
+        "weight lifting",
         "Judo",
-        "Natation",
-        "Rugby en fauteuil",
-        "Tennis en fauteuil",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Voile",
-        "Volley-ball assis"
+        "Swimming",
+        "Wheelchair rugby",
+        "Wheelchair tennis",
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sail",
+        "Sitting volleyball"
       ]
     }
   },
   {
     "year": "2016",
     "host": {
-      "country": "Bresil",
+      "country": "Brazil",
       "city": "Rio"
     },
     "participants": {
@@ -457,35 +457,35 @@
     "sports": {
       "sportsNumber": "22",
       "sportsList": [
-        "Athlétisme",
-        "Aviron",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Rowing",
+        "basketball armchair",
         "Boccia",
         "Bowls",
-        "Canoë",
-        "Cyclisme",
-        "Équitation",
-        "Escrime en fauteuil",
-        "Football à sept",
+        "Canoe",
+        "Cycling",
+        "Horse riding",
+        "Chair fencing",
+        "Seven-a-side football",
         "Goalball",
-        "Haltérophilie",
+        "weight lifting",
         "Judo",
-        "Natation",
+        "Swimming",
         "Paratriathlon",
-        "Rugby en fauteuil",
-        "Tennis en fauteuil",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Voile",
-        "Volley-ball assis"
+        "Wheelchair rugby",
+        "Wheelchair tennis",
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sail",
+        "Sitting volleyball"
       ]
     }
   },
   {
     "year": "2020",
     "host": {
-      "country": "Japon",
+      "country": "Japan",
       "city": "Tokyo"
     },
     "participants": {
@@ -496,28 +496,28 @@
     "sports": {
       "sportsNumber": "22",
       "sportsList": [
-        "Athlétisme",
-        "Aviron",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Rowing",
+        "basketball armchair",
         "Badminton",
         "Boccia",
-        "Canoë",
-        "Cyclisme",
-        "Équitation",
-        "Escrime en fauteuil",
-        "Football à cinq",
+        "Canoe",
+        "Cycling",
+        "Horse riding",
+        "Chair fencing",
+        "Five-a-side football",
         "Goalball",
-        "Haltérophilie",
+        "weight lifting",
         "Judo",
-        "Natation",
+        "Swimming",
         "Paratriathlon",
-        "Rugby en fauteuil",
+        "Wheelchair rugby",
         "Taekwondo",
-        "Tennis en fauteuil",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Volley-ball assis"
+        "Wheelchair tennis",
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sitting volleyball"
       ]
     }
   },
@@ -535,28 +535,28 @@
     "sports": {
       "sportsNumber": "22",
       "sportsList": [
-        "Athlétisme",
-        "Aviron",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Rowing",
+        "basketball armchair",
         "Badminton",
         "Boccia",
-        "Canoë",
-        "Cyclisme",
-        "Équitation",
-        "Escrime en fauteuil",
-        "Football à cinq",
+        "Canoe",
+        "Cycling",
+        "Horse riding",
+        "Chair fencing",
+        "Five-a-side football",
         "Goalball",
-        "Haltérophilie",
+        "weight lifting",
         "Judo",
-        "Natation",
+        "Swimming",
         "Paratriathlon",
-        "Rugby en fauteuil",
+        "Wheelchair rugby",
         "Taekwondo",
-        "Tennis en fauteuil",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Volley-ball assis"
+        "Wheelchair tennis",
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sitting volleyball"
       ]
     }
   }
