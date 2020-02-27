@@ -38,7 +38,8 @@ export default function GameHistory() {
         });
         if (positionInBox.isEnter) {
             positionInBox.isTop ? cursorCircle.style.backgroundImage = `url(${TopArrow})` :
-                cursorCircle.style.backgroundImage = `url(${BottomArrow})`;
+                (positionInBox.isBottom ? cursorCircle.style.backgroundImage = `url(${BottomArrow})` :
+                    cursorCircle.style.backgroundImage = 'none' );
             cursorCircle.style.backgroundColor = 'rgba(196, 196, 196, 0.32)';
             cursorCircle.style.border = '2px solid #9C9C9C';
             /*t.timeScale(0.2);*/
@@ -100,8 +101,8 @@ export default function GameHistory() {
                         <div className="game-data-container">
                             <GameHost/>
                             <GameHistograms/>
-                            <Paris2024 />
                         </div>
+                        <Paris2024 />
                     </div>
                 </div>
             </BoxContext.Provider>

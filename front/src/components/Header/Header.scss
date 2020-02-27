@@ -48,19 +48,19 @@ $black: #000000;
     width: 100%;
     h1 {
       font-family: $fontSerif;
-      font-size: 86px;
+      font-size: 110px;
       text-transform: uppercase;
       font-weight: 400;
     }
     .Subtitle  {
       font-family: $fontSerif;
       padding-top: 2%;
-      font-size: 20px;
+      font-size: 25px;
     }
     .textIntro  {
       font-family: $fontSansSerif;
       padding-top: 1%;
-      font-size: 12px;
+      font-size: 16px;
       max-width: 500px;
       margin: 0 auto;
       font-weight: 300;
@@ -112,7 +112,7 @@ $black: #000000;
       .loaderText{
         font-family: $fontSansSerif;
         text-transform: uppercase;
-        font-size: 10px;
+        font-size: 13px;
         margin: 20px;
       }
       .Next {
