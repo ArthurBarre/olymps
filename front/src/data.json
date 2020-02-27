@@ -13,14 +13,14 @@
     "sports": {
       "sportsNumber": "8",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Basketball armchair",
         "Dartchery",
-        "Escrime en fauteuil",
-        "Natation",
+        "Chair fencing",
+        "Swimming",
         "Snooker",
-        "Tennis de table",
-        "Tir à l'arc"
+        "Table tennis",
+        "Archery"
       ]
     }
   },
@@ -38,15 +38,15 @@
     "sports": {
       "sportsNumber": "9",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Basketball armchair",
         "Dartchery",
-        "Escrime en fauteuil",
-        "Haltérophilie",
-        "Natation",
+        "Chair fencing",
+        "weight lifting",
+        "Swimming",
         "Snooker",
-        "Tennis de table",
-        "Tir à l'arc"
+        "Table tennis",
+        "Archery"
       ]
     }
   },
@@ -64,15 +64,15 @@
     "sports": {
       "sportsNumber": "9",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Basketball armchair",
         "Dartchery",
-        "Escrime en fauteuil",
-        "Haltérophilie",
-        "Natation",
+        "Chair fencing",
+        "weight lifting",
+        "Swimming",
         "Snooker",
-        "Tennis de table",
-        "Tir à l'arc"
+        "Table tennis",
+        "Archery"
       ]
     }
   },
@@ -90,15 +90,15 @@
     "sports": {
       "sportsNumber": "13",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Basketball armchair",
         "Dartchery",
-        "Escrime en fauteuil",
-        "Haltérophilie",
-        "Natation",
+        "Chair fencing",
+        "weight lifting",
+        "Swimming",
         "Snooker",
-        "Tennis de table",
-        "Tir à l'arc"
+        "Table tennis",
+        "Archery"
       ]
     }
   },
@@ -116,19 +116,19 @@
     "sports": {
       "sportsNumber": "13",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Basketball armchair",
         "Boulingrin",
         "Dartchery",
-        "Escrime en fauteuil",
+        "Chair fencing",
         "Goalball",
-        "Haltérophilie",
-        "Natation",
+        "weight lifting",
+        "Swimming",
         "Snooker",
-        "Tennis de table",
-        "Tir",
-        "Tir à l'arc",
-        "Volleyball assis"
+        "Table tennis",
+        "Shoot",
+        "Archery",
+        "Sitting volleyball"
       ]
     }
   },
@@ -146,19 +146,19 @@
     "sports": {
       "sportsNumber": "13",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Basketball armchair",
         "Boulingrin",
         "Dartchery",
-        "Escrime en fauteuil",
+        "Chair fencing",
         "Goalball",
-        "Haltérophilie",
-        "Natation",
+        "weight lifting",
+        "Swimming",
         "Snooker",
-        "Tennis de table",
-        "Tir",
-        "Tir à l'arc",
-        "Volleyball assis"
+        "Table tennis",
+        "Shoot",
+        "Archery",
+        "Sitting volleyball"
       ]
     }
   },
@@ -176,22 +176,22 @@
     "sports": {
       "sportsNumber": "16",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Basketball armchair",
         "Boccia",
         "Bowls",
-        "Cyclisme",
-        "Escrime en fauteuil",
+        "Cycling",
+        "Chair fencing",
         "Goalball",
-        "Football à sept",
-        "Haltérophilie",
-        "Lutte",
-        "Natation",
+        "Seven-a-side football",
+        "weight lifting",
+        "Fight",
+        "Swimming",
         "Snooker",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Volleyball assis"
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sitting volleyball"
       ]
     }
   },
@@ -209,23 +209,23 @@
     "sports": {
       "sportsNumber": "17",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Basketball armchair",
         "Boccia",
         "Bowls",
-        "Cyclisme",
-        "Escrime en fauteuil",
+        "Cycling",
+        "Chair fencing",
         "Goalball",
-        "Football à sept",
-        "Haltérophilie",
+        "Seven-a-side football",
+        "weight lifting",
         "Judo",
-        "Lutte",
-        "Natation",
+        "Fight",
+        "Swimming",
         "Snooker",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Volleyball assis"
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sitting volleyball"
       ]
     }
   },
@@ -243,21 +243,21 @@
     "sports": {
       "sportsNumber": "15",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Basketball armchair",
         "Boccia",
-        "Cyclisme",
-        "Escrime en fauteuil",
+        "Cycling",
+        "Chair fencing",
         "Goalball",
-        "Haltérophilie",
+        "weight lifting",
         "Judo",
-        "Lutte",
-        "Natation",
-        "Tennis en fauteuil",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Volleyball assis"
+        "Fight",
+        "Swimming",
+        "Wheelchair tennis",
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sitting volleyball"
       ]
     }
   },
@@ -275,26 +275,26 @@
     "sports": {
       "sportsNumber": "20",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Basketball armchair",
         "Boccia",
         "Bowls",
-        "Cyclisme",
-        "Équitation",
-        "Escrime en fauteuil",
-        "Football à sept",
+        "Cycling",
+        "Horse riding",
+        "Chair fencing",
+        "Seven-a-side football",
         "Goalball",
-        "Haltérophilie",
+        "weight lifting",
         "Judo",
-        "Natation",
+        "Swimming",
         "Racquetball",
-        "Rugby en fauteuil",
-        "Tennis en fauteuil",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Voile",
-        "Volleyball assis"
+        "Wheelchair rugby",
+        "Wheelchair tennis",
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sail",
+        "Sitting volleyball"
       ]
     }
   },
@@ -312,24 +312,24 @@
     "sports": {
       "sportsNumber": "18",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Basketball armchair",
         "Boccia",
-        "Cyclisme",
-        "Équitation",
-        "Escrime en fauteuil",
-        "Football à sept",
+        "Cycling",
+        "Horse riding",
+        "Chair fencing",
+        "Seven-a-side football",
         "Goalball",
-        "Haltérophilie",
+        "weight lifting",
         "Judo",
-        "Natation",
-        "Rugby en fauteuil",
-        "Tennis en fauteuil",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Voile",
-        "Volleyball assis"
+        "Swimming",
+        "Wheelchair rugby",
+        "Wheelchair tennis",
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sail",
+        "Sitting volleyball"
       ]
     }
   },
@@ -347,24 +347,24 @@
     "sports": {
       "sportsNumber": "19",
       "sportsList": [
-        "Athlétisme",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Basketball armchair",
         "Boccia",
-        "Cyclisme",
-        "Équitation",
-        "Escrime en fauteuil",
-        "Football à cinq",
-        "Football à sept",
+        "Cycling",
+        "Horse riding",
+        "Chair fencing",
+        "Five-a-side football",
+        "Seven-a-side football",
         "Goalball",
-        "Haltérophilie",
+        "weight lifting",
         "Judo",
-        "Natation",
-        "Rugby en fauteuil",
-        "Tennis en fauteuil",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Voile"
+        "Swimming",
+        "Wheelchair rugby",
+        "Wheelchair tennis",
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sail"
       ]
     }
   },
@@ -382,27 +382,27 @@
     "sports": {
       "sportsNumber": "21",
       "sportsList": [
-        "Athlétisme",
-        "Aviron",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Rowing",
+        "Basketball armchair",
         "Boccia",
         "Bowls",
-        "Cyclisme",
-        "Équitation",
-        "Escrime en fauteuil",
-        "Football à sept",
+        "Cycling",
+        "Horse riding",
+        "Chair fencing",
+        "Seven-a-side football",
         "Goalball",
-        "Haltérophilie",
+        "weight lifting",
         "Judo",
-        "Natation",
+        "Swimming",
         "Racquetball",
-        "Rugby en fauteuil",
-        "Tennis en fauteuil",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Voile",
-        "Volley-ball assis"
+        "Wheelchair rugby",
+        "Wheelchair tennis",
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sail",
+        "Sitting volleyball"
       ]
     }
   },
@@ -420,26 +420,26 @@
     "sports": {
       "sportsNumber": "20",
       "sportsList": [
-        "Athlétisme",
-        "Aviron",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Rowing",
+        "Basketball armchair",
         "Boccia",
-        "Cyclisme",
-        "Équitation",
-        "Escrime en fauteuil",
-        "Football à cinq",
-        "Football à sept",
+        "Cycling",
+        "Horse riding",
+        "Chair fencing",
+        "Five-a-side football",
+        "Seven-a-side football",
         "Goalball",
-        "Haltérophilie",
+        "weight lifting",
         "Judo",
-        "Natation",
-        "Rugby en fauteuil",
-        "Tennis en fauteuil",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Voile",
-        "Volley-ball assis"
+        "Swimming",
+        "Wheelchair rugby",
+        "Wheelchair tennis",
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sail",
+        "Sitting volleyball"
       ]
     }
   },
@@ -457,28 +457,28 @@
     "sports": {
       "sportsNumber": "22",
       "sportsList": [
-        "Athlétisme",
-        "Aviron",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Rowing",
+        "Basketball armchair",
         "Boccia",
         "Bowls",
         "Canoë",
-        "Cyclisme",
-        "Équitation",
-        "Escrime en fauteuil",
-        "Football à sept",
+        "Cycling",
+        "Horse riding",
+        "Chair fencing",
+        "Seven-a-side football",
         "Goalball",
-        "Haltérophilie",
+        "weight lifting",
         "Judo",
-        "Natation",
+        "Swimming",
         "Paratriathlon",
-        "Rugby en fauteuil",
-        "Tennis en fauteuil",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Voile",
-        "Volley-ball assis"
+        "Wheelchair rugby",
+        "Wheelchair tennis",
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sail",
+        "Sitting volleyball"
       ]
     }
   },
@@ -496,28 +496,28 @@
     "sports": {
       "sportsNumber": "22",
       "sportsList": [
-        "Athlétisme",
-        "Aviron",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Rowing",
+        "Basketball armchair",
         "Badminton",
         "Boccia",
         "Canoë",
-        "Cyclisme",
-        "Équitation",
-        "Escrime en fauteuil",
-        "Football à cinq",
+        "Cycling",
+        "Horse riding",
+        "Chair fencing",
+        "Five-a-side football",
         "Goalball",
-        "Haltérophilie",
+        "weight lifting",
         "Judo",
-        "Natation",
+        "Swimming",
         "Paratriathlon",
-        "Rugby en fauteuil",
+        "Wheelchair rugby",
         "Taekwondo",
-        "Tennis en fauteuil",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
-        "Volley-ball assis"
+        "Wheelchair tennis",
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
+        "Sitting volleyball"
       ]
     }
   },
@@ -535,27 +535,27 @@
     "sports": {
       "sportsNumber": "22",
       "sportsList": [
-        "Athlétisme",
-        "Aviron",
-        "Basket-ball fauteuil",
+        "Athletics",
+        "Rowing",
+        "Basketball armchair",
         "Badminton",
         "Boccia",
         "Canoë",
-        "Cyclisme",
-        "Équitation",
-        "Escrime en fauteuil",
-        "Football à cinq",
+        "Cycling",
+        "Horse riding",
+        "Chair fencing",
+        "Five-a-side football",
         "Goalball",
-        "Haltérophilie",
+        "weight lifting",
         "Judo",
-        "Natation",
+        "Swimming",
         "Paratriathlon",
-        "Rugby en fauteuil",
+        "Wheelchair rugby",
         "Taekwondo",
-        "Tennis en fauteuil",
-        "Tennis de table",
-        "Tir à l'arc",
-        "Tir sportif",
+        "Wheelchair tennis",
+        "Table tennis",
+        "Archery",
+        "Sportive shoot",
         "Volley-ball assis"
       ]
     }
