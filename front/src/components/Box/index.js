@@ -12,6 +12,7 @@ export default function Box() {
     const {currentYear, setCurrentYear} = useContext(YearContext);
     let numDates = jo.length - 1;
     let tweenYear = useRef([React.createRef()]);
+
     let midPosition = 50;
     //Modifier cette valeur pour augmenter ou diminuer espacement des dates
     let intervalPosition = 40;
@@ -19,7 +20,6 @@ export default function Box() {
     let bottomPosition = midPosition + intervalPosition;
     let subBottomPosition = midPosition + (intervalPosition*2);
     let overTopPosition = midPosition - intervalPosition*2;
-
 
     function yearProgress() {
         (currentYear.id < numDates) &&
@@ -103,20 +103,23 @@ export default function Box() {
 
     // Update box context
     useEffect(() => {
-        const boxMiddleY = parseInt((refContainer.current.getBoundingClientRect().height) / 2);
-        position.inside && ((position.y < boxMiddleY) ? setPositionInBox({
+        const boxTopStop = (parseInt((refContainer.current.getBoundingClientRect().height) / 2))-80;
+        const boxBottomStop = parseInt(refContainer.current.getBoundingClientRect().height)-boxTopStop;
+        position.inside && ((position.y < boxTopStop) ? setPositionInBox({
             isTop: true,
             isEnter: true,
             isBottom: false,
-            yearId: true,
-        }) : setPositionInBox({isTop: false, isEnter: true, isBottom: true}));
+            isMiddle: false
+        }) : ((position.y > boxBottomStop) ? setPositionInBox({isTop: false, isEnter: true, isBottom: true, isMiddle: false}) :
+            setPositionInBox({isTop: false, isEnter: true, isBottom: false, isMiddle: true})));
     }, [position.inside, position.y]);
 
 
     // Execute scroll if cursor stay in box part
     useInterval(() => {
         if(positionInBox.isEnter){
-            positionInBox.isTop ? yearBack() : yearProgress();
+            positionInBox.isTop && yearBack();
+            positionInBox.isBottom && yearProgress();
         }
     }, 1500);
 
