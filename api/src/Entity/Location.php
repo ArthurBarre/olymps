@@ -3,6 +3,9 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToMany;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\JoinColumn;
 
 /**
  * Location
@@ -120,6 +123,20 @@ class Location
 
         return $this;
     }
+        /**
+     * @ManyToMany(targetEntity="HandiType")
+     * @JoinTable(name="location_type",
+     *      joinColumns={@JoinColumn(name="id_location", referencedColumnName="id_location")},
+     *      inverseJoinColumns={@JoinColumn(name="id_handi", referencedColumnName="id_handi")}
+     *      )
+     */
+    private $typesList;
+
+    public function getTypesList() :Collection
+    {
+        return $this->typesList;
+    }
+
 
 
 }
