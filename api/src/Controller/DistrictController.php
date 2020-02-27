@@ -28,6 +28,20 @@ class DistrictController extends AbstractController
 
         return $this->json($districtFiltered);
     }
+     /**
+     * @Route("/district_infos", name="district_infos")
+     * @param BestDistrictRepository $bdRep
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function districtById(BestDistrictRepository $bdRep, Request $request)
+    {
+        // GET http://localhost:8000/district_info?district=75019
+        $district_info = $bdRep;
+        $districtFiltered = $district_info->findAll();
+
+        return $this->json($districtFiltered);
+    }
 
 
 }
