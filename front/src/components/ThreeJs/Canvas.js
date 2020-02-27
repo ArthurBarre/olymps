@@ -12,6 +12,7 @@ function Canvas() {
   let renderer2 = null;
   let group = new THREE.Group();
   let camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1000);
+  let controls = null;
   let scene = new THREE.Scene();
   let currentURL = null;
   let raycaster;
@@ -38,7 +39,7 @@ function Canvas() {
 
 
     // INITIATE CAMERA
-    camera.position.set(40, 0, 260);
+    camera.position.set(40, 0, 230);
 
     // CANVAS ON RESIZE
     raycaster = new THREE.Raycaster();
