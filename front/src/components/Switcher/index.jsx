@@ -36,7 +36,7 @@ export default function Switcher() {
   function checkIndex() {
     console.log(scrollTop)
     if (indexComp > 2) {
-      return;
+      return
     } else {
       if (scrollTop < 200) {
         setIndexComp(0)
@@ -46,6 +46,9 @@ export default function Switcher() {
       }
       if ((scrollTop > 500) | (scrollTop > 699)) {
         setIndexComp(2)
+      }
+      if ((scrollTop > 700) | (scrollTop > 900)) {
+        setIndexComp(3)
       }
     }
   }

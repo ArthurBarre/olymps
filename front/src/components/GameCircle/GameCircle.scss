@@ -1,9 +1,13 @@
 $fontSerif: 'Suranna', serif;
 $fontSansSerif: 'Teko', sans-serif;
 .circle {
-  font-family: $fontSansSerif;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  text {
+    font-family: $fontSansSerif;
+    font-weight: 200;
+    font-size: 20px;
+  }
 }
