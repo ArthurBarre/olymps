@@ -45,25 +45,13 @@ function Canvas() {
     fetch(`http://35.180.64.236:8000/district_infos`, {})
       .then(res => res.json())
       .then(res => setDistrictDatas(res))
-      for (let i = 0; i < districtDatas.length; i++) {
+    for (let i = 0; i < districtDatas.length; i++) {
       console.log(districtDatas[i], arrdt)
       if (parseInt(districtDatas[i].district) === parseInt(arrdt)) {
         setDistrictData(districtDatas[i])
-        // console.log('helfdssd')
       }
     }
   }, [districtDatas])
-  // console.log(districtDatas)
-  // useEffect(() => {
-  //   for (let i = 0; i < districtDatas.length; i++) {
-  //     console.log(districtDatas[i], arrdt)
-  //     if (parseInt(districtDatas[i].district) === parseInt(arrdt)) {
-  //       setDistrictData(districtDatas[i])
-  //       console.log('helfdssd')
-  //     }
-  //   }
-  // }, [districtData])
-  // console.log(districtDatas[0])
 
   const init = () => {
     let container = document.getElementById('container')
