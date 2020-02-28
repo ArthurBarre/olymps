@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import YearContext from "../GameHistory/year-context";
 import jo from "../../data";
+import joe from "../../events";
 import './GameHistograms.scss';
 import * as d3 from "d3";
 import { maxAthlete } from "../constants";
@@ -35,7 +36,7 @@ export default function GameHistograms() {
             .attr('class', 'athlete-bar')
             .attr('height', svgHeight)
             .attr('width', histogramsWrapperWidth / 3);
-        let currentAthlete = jo[currentYear.id].participants.athletesNumber;
+        let currentAthlete = joe[currentYear.id].athletesnumber;
         let athleteRatio = currentAthlete / maxAthlete;
         let ancientAthleteRatio = stockedData.athlete / maxAthlete;
 
@@ -89,7 +90,7 @@ export default function GameHistograms() {
             .attr('class', 'country-bar')
             .attr('height', svgHeight)
             .attr('width', histogramsWrapperWidth / 3);
-        let currentCountry = jo[currentYear.id].participants.countryNumber;
+        let currentCountry = joe[currentYear.id].countrynumber;
         let countryRatio = currentCountry / maxCountry;
         let ancientCountryRatio = stockedData.country / maxCountry;
 
@@ -141,7 +142,7 @@ export default function GameHistograms() {
             .attr('class', 'discipline-bar')
             .attr('height', svgHeight)
             .attr('width', histogramsWrapperWidth / 3);
-        let currentDiscipline = jo[currentYear.id].sports.sportsNumber;
+        let currentDiscipline = joe[currentYear.id].sportNumber;
         let disciplineRatio = currentDiscipline / maxDiscipline;
         let ancientDisciplineRatio = stockedData.discipline / maxDiscipline;
 
