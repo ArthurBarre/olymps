@@ -4,6 +4,7 @@ import Switcher from './Switcher'
 import { BrowserRouter as Router } from 'react-router-dom'
 import ToolTips from './Tooltips';
 import PlayerAudio from './Audio/Audio';
+import sound from '../assets/audios/soundbg.mp3';
 
 
 function App() {
@@ -12,9 +13,10 @@ function App() {
   }, [])
   return (
     <Router>
-      {/*<ToolTips />*/}
       <Switcher />
-      {/* <Navigation /> */}
+      <div className="soundContainer">
+        <PlayerAudio url={sound} />
+      </div>
     </Router>
   )
 }
