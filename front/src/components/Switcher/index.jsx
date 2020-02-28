@@ -13,11 +13,12 @@ export default function Switcher() {
   const [scrolling, setScrolling] = useState(0)
   const [indexComp, setIndexComp] = useState(0)
   const [inProp, setInProp] = useState(false)
+  const [wait, setWait] = useState(false)
 
   const components = [
     {
       id: 0,
-      comp: <Home />,
+      comp: <Home skip={skip} />,
     },
     {
       id: 1,
@@ -35,21 +36,20 @@ export default function Switcher() {
   // console.log(components)
   function checkIndex() {
     console.log(scrollTop)
-    if (indexComp > 2) {
-      return
-    } else {
-      if (scrollTop < 200) {
-        setIndexComp(0)
+    if (wait) {
+      if (indexComp > 2) {
+        return
+      } else {
+        if (scrollTop < 200) {
+          setIndexComp(0)
+        }
+        if (scrollTop > 200 && scrollTop < 499) {
+          setIndexComp(1)
+        }
+        if (scrollTop > 500 && scrollTop < 699) {
+          setIndexComp(2)
+        }
       }
-      if (scrollTop > 200 && scrollTop < 499) {
-        setIndexComp(1)
-      }
-      if (scrollTop > 500 && scrollTop < 699) {
-        setIndexComp(2)
-      }
-      // if (scrollTop > 700 && scrollTop < 900) {
-      //   setIndexComp(3)
-      // }
     }
   }
   function goMap() {
@@ -58,19 +58,30 @@ export default function Switcher() {
   function goHistory() {
     setIndexComp(0)
   }
+  function skip() {
+    setWait(true)
+  }
 
   useEffect(() => {
     const onScroll = e => {
       setScrollTop(e.target.documentElement.scrollTop)
       setScrolling(e.target.documentElement.scrollTop > scrollTop)
     }
+    let windowtest = document.getElementById('windowtest')
+    setTimeout(() => {
+      setWait(true)
+      windowtest.style.overflowY = 'hidden'
+    }, 12000)
+    if (!wait) window.scrollTo(0, 0)
     window.addEventListener('scroll', onScroll)
     checkIndex()
     return () => window.removeEventListener('scroll', onScroll)
   }, [scrollTop])
   return (
     <>
-      <div className="window">{components[indexComp].comp}</div>
+      <div id="windowtest" className="window">
+        {components[indexComp].comp}
+      </div>
     </>
   )
 }
