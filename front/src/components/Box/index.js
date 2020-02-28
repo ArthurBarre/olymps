@@ -4,7 +4,7 @@ import useMouseOfRef from "../Mouse/use-mouse-ref";
 import BoxContext from "./box-context";
 import YearContext from "../GameHistory/year-context";
 import { TweenLite, TweenMax, Circ} from "gsap/all";
-import jo from '../../data.json';
+import jo from '../../events.json';
 
 export default function Box() {
     const [refContainer, position] = useMouseOfRef();
