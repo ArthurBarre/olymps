@@ -13,11 +13,12 @@ export default function Switcher() {
   const [scrolling, setScrolling] = useState(0)
   const [indexComp, setIndexComp] = useState(0)
   const [inProp, setInProp] = useState(false)
+  const [wait, setWait] = useState(false)
 
   const components = [
     {
       id: 0,
-      comp: <Home />,
+      comp: <Home skip={skip} />,
     },
     {
       id: 1,
@@ -25,32 +26,40 @@ export default function Switcher() {
     },
     {
       id: 2,
-      comp: <Practice />,
+      comp: <Practice goMap={goMap} />,
     },
     {
       id: 3,
-      comp: <Map />,
+      comp: <Map goHistory={goHistory} />,
     },
   ]
   // console.log(components)
   function checkIndex() {
     console.log(scrollTop)
-    if (indexComp > 2) {
-      return
-    } else {
-      if (scrollTop < 200) {
-        setIndexComp(0)
-      }
-      if ((scrollTop > 200) | (scrollTop > 499)) {
-        setIndexComp(1)
-      }
-      if ((scrollTop > 500) | (scrollTop > 699)) {
-        setIndexComp(2)
-      }
-      if ((scrollTop > 700) | (scrollTop > 900)) {
-        setIndexComp(3)
+    if (wait) {
+      if (indexComp > 2) {
+        return
+      } else {
+        if (scrollTop < 200) {
+          setIndexComp(0)
+        }
+        if (scrollTop > 200 && scrollTop < 499) {
+          setIndexComp(1)
+        }
+        if (scrollTop > 500 && scrollTop < 699) {
+          setIndexComp(2)
+        }
       }
     }
+  }
+  function goMap() {
+    setIndexComp(3)
+  }
+  function goHistory() {
+    setIndexComp(0)
+  }
+  function skip() {
+    setWait(true)
   }
 
   useEffect(() => {
@@ -58,13 +67,22 @@ export default function Switcher() {
       setScrollTop(e.target.documentElement.scrollTop)
       setScrolling(e.target.documentElement.scrollTop > scrollTop)
     }
+    let windowtest = document.getElementById('windowtest')
+    setTimeout(() => {
+      setWait(true)
+      windowtest.style.overflowY = 'hidden'
+      // setIndexComp(1)
+    }, 1000)
+    // if (!wait) window.scrollTo(0, 0)
     window.addEventListener('scroll', onScroll)
     checkIndex()
     return () => window.removeEventListener('scroll', onScroll)
   }, [scrollTop])
   return (
     <>
-      <div className="window">{components[indexComp].comp}</div>
+      <div id="windowtest" className="window">
+        {components[indexComp].comp}
+      </div>
     </>
   )
 }

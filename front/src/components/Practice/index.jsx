@@ -1,12 +1,12 @@
-import React from 'react';
-import './Practice.scss';
-import VideoHeader from '../Videos/Video';
+import React from 'react'
+import './Practice.scss'
+import VideoPractice from './PracticeVideo'
 
-export default function Practice() {
+export default function Practice({ goMap }) {
   return (
     <div className="general">
       <div className="videoheader">
-        <VideoHeader />
+        <VideoPractice />
       </div>
       <ul className="sports_list">
         <li className="sports_list_li">Athletics</li>
@@ -32,9 +32,16 @@ export default function Practice() {
         <li className="sports_list_li">Sportive shoot</li>
         <li className="sports_list_li">Sitting volleyball</li>
       </ul>
-      <h1 className="title">Where can you practice <br /> in paris ?</h1>
+      <h1 className="title">
+        Where can you practice <br /> in paris ?
+      </h1>
       <div className="test_map_button"></div>
-      <button className="map_button"></button>
+      <button
+        onClick={() => {
+          goMap()
+        }}
+        className="map_button"
+      ></button>
     </div>
   )
 }

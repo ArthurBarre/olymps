@@ -2,11 +2,11 @@ import React from 'react'
 import Header from '../../components/Header'
 import History from '../../components/History'
 import Window from '../../components/Switcher/window'
-export default () => {
+export default ({skip}) => {
   return (
     <div className="Olymps">
       <div className="heroContainer">
-        <Header />
+        <Header skip={skip} />
       </div>
     </div>
   )

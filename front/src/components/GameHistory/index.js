@@ -14,7 +14,7 @@ import YearContext from "./year-context";
 import Paris2024 from '../Paris2024';
 import GameHost from "../GameHost";
 import GameHistograms from "../GameHistograms";
-import Video from "../Videos/Video";
+import Video from "./VideoHistory";
 
 
 export default function GameHistory() {

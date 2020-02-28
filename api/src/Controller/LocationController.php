@@ -13,21 +13,21 @@ use Symfony\Component\Routing\Annotation\Route;
 class LocationController extends AbstractController
 {
 
-    /**
-     * @Route("/district", name="district")
-     * @param LocationRepository $locRep
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function districtById(LocationRepository $locRep, Request $request)
-    {
-        // GET http://localhost:8000/district?district=75019
-        $district = $request->query->get('district');
-        $locations = $locRep;
-        $locFiltered = $locations->findByDistrict($district);
-
-        return $this->json($locFiltered);
-    }
+//    /**
+//     * @Route("/district", name="district")
+//     * @param LocationRepository $locRep
+//     * @param Request $request
+//     * @return JsonResponse
+//     */
+//    public function districtById(LocationRepository $locRep, Request $request)
+//    {
+//        // GET http://localhost:8000/district?district=75019
+//        $district = $request->query->get('district');
+//        $locations = $locRep;
+//        $locFiltered = $locations->findByDistrict($district);
+//
+//        return $this->json($locFiltered);
+//    }
 
     /**
      * @Route("/districts", name="districts")

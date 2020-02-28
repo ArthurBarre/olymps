@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * LocationType
  *
- * @ORM\Table(name="location_type", indexes={@ORM\Index(name="id_handi", columns={"id_handi"}), @ORM\Index(name="id_location", columns={"id_location"})})
+ * @ORM\Table(name="location_type")
  * @ORM\Entity
  */
 class LocationType
@@ -22,22 +22,16 @@ class LocationType
     private $idRelation;
 
     /**
-     * @var \Location
+     * @var string
      *
-     * @ORM\ManyToOne(targetEntity="Location")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_location", referencedColumnName="id_location")
-     * })
+     * @ORM\Column(name="id_location", type="string", length=255, nullable=false)
      */
     private $idLocation;
 
     /**
-     * @var \HandiType
+     * @var string
      *
-     * @ORM\ManyToOne(targetEntity="HandiType")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_handi", referencedColumnName="id_handi")
-     * })
+     * @ORM\Column(name="id_handi", type="string", length=255, nullable=false)
      */
     private $idHandi;
 
@@ -46,24 +40,24 @@ class LocationType
         return $this->idRelation;
     }
 
-    public function getIdLocation(): ?Location
+    public function getIdLocation(): ?string
     {
         return $this->idLocation;
     }
 
-    public function setIdLocation(?Location $idLocation): self
+    public function setIdLocation(string $idLocation): self
     {
         $this->idLocation = $idLocation;
 
         return $this;
     }
 
-    public function getIdHandi(): ?HandiType
+    public function getIdHandi(): ?string
     {
         return $this->idHandi;
     }
 
-    public function setIdHandi(?HandiType $idHandi): self
+    public function setIdHandi(string $idHandi): self
     {
         $this->idHandi = $idHandi;
 
