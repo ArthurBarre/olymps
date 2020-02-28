@@ -1,10 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react'
-import jo from '../../data.json'
+import jo from '../../events.json'
 import * as d3 from 'd3'
 import './GameCircle.scss'
 import YearContext from '../GameHistory/year-context'
 import { allSports } from '../constants/index'
-console.log('test', allSports)
 
 // First inizialisation of circle
 let circle;
@@ -31,6 +30,12 @@ export default function GameCircle() {
         let newFillCount= 0 ;
         let currentSports = [];
         let currentNewSports = [];
+        let allYearSport = [];
+
+        // Push in allYearSport array all the sports of the current year
+        for (let sport = 0; sport < jo[currentYear.id].sportList.length; sport++) {
+            allYearSport.push(jo[currentYear.id].sportList[sport].title);
+        }
 
         circle = d3.select(".circle").append("svg")
             .attr("width", width)
@@ -62,7 +67,7 @@ export default function GameCircle() {
             .transition().duration(0)
             .attr('fill', function () {
                 if(sportFillCount > (numSports/2)-1) {
-                    if (jo[currentYear.id].sports.sportsList.includes(allSports[sportFillCount-3])){
+                    if (allYearSport.includes(allSports[sportFillCount-3])){
                         if(stockedData.prevSports.includes(sportFillCount-3)){
                             currentSports.push(sportFillCount-3);
                             sportFillCount++;
@@ -86,7 +91,7 @@ export default function GameCircle() {
                     }
                 }
                 else {
-                    if (jo[currentYear.id].sports.sportsList.includes(allSports[sportFillCount])){
+                    if (allYearSport.includes(allSports[sportFillCount])){
                         if(stockedData.prevSports.includes(sportFillCount)){
                             currentSports.push(sportFillCount);
                             sportFillCount++;
