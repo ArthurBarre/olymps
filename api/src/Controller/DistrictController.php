@@ -34,7 +34,7 @@ class DistrictController extends AbstractController
      * @param Request $request
      * @return JsonResponse
      */
-    public function districtById(BestDistrictRepository $bdRep, Request $request)
+    public function allDistrict(BestDistrictRepository $bdRep, Request $request)
     {
         // GET http://localhost:8000/district_info?district=75019
         $district_info = $bdRep;
