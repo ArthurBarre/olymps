@@ -4,7 +4,7 @@ import DateScroll from '../DateScroll';
 import Circle from '../Circle/Circle';
 import Infos from '../Infos';
 import Paris2024 from '../Paris2024';
-import VideoHeader from '../Videos/Video';
+// import VideoHeader from '../Videos/Video';
 
 class History extends React.Component {
 
@@ -25,7 +25,7 @@ class History extends React.Component {
     return (
       <div className="History">
         <div className="videoheader">
-          <VideoHeader />
+          {/* <VideoHeader /> */}
         </div>
         <div className="Logo" />
         <div className="blackLayer">

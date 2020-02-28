@@ -4,7 +4,6 @@
 @import '../components/ThreeJs/Three.scss';
 @import '../components/Videos/video.scss';
 
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Teko:300,400,500,600,700&display=swap');
@@ -15,8 +14,33 @@ $fontText: 'Open Sans', sans-serif;
 $white: #ffffff;
 $black: #000000;
 
-
 .heroContainer {
   width: 100vw;
   height: 100vh;
+}
+
+.soundContainer {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  width: 80px;
+  height: 30px;
+  border: rgba(255, 255, 255, 0.377) solid 0.5px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.audio-container-div {
+  font-family: $fontText;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  color: white;
+  padding-top: 7px;
+  font-size: 20px;
+  & > div {
+    cursor: pointer;
+    font-size: 14px;
+
+  }
 }

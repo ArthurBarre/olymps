@@ -1,9 +1,10 @@
 import React from 'react';
 import Nav from './Nav';
 import Loader from 'react-loader-spinner';
-import VideoHeader from '../Videos/Video';
+import VideoHeader from './Video';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Audio from '../Audio/Audio';
+import PlayerAudio from '../Audio/Audio';
+
 // import Audio from '../Audio';
 
 class Header extends React.Component {
@@ -11,9 +12,6 @@ class Header extends React.Component {
   render() {
     return (
       <div className="Header">
-        <div className="soundContainer">
-
-        </div>
         <div className="videoheader">
           <VideoHeader />
         </div>

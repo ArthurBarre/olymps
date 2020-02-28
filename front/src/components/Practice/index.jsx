@@ -1,12 +1,12 @@
 import React from 'react';
 import './Practice.scss';
-import VideoHeader from '../Videos/Video';
+import VideoPractice from './PracticeVideo';
 
 export default function Practice() {
   return (
     <div className="general">
       <div className="videoheader">
-        <VideoHeader />
+        <VideoPractice />
       </div>
       <ul className="sports_list">
         <li className="sports_list_li">Athletics</li>
