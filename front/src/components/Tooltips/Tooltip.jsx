@@ -1,25 +1,143 @@
-import React from 'react'
-import './tooltips.scss'
+// import React from 'react'
+// import './tooltips.scss'
 
-const ToolTip = ({ data, arrdt }) => {
-  // console.log(data, numberLocation)
+// const ToolTip = ({ data, arrdt }) => {
+//   // console.log(data, numberLocation)
+//   const { numberLocation, count, moy } = data
+//   return (
+//     <div className="tooltipContainer">
+//       <div className="aera-name">{arrdt}</div>
+//       <div className="aera-infos">
+//         <ul>
+//           <li>
+//             <span>I dont remember</span>
+//             <span className="graph">{numberLocation}</span>
+//           </li>
+//           <li>
+//             <span>Accessible Gymnase </span>
+//             <span className="graph">{count}</span>
+//           </li>
+//           <li>
+//             <span>Accessibility types </span>
+//             <span className="graph">{moy}</span>
+//           </li>
+//         </ul>
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default ToolTip
+
+import React, { useEffect, useState } from 'react'
+import './tooltips.scss'
+import * as d3 from 'd3'
+import { number } from 'prop-types'
+
+let barsContainer
+const ToolTip = ({ arrdt, data }) => {
   const { numberLocation, count, moy } = data
+  //   return (
+  /*useEffect(()=>{
+        console.log('gro', numberLocation);
+    }, [numberLocation]);*/
+
+  useEffect(() => {
+    barsContainer !== undefined && d3.select('.bar-one .graph').remove()
+    barsContainer !== undefined && d3.select('.bar-two .graph').remove()
+    barsContainer !== undefined && d3.select('.bar-three .graph').remove()
+
+    
+
+    let mapBarWidth = 180
+    let ratioBar1 = 80 / 100
+    let ratioBar2 = 20 / 100
+    let ratioBar3 = 60 / 100
+
+    barsContainer = d3.select('.aera-infos')
+
+    let mapBar1 = d3
+      .select('.bar-one')
+      .append('svg')
+      .attr('class', 'graph')
+      .attr('height', 100)
+      .attr('width', mapBarWidth)
+
+    let progressBar1 = mapBar1
+      .append('rect')
+      .attr('fill', 'rgba(27, 27, 27, 0.78)')
+      .attr('height', 15)
+      .attr('width', '0')
+      .attr('x', 0)
+
+    progressBar1
+      .transition()
+      .duration(1000)
+      .attr('width', function() {
+        return mapBarWidth * ratioBar1
+      })
+
+    let mapBar2 = d3
+      .select('.bar-two')
+      .append('svg')
+      .attr('class', 'graph')
+      .attr('height', 100)
+      .attr('width', mapBarWidth)
+
+    let progressBar2 = mapBar2
+      .append('rect')
+      .attr('fill', 'rgba(27, 27, 27, 0.78)')
+      .attr('height', 15)
+      .attr('width', 0)
+      .attr('x', 0)
+
+    progressBar2
+      .transition()
+      .duration(1000)
+      .attr('width', function() {
+        return mapBarWidth * ratioBar2
+      })
+
+    let mapBar3 = d3
+      .select('.bar-three')
+      .append('svg')
+      .attr('class', 'graph')
+      .attr('height', 100)
+      .attr('width', mapBarWidth)
+
+    let progressBar3 = mapBar3
+      .append('rect')
+      .attr('fill', 'rgba(27, 27, 27, 0.78)')
+      .attr('height', 15)
+      .attr('width', 0)
+      .attr('x', 0)
+
+    progressBar3
+      .transition()
+      .duration(1000)
+      .attr('width', function() {
+        return mapBarWidth * ratioBar3
+      })
+  }, [arrdt])
+
   return (
     <div className="tooltipContainer">
-      <div className="aera-name">{arrdt}</div>
+      <div className="area-name-container">
+        <div className="area-name">{arrdt}</div>
+      </div>
       <div className="aera-infos">
         <ul>
           <li>
-            <span>I dont remember</span>
-            <span className="graph">{numberLocation}</span>
+            <span className="text-map-tooltip">I dont remember {arrdt}</span>
+            <span className="bar bar-one"></span>
           </li>
           <li>
-            <span>Accessible Gymnase </span>
-            <span className="graph">{count}</span>
+            <span className="text-map-tooltip">Accessible Gymnase </span>
+            <span className="bar bar-two">{count}</span>
           </li>
           <li>
-            <span>Accessibility types </span>
-            <span className="graph">{moy}</span>
+            <span className="text-map-tooltip">Accessibility types </span>
+            <span className="bar bar-three">{moy}</span>
           </li>
         </ul>
       </div>
