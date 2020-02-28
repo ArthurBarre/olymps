@@ -1,30 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader';
-import { Vector3 } from 'three';
-import { CSS3DObject } from 'three-css3drenderer';
 import MapInfos from './MapInfos';
 
 function Canvas() {
+
   let renderer = null;
-  let renderer2 = null;
   let group = new THREE.Group();
   let camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1000);
-  let controls = null;
   let scene = new THREE.Scene();
   let currentURL = null;
   let raycaster;
-  let INTERSECTED;
   let mouse = new THREE.Vector2();
   const target = new THREE.Vector2();
-  let intersects = null;
-  let groupName = null;
-  let fitOffset = 1.2;
   let tampon = null;
   let light = null;
-  const pathArr = null;
   const [displayInfos, setDisplayInfos] = useState(false);
   const [arrdt, setArrdt] = useState(null);
 
@@ -34,21 +24,24 @@ function Canvas() {
   }, []);
 
   const init = () => {
-    let container = document.getElementById('container');
-    /////
 
+    // SELECT CANVAS CONTAINER
+    let container = document.getElementById('container');
 
     // INITIATE CAMERA
     camera.position.set(40, 0, 230);
 
-    // CANVAS ON RESIZE
+    // INITATE RAYCASTER
     raycaster = new THREE.Raycaster();
+
+    // INITATE RENDER
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(0x000000, 0);
     container.appendChild(renderer.domElement);
 
+    // EVENTS
     window.addEventListener('resize', onWindowResize, false);
     document.addEventListener('mousemove', onMouseMove, false);
     document.addEventListener('wheel', onMouseWheel, false);
@@ -64,12 +57,7 @@ function Canvas() {
   const loadSVG = (url, cb) => {
     let loader = new SVGLoader();
     loader.load(url, function (paths) {
-      // console.log(paths);
-
-      // const arrayPaths = [...paths.xml.children].filter(el => el.tagName === 'path');
-      // console.log(arrayPaths);
-
-
+      // Object parameters
       group.scale.multiplyScalar(0.25);
       group.position.x = -130;
       group.position.y = 90;
@@ -79,9 +67,11 @@ function Canvas() {
       group.castShadows = true;
       group.name = 'group';
       for (let i = 0; i < paths.paths.length; i++) {
+        // Create object from svg paths
         let path = paths.paths[i];
         const arrdt = path.userData.node.dataset.arrdt;
         let shapes = path.toShapes(true);
+        // Extrude function 
         for (let j = 0; j < shapes.length; j++) {
           let shape = shapes[j];
           let extrGeometry = new THREE.ExtrudeGeometry(shape, {
@@ -101,6 +91,7 @@ function Canvas() {
               u.y = (u.y - 0) / 700;
             }
           }
+          // Object parameters
           let material1 = new THREE.MeshBasicMaterial({ color: 0x5B5B5B, opacity: 0.4 });
           let material2 = new THREE.MeshMatcapMaterial({ color: 0xF1F1F1, opacity: 0.4 });
           let mesh = new THREE.Mesh(extrGeometry, [material1, material2]);
@@ -108,6 +99,7 @@ function Canvas() {
           group.add(mesh);
         }
       }
+      // Initiate Light
       light = new THREE.DirectionalLight(0xfffffff, 1);
       light.position.set(0, 1, 0);
       light.castShadow = true;
@@ -124,12 +116,14 @@ function Canvas() {
     });
   };
 
+  // Get mouse move for Raycaster
   const onMouseMove = event => {
     event.preventDefault();
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
   };
 
+  // Camera orbite on mouse move
   const onMouseWheel = event => {
     camera.position.z += event.deltaY * 0.1;
     camera.position.y += event.deltaY * 0.1;
@@ -151,6 +145,7 @@ function Canvas() {
     render();
   };
 
+  // Raycaster
   const render = () => {
     raycaster.setFromCamera(mouse, camera);
     var intersects = raycaster.intersectObjects(scene.children);
