@@ -7,4 +7,6 @@
 /public/bundles/
 /var/
 /vendor/
+.idea/
+*/.DS_store/
 ###< symfony/framework-bundle ###

@@ -199,13 +199,13 @@ export default function GameHistograms() {
         <div className="histograms-wrapper">
             <div className="titles">
                 <div className="title">
-                    Nombre<br />d'athlètes
+                    Athletes<br />number
                 </div>
                 <div className="title">
-                    Pays<br />participants
+                    Participating<br />countries
                 </div>
                 <div className="title">
-                    Nombre de<br />disciplines
+                    Disciplines<br />number
                 </div>
             </div>
         </div>

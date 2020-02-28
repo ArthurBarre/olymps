@@ -3,18 +3,18 @@
 
 namespace App\Controller;
 
-use App\Entity\Location;
-use App\Repository\LocationRepository;
+use App\Entity\Events;
+use App\Repository\EventRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-class LocationController extends AbstractController
+class EventController extends AbstractController
 {
 
 //    /**
-//     * @Route("/district", name="district")
+//     * @Route("/event", name="district")
 //     * @param LocationRepository $locRep
 //     * @param Request $request
 //     * @return JsonResponse
@@ -30,16 +30,17 @@ class LocationController extends AbstractController
 //    }
 
     /**
-     * @Route("/districts", name="districts")
-     * @param LocationRepository $locRep
+     * @Route("/events", name="events")
+     * @param EventRepository $evRep
      * @return JsonResponse
      */
-    public function allDistricts(LocationRepository $locRep)
+    public function allEvents(EventRepository $evRep)
     {
-        // GET http://localhost:8000/districts
-        $locations = $locRep;
-        $allLoc = $locations->findAll();
-        return $this->json($allLoc);
+        // GET http://localhost:8000/events
+        $events = $evRep;
+        $allEvents = $events->findAll();
+//        dd($allEvents);
+        return $this->json($allEvents);
     }
 
 }
