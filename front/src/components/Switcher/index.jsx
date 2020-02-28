@@ -25,11 +25,11 @@ export default function Switcher() {
     },
     {
       id: 2,
-      comp: <Practice />,
+      comp: <Practice goMap={goMap} />,
     },
     {
       id: 3,
-      comp: <Map />,
+      comp: <Map goHistory={goHistory} />,
     },
   ]
   // console.log(components)
@@ -41,16 +41,22 @@ export default function Switcher() {
       if (scrollTop < 200) {
         setIndexComp(0)
       }
-      if ((scrollTop > 200) | (scrollTop > 499)) {
+      if (scrollTop > 200 && scrollTop < 499) {
         setIndexComp(1)
       }
-      if ((scrollTop > 500) | (scrollTop > 699)) {
+      if (scrollTop > 500 && scrollTop < 699) {
         setIndexComp(2)
       }
-      if ((scrollTop > 700) | (scrollTop > 900)) {
-        setIndexComp(3)
-      }
+      // if (scrollTop > 700 && scrollTop < 900) {
+      //   setIndexComp(3)
+      // }
     }
+  }
+  function goMap() {
+    setIndexComp(3)
+  }
+  function goHistory() {
+    setIndexComp(0)
   }
 
   useEffect(() => {
