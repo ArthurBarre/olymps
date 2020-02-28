@@ -1,34 +1,3 @@
-// import React from 'react'
-// import './tooltips.scss'
-
-// const ToolTip = ({ data, arrdt }) => {
-//   // console.log(data, numberLocation)
-//   const { numberLocation, count, moy } = data
-//   return (
-//     <div className="tooltipContainer">
-//       <div className="aera-name">{arrdt}</div>
-//       <div className="aera-infos">
-//         <ul>
-//           <li>
-//             <span>I dont remember</span>
-//             <span className="graph">{numberLocation}</span>
-//           </li>
-//           <li>
-//             <span>Accessible Gymnase </span>
-//             <span className="graph">{count}</span>
-//           </li>
-//           <li>
-//             <span>Accessibility types </span>
-//             <span className="graph">{moy}</span>
-//           </li>
-//         </ul>
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default ToolTip
-
 import React, { useEffect, useState } from 'react'
 import './tooltips.scss'
 import * as d3 from 'd3'
@@ -36,7 +5,7 @@ import { number } from 'prop-types'
 
 let barsContainer
 const ToolTip = ({ arrdt, data }) => {
-  const { numberLocation, count, moy } = data
+  const { numberLocation, count, moy, position } = data
   //   return (
   /*useEffect(()=>{
         console.log('gro', numberLocation);
@@ -47,12 +16,10 @@ const ToolTip = ({ arrdt, data }) => {
     barsContainer !== undefined && d3.select('.bar-two .graph').remove()
     barsContainer !== undefined && d3.select('.bar-three .graph').remove()
 
-    
-
     let mapBarWidth = 180
     let ratioBar1 = 80 / 100
-    let ratioBar2 = 20 / 100
-    let ratioBar3 = 60 / 100
+    let ratioBar2 = count / 2293
+    let ratioBar3 = moy / 6
 
     barsContainer = d3.select('.aera-infos')
 
@@ -123,7 +90,10 @@ const ToolTip = ({ arrdt, data }) => {
   return (
     <div className="tooltipContainer">
       <div className="area-name-container">
-        <div className="area-name">{arrdt}</div>
+        <div className="area-name">
+          {position}
+          {position === 1 ? 'er' : 'ème'}
+        </div>
       </div>
       <div className="aera-infos">
         <ul>
@@ -133,11 +103,11 @@ const ToolTip = ({ arrdt, data }) => {
           </li>
           <li>
             <span className="text-map-tooltip">Accessible Gymnase </span>
-            <span className="bar bar-two">{count}</span>
+            <span className="bar bar-two"></span>
           </li>
           <li>
             <span className="text-map-tooltip">Accessibility types </span>
-            <span className="bar bar-three">{moy}</span>
+            <span className="bar bar-three"></span>
           </li>
         </ul>
       </div>
