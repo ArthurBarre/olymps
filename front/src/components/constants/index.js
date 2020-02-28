@@ -1,5 +1,6 @@
 import React from "react";
 import jo from "../../data";
+import joe from "../../events"
 
 export const api_url = 'http://35.180.64.236:8000';
 
@@ -14,9 +15,9 @@ for (let year = 0; year < jo.length; year++) {
 
 const calculateAthlete = () => {
     let max = 0;
-    for (let year = 0; year < jo.length; year++) {
-        if (jo[year].participants.athletesNumber > max) {
-            max = parseInt(jo[year].participants.athletesNumber);
+    for (let year = 0; year < joe.length; year++) {
+        if (joe[year].athletesnumber > max) {
+            max = joe[year].athletesnumber;
         }
     }
     return max;
@@ -26,9 +27,9 @@ export const maxAthlete = calculateAthlete();
 
 const calculateCountry = () => {
         let max = 0;
-        for (let year = 0; year < jo.length; year++) {
-            if (jo[year].participants.countryNumber > max) {
-                max = jo[year].participants.countryNumber;
+        for (let year = 0; year < joe.length; year++) {
+            if (joe[year].countrynumber > max) {
+                max = joe[year].countrynumber;
             }
         }
         return max;
@@ -38,9 +39,9 @@ export const maxCountry = calculateCountry();
 
 const calculateDiscipline = () => {
     let max = 0;
-    for (let year = 0; year < jo.length; year++) {
-        if (jo[year].sports.sportsNumber > max) {
-            max = parseInt(jo[year].sports.sportsNumber);
+    for (let year = 0; year < joe.length; year++) {
+        if (joe[year].sportNumber > max) {
+            max = parseInt(joe[year].sportNumber);
         }
     }
     return max;
