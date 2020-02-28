@@ -32,18 +32,11 @@ function Canvas() {
   let light = null
   const pathArr = null
   const [displayInfos, setDisplayInfos] = useState(false)
-  const [arrdt, setArrdt] = useState(75012)
-  // console.log(arrdt)
+  const [arrdt, setArrdt] = useState(null)
+  console.log(arrdt)
   const [districtDatas, setDistrictDatas] = useState([])
   const [districtData, setDistrictData] = useState([])
 
-  const changeDistrict = arrdt => {
-    // fetch(`${api_url}/district_info?district=${arrdt}`, {})
-    // fetch(`http://35.180.64.236:8000/district_info?district=${arrdt}`, {})
-    //   .then(res => res.json())
-    //   .then(res => setDistrictData(res))
-    // .then(res => console.log(res))
-  }
   useEffect(() => {
     init()
     animate()
@@ -52,16 +45,25 @@ function Canvas() {
     fetch(`http://35.180.64.236:8000/district_infos`, {})
       .then(res => res.json())
       .then(res => setDistrictDatas(res))
-  }, [districtDatas])
-  useEffect(() => {
-    for (let i = 0; i < districtDatas.length; i++) {
-      if (parseInt(districtDatas[i].district) === arrdt) {
+      for (let i = 0; i < districtDatas.length; i++) {
+      console.log(districtDatas[i], arrdt)
+      if (parseInt(districtDatas[i].district) === parseInt(arrdt)) {
         setDistrictData(districtDatas[i])
+        // console.log('helfdssd')
       }
     }
-    console.log(districtData)
-  })
-  // console.log(districtData)
+  }, [districtDatas])
+  // console.log(districtDatas)
+  // useEffect(() => {
+  //   for (let i = 0; i < districtDatas.length; i++) {
+  //     console.log(districtDatas[i], arrdt)
+  //     if (parseInt(districtDatas[i].district) === parseInt(arrdt)) {
+  //       setDistrictData(districtDatas[i])
+  //       console.log('helfdssd')
+  //     }
+  //   }
+  // }, [districtData])
+  // console.log(districtDatas[0])
 
   const init = () => {
     let container = document.getElementById('container')
@@ -161,7 +163,7 @@ function Canvas() {
     event.preventDefault()
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
-    changeDistrict(arrdt)
+    // changeDistrict(arrdt)
   }
 
   const onMouseWheel = event => {
@@ -193,8 +195,9 @@ function Canvas() {
         scene.getObjectByName('group').children
       )
       if (intersects && intersects.length > 0) {
-        let district = parseInt(intersects[0].object.arrdt)
+        let district = intersects[0].object.arrdt
         setArrdt(district)
+        // console.log(arrdt)
         // console.log(intersects[0].object.arrdt)
         setDisplayInfos(true)
         for (let i = 0; i < intersects.length; i++) {

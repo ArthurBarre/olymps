@@ -1,24 +1,25 @@
 import React from 'react'
 import './tooltips.scss'
 
-const ToolTip = ({ data }) => {
-  // console.log(data)
+const ToolTip = ({ data, arrdt }) => {
+  // console.log(data, numberLocation)
+  const { numberLocation, count, moy } = data
   return (
     <div className="tooltipContainer">
-      <div className="aera-name">{data.arrdt}</div>
+      <div className="aera-name">{arrdt}</div>
       <div className="aera-infos">
         <ul>
           <li>
             <span>I dont remember</span>
-            <span className="graph">{data.numberLocation}</span>
+            <span className="graph">{numberLocation}</span>
           </li>
           <li>
             <span>Accessible Gymnase </span>
-            <span className="graph">{data.count}</span>
+            <span className="graph">{count}</span>
           </li>
           <li>
             <span>Accessibility types </span>
-            <span className="graph">{data.moy}</span>
+            <span className="graph">{moy}</span>
           </li>
         </ul>
       </div>
