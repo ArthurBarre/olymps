@@ -1,41 +1,37 @@
+$fontSerif: 'Suranna', serif;
+$fontSansSerif: 'Teko', sans-serif;
 .box {
   width: 300px;
-  height: 600px ;
+  height: 500px ;
   position: absolute;
   z-index: 1;
   top: 50%;
-  left: 0;
+  left: 5%;
   transform: translateY(-50%);
   overflow: hidden;
+  .container-epreuve {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-family: $fontSerif;
+    .date-wrapper {
+      color: white;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: -100%;
+      .date-wrapper.current-year {
+        display: block;
+      }
+      .date-wrapper.prev-year {
+        display: block;
+      }
+      .date-wrapper.next-year {
+        display: block;
+      }
+    }
+  }
 }
 
-.container-epreuve {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%
-}
 
-.date-wrapper {
-  color: white;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: -100%;
-}
-
-.date-wrapper.current-year {
-  display: block;
-  top: 50%;
-
-}
-
-.date-wrapper.prev-year {
-  display: block;
-  top: 5%;
-}
-
-.date-wrapper.next-year {
-  display: block;
-  top: 95%;
-}

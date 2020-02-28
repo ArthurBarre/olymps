@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap');
-$fontSerief: 'Cormorant Garamond', serif;
-$fontText: 'Open Sans', sans-serif;
+$fontSerif: 'Suranna', serif;
+$fontSansSerif: 'Teko', sans-serif;
 
 $white: #ffffff;
 $black: #000000;
@@ -11,29 +11,22 @@ $black: #000000;
   height: 100vh;
 }
 
-.soundContainer {
-  position: absolute;
-  top: 2%;
-  right: 2%;
-  width: 40px;
-  height: 40px;
-  background-color: rgb(104, 104, 104);
-}
 
 .Header {
   width: 100%;
   height: 100%;
-  background-color: $black;
+  background-color: rgba(255, 255, 255, 0);
   color: $white;
   text-align: center;
-  background-image: url(../../assets/img/headerPhoto.png);
+  // background-image: url(../../assets/img/headerPhoto.png);
   .soundContainer {
     position: absolute;
     top: 2%;
     right: 2%;
-    width: 40px;
-    height: 40px;
-    background-color: rgb(104, 104, 104);
+    width: 80px;
+    height: 30px;
+    border: rgba(255, 255, 255, 0.377) solid 0.5px;
+    border-radius: 20px;
   }
   .blackLayer {
     width: 100%;
@@ -42,45 +35,81 @@ $black: #000000;
   }
   .Intro {
     position: absolute;
-    top: 50%;
+    top: 45%;
     transform: translateY(-50%);
     text-align: center;
     width: 100%;
     h1 {
-      font-family: $fontSerief;
-      font-size: 86px;
+      font-family: $fontSerif;
+      font-size: 110px;
       text-transform: uppercase;
       font-weight: 400;
     }
     .Subtitle  {
-      font-family: $fontSerief;
+      font-family: $fontSerif;
       padding-top: 2%;
-      font-size: 20px;
+      font-size: 25px;
     }
     .textIntro  {
-      font-family: $fontText;
+      font-family: $fontSansSerif;
       padding-top: 1%;
-      font-size: 14px;
+      font-size: 16px;
       max-width: 500px;
       margin: 0 auto;
       font-weight: 300;
       line-height: 22px;
     }
     .loaderContainer {
-      .loaderImg{
-        width: 100px;
-        height: 100px;
-        margin: 0 auto;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-image: url(../../assets/img/loader.svg);
+      $height_loader_div: 30px;
+      .loader_div{
+        height: $height_loader_div;
+        width: $height_loader_div*3.2;
+        margin-top: 40px;
+        left: 50%;
+        //transform: translate(-50%, -50%);
+        position: relative;
+    
+        .loader{
+          position: absolute;
+          height: $height_loader_div;
+          width: $height_loader_div;
+        }
+        .blue_loader, 
+        .black_loader, 
+        .red_loader{
+          top: 0px;
+        }
+        .blue_loader{
+          left: 0px;
+        }
+        .black_loader{
+          left: 50%;
+          transform: translate(-50%, -0%);
+        }
+        .red_loader{
+          right: 0px;
+        }
+        .yellow_loader, 
+        .green_loader{
+          top: $height_loader_div*0.6;
+        }
+        .yellow_loader{
+          left: 25%;
+          transform: translate(-25%, -0%);
+        }
+        .green_loader{
+          right: 25%;
+          transform: translate(+25%, -0%);
+        }
       }
       .loaderText{
-        font-family: $fontText;
+        font-family: $fontSansSerif;
         text-transform: uppercase;
+        font-size: 13px;
+        margin: 20px;
       }
       .Next {
-        font-family: $fontText;
+        font-family: $fontSansSerif;
         padding-top: 2%;
         text-decoration: underline;
         font-weight: 200;
@@ -103,7 +132,7 @@ $black: #000000;
       background-image: url(../../assets/img/headphones.png);
     }
     .headphoneText {
-      font-family: $fontText;
+      font-family: $fontSansSerif;
       font-size: 12px;
       text-transform: uppercase;
       font-weight: 300;
@@ -112,9 +141,11 @@ $black: #000000;
 }
 .nav-link{
   color: white;
-  font-family: $fontSerief;
+  font-family: $fontSerif;
   font-size: 16px;
   text-decoration: underline #ffffff;
 
 }
+
+
 

@@ -3,6 +3,8 @@ import Data from '../../data.json';
 import DateScroll from '../DateScroll';
 import Circle from '../Circle/Circle';
 import Infos from '../Infos';
+import Paris2024 from '../Paris2024';
+// import VideoHeader from '../Videos/Video';
 
 class History extends React.Component {
 
@@ -22,7 +24,10 @@ class History extends React.Component {
     const date = this.state.date;
     return (
       <div className="History">
-        <div className="Logo"/>
+        <div className="videoheader">
+          {/* <VideoHeader /> */}
+        </div>
+        <div className="Logo" />
         <div className="blackLayer">
           <div>
             <DateScroll onDateChange={this.handleDateChange} />
