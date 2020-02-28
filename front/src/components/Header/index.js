@@ -35,8 +35,8 @@ class Header extends React.Component {
             </p>
             <p className="textIntro">
               Using data collected from the city of Paris and others differents
-              sources like , this experiment analyses and visualizes the history
-              of paralympics games from the start to now.
+              sources , this experiment analyses and visualizes the history of
+              paralympics games from the start to now.
             </p>
             <div className="loaderContainer">
               <div class="loader_div">

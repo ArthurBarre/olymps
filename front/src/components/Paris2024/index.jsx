@@ -6,9 +6,7 @@ class Paris2024 extends React.Component {
     return (
       <div className="paris2024_display">
         <div className="paris2024_bg">
-          <a className="paris2024_a" href="">
-            PARIS 2024
-          </a>
+          <div className="paris2024_a">PARIS 2024</div>
         </div>
       </div>
     )

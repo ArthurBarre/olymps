@@ -71,8 +71,9 @@ export default function Switcher() {
     setTimeout(() => {
       setWait(true)
       windowtest.style.overflowY = 'hidden'
-    }, 12000)
-    if (!wait) window.scrollTo(0, 0)
+      // setIndexComp(1)
+    }, 1000)
+    // if (!wait) window.scrollTo(0, 0)
     window.addEventListener('scroll', onScroll)
     checkIndex()
     return () => window.removeEventListener('scroll', onScroll)

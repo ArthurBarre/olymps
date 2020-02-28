@@ -98,7 +98,7 @@ const ToolTip = ({ arrdt, data }) => {
       <div className="aera-infos">
         <ul>
           <li>
-            <span className="text-map-tooltip">I dont remember {arrdt}</span>
+            <span className="text-map-tooltip">Arrondissement {arrdt}</span>
             <span className="bar bar-one"></span>
           </li>
           <li>
