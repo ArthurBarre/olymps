@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ToolTip from '../Tooltips/Tooltip';
 
 
-function MapInfos({ arrdt }) {
-
+function MapInfos({ arrdt, data }) {
   const [x, setX] = useState();
   const [y, setY] = useState();
 
@@ -29,7 +28,7 @@ function MapInfos({ arrdt }) {
 
   return (
     <div id="infos-container" className="infos-container" style={styles} >
-      <ToolTip arrdt={arrdt} />
+      <ToolTip data={data} arrdt={arrdt} />
     </div>
   )
 };
