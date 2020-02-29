@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping\ManyToMany;
 use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping\JoinColumn;
 
+
 /**
  * Location
  *
@@ -132,7 +133,7 @@ class Location
      */
     private $typesList;
 
-    public function getTypesList() :Collection
+    public function getTypesList()
     {
         return $this->typesList;
     }

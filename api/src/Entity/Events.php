@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\ManyToMany;
 use Doctrine\ORM\Mapping\JoinTable;
@@ -16,7 +15,6 @@ use Doctrine\ORM\Mapping\JoinColumn;
  */
 class Events
 {
-
     /**
      * @var int
      *
@@ -157,6 +155,5 @@ class Events
     {
         return $this->sportList;
     }
-
 
 }
