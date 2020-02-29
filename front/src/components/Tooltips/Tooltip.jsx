@@ -4,6 +4,7 @@ import './tooltips.scss'
 const ToolTip = ({ data, arrdt }) => {
   // console.log(data, numberLocation)
   const { numberLocation, count, moy } = data
+  console.log(data)
   return (
     <div className="tooltipContainer">
       <div className="aera-name">{arrdt}</div>

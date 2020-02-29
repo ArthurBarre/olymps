@@ -1,35 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react'
 
 const useAudio = url => {
-  const [audio] = useState(new Audio(url));
-  const [playing, setPlaying] = useState(true);
+  const [audio] = useState(new Audio(url))
+  const [playing, setPlaying] = useState(true)
 
-  const toggle = () => setPlaying(!playing);
-
-  useEffect(() => {
-    playing ? audio.play() : audio.pause();
-  },
-    [playing]
-  );
+  const toggle = () => setPlaying(!playing)
 
   useEffect(() => {
-    audio.addEventListener('ended', () => setPlaying(false));
+    playing ? audio.play() : audio.pause()
+    audio.play()
+    console.log(audio)
+  }, [playing])
+
+  useEffect(() => {
+    audio.addEventListener('ended', () => setPlaying(false))
     return () => {
-      audio.removeEventListener('ended', () => setPlaying(false));
-    };
-  }, []);
+      audio.removeEventListener('ended', () => setPlaying(false))
+    }
+  }, [])
 
-  return [playing, toggle];
-};
+  return [playing, toggle]
+}
 
 const PlayerAudio = ({ url }) => {
-  const [playing, toggle] = useAudio(url);
+  const [playing, toggle] = useAudio(url)
 
   return (
     <div className="audio-container-div">
-      <div onClick={toggle}>{playing ? "Mute" : "Sound"}</div>
+      <div onClick={toggle}>{playing ? 'Mute' : 'Sound'}</div>
     </div>
-  );
-};
+  )
+}
 
-export default PlayerAudio;
+export default PlayerAudio

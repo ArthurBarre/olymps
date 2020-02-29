@@ -7,6 +7,8 @@ import { Vector3 } from 'three'
 import { CSS3DObject } from 'three-css3drenderer'
 import MapInfos from './MapInfos'
 import { api_url } from '../constants'
+//event just under this cvan be use if the server isn't running
+import { Event } from './eventData'
 
 function Canvas() {
   let renderer = null
@@ -33,37 +35,36 @@ function Canvas() {
   const pathArr = null
   const [displayInfos, setDisplayInfos] = useState(false)
   const [arrdt, setArrdt] = useState(null)
-  console.log(arrdt)
-  const [districtDatas, setDistrictDatas] = useState([])
+  const [districtDatas, setDistrictDatas] = useState(Event)
+  console.log(districtDatas)
   const [districtData, setDistrictData] = useState([])
 
   useEffect(() => {
     init()
     animate()
   }, [])
-  useEffect(() => {
-    fetch(`http://35.180.64.236:8000/district_infos`, {})
-      .then(res => res.json())
-      .then(res => setDistrictDatas(res))
-      for (let i = 0; i < districtDatas.length; i++) {
-      console.log(districtDatas[i], arrdt)
-      if (parseInt(districtDatas[i].district) === parseInt(arrdt)) {
-        setDistrictData(districtDatas[i])
-        // console.log('helfdssd')
-      }
-    }
-  }, [districtDatas])
-  // console.log(districtDatas)
   // useEffect(() => {
+  //   // fetch(`http://35.180.64.236:8000/district_infos`, {})
+  //   //   .then(res => res.json())
+  //   //   .then(res => setDistrictDatas(res))
   //   for (let i = 0; i < districtDatas.length; i++) {
   //     console.log(districtDatas[i], arrdt)
   //     if (parseInt(districtDatas[i].district) === parseInt(arrdt)) {
   //       setDistrictData(districtDatas[i])
-  //       console.log('helfdssd')
+  //       // console.log('helfdssd')
   //     }
   //   }
-  // }, [districtData])
-  // console.log(districtDatas[0])
+  // }, [districtDatas])
+  // // console.log(districtDatas)
+  useEffect(() => {
+    for (let i = 0; i < districtDatas.length; i++) {
+      console.log(districtDatas[i], arrdt)
+      if (parseInt(districtDatas[i].district) === parseInt(arrdt)) {
+        setDistrictData(districtDatas[i])
+        console.log('helfdssd')
+      }
+    }
+  }, [districtData])
 
   const init = () => {
     let container = document.getElementById('container')
@@ -163,7 +164,6 @@ function Canvas() {
     event.preventDefault()
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
-    // changeDistrict(arrdt)
   }
 
   const onMouseWheel = event => {
@@ -197,8 +197,6 @@ function Canvas() {
       if (intersects && intersects.length > 0) {
         let district = intersects[0].object.arrdt
         setArrdt(district)
-        // console.log(arrdt)
-        // console.log(intersects[0].object.arrdt)
         setDisplayInfos(true)
         for (let i = 0; i < intersects.length; i++) {
           if (!tampon) {
