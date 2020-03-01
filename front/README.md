@@ -83,3 +83,32 @@ Elle a été très utile notamment pour le scroll des années (composant Box) et
 D3JS
 Ne sachant pas comment réaliser le cercle (GameCircle) de la partie historique pour que les mots se tournent en gardant un sens de lecture lisible, hélène a trouver un exemple avec D3.js. Il est disponible au lien suivant : https://bl.ocks.org/mbostock/4583749. 
 J'ai repris cet exemple et je l'ai adapté pour notre cas. La fonction range de D3 m' a été très utile pour placer mes disciplines en fonction du nombre total. Réaliser ce cercle m'a permis de prendre en main les principes de bases de cette librairie. J'ai profité des compétences acquises et de l'installation de cette bibliothèque pour réaliser les barres de progression (GameHistograms). 
+
+
+## Argumentaire Hélène
+
+Mon travail : 
+
+J’ai réalisé la partie correspondant au troisième écran du site , c’est à dire la partie « map » de notre  site. Elle comprend les composants Canvas et MapInfos pour la gestion de la carte et du tooltip.
+Je me suis aussi occupé de la gestion de l’audio et des éléments videos.
+J’ai aussi passé beaucoup de temps à faire des tests que ce soir sur codepen ou sur des repositories test.
+
+Méthode de travail : 
+Pour la partie map avec three.js, je n’avais pas de connaissances au préalable j’ai donc commencé par faire beaucoup de tests en vanilla Javascript. Puis ai réussi à réécrire mon code en React j’ai aussi beaucoup appris sur la gestion des événements avec Three et React. J’ai aussi pour la première fois appris à utiliser les hooks. Pour cela j’ai passé beaucoup de temps sur la documentation React.
+J’ai aussi utilisé le debuggeur Canvas de safari pour acceder aux éléments de mon canvas. 
+
+Choix des solutions : ThreeJS & SVG
+
+Je voulais faire une carte 3d intéractive, j’ai donc eu un long moment de recherche sur les possibilités qui s’offraient à moi en terme de technologies.
+
+J’ai choisi d’utiliser la librairie ThreeJs pour pouvoir faire de la 3d sans webgl avec l’utilisation de canvas et svg.
+J’ai choisi d’utiliser svg pour pouvoir créer ma propre carte de Paris dans un format scalable.
+J’ai aussi créer un model 3d sur blender à partir du svg mais je me suis vite rendu compte que les objets 3d directement importé étaient trop lourd.
+
+Avant d’être capable de pouvoir utiliser le svg que j’ai dessiné sur Illustator je suis passée par une fonction pour pourvoir le reformater, supprimer les polygones et avoir seulement des paths en forme de coordonnées.
+
+Avec La librairie threeJs j’ai ainsi pue extruder le svg et donc passer d’une carte en 2 dimensions à une carte en 3 dimentions.
+ThreeJs m’a aussi permis d’animer la carte au survol du curseur.
+mais aussi de pouvoir utiliser la camera de la scène du canvas pour créer un effet 3d plus illusionniste.
+
+Pour que le tooltip apparaissent sur la carte en fonction de l’arrondissement j’ai appris à utiliser Raycaster qui permet de connaître la position du curseur dans un environnement 3d. Je copie donc les adresses vectoriel à chaque instant et lorsqu’elle intersect un élément object dans cet espace je lui applique une animation et une transformation.
