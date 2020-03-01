@@ -70,17 +70,16 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 prod: https://olymps-etrhn5z3v.now.sh/
 
 ## Argumentaire Timothée 
-
-## Mon travail : 
+ Mon travail : 
 J’ai réalisé la partie correspondant au deuxième écran du site : la partie historique qui affiche les données en fonction de l’année sélectionnée au scroll. Elle comprend les composants suivants : GameHistory et ses composants enfants Box, GameCircle, GameHistograms, GameHost. Je me suis aussi occupé du curseur et de son changement animé. J’ai également réalisé les barres de progressions sur la map threeJs (visible sur la branche dev) et une partie du css du tooltip. 
 
-## Méthode de travail : 
+Méthode de travail : 
 J’ai pris soin de ne pas utiliser de Classes react et de travailler uniquement avec des fonctions. Par conséquent, j’ai appris à utiliser de nombreux hooks de react. Cela m’a permis d’avoir une écriture plus concise sans être obligé d’instancier de classes avec des constructors et de ne pas utiliser le this pour éviter des erreurs liées à sa référence. Le useContext m’a également été très pratique pour communiquer l’état de l’année actuelle à tous mes composants. En effet, au scroll de mon année j’actualise l’id de celle-ci dans year-context.jsx et en important ce contexte dans tous mes composants, ils peuvent s’actualiser au changement de valeur l'id de l'année avec un hook useEffect (mon id d'année en paramètre du tableau d'exécution du useEffect). 
 
-## GSAP 
+GSAP 
 Notre site étant expérientiel et basé sur le ressenti utilisateur, il était indispensable d'avoir une librairie pour les animations. J'ai utilisé la librairie GSAP pour certaines animations afin d'améliorer le sentiment de fluidité du site. Ayant déjà travaillé avec et connaissant sa simplicité d'utilisation, notre choix s'est porté sur celle-ci. 
 Elle a été très utile notamment pour le scroll des années (composant Box) et la gestion du curseur. En effet, le scroll des années est en réalité une animation qui en fonction de la position du curseur translate la position des années pour créer une sensation de scroll. GSAP m'a permis de changer la taille du curseur de manière smooth et de tracker la position de ma souris avec une duration. 
 
-## D3JS
+D3JS
 Ne sachant pas comment réaliser le cercle (GameCircle) de la partie historique pour que les mots se tournent en gardant un sens de lecture lisible, hélène a trouver un exemple avec D3.js. Il est disponible au lien suivant : https://bl.ocks.org/mbostock/4583749. 
 J'ai repris cet exemple et je l'ai adapté pour notre cas. La fonction range de D3 m' a été très utile pour placer mes disciplines en fonction du nombre total. Réaliser ce cercle m'a permis de prendre en main les principes de bases de cette librairie. J'ai profité des compétences acquises et de l'installation de cette bibliothèque pour réaliser les barres de progression (GameHistograms). 
