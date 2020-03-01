@@ -97,7 +97,7 @@ Méthode de travail :
 Pour la partie map avec three.js, je n’avais pas de connaissances au préalable j’ai donc commencé par faire beaucoup de tests en vanilla Javascript. Puis ai réussi à réécrire mon code en React j’ai aussi beaucoup appris sur la gestion des événements avec Three et React. J’ai aussi pour la première fois appris à utiliser les hooks. Pour cela j’ai passé beaucoup de temps sur la documentation React.
 J’ai aussi utilisé le debuggeur Canvas de safari pour acceder aux éléments de mon canvas. 
 
-Choix des solutions : ThreeJS & SVG
+Choix des solutions : ThreeJS & SVG & D3
 
 Je voulais faire une carte 3d intéractive, j’ai donc eu un long moment de recherche sur les possibilités qui s’offraient à moi en terme de technologies.
 
@@ -112,3 +112,7 @@ ThreeJs m’a aussi permis d’animer la carte au survol du curseur.
 mais aussi de pouvoir utiliser la camera de la scène du canvas pour créer un effet 3d plus illusionniste.
 
 Pour que le tooltip apparaissent sur la carte en fonction de l’arrondissement j’ai appris à utiliser Raycaster qui permet de connaître la position du curseur dans un environnement 3d. Je copie donc les adresses vectoriel à chaque instant et lorsqu’elle intersect un élément object dans cet espace je lui applique une animation et une transformation.
+
+J’ai aussi travaillé sur la partie ‘test’ de la section History.
+À partir du fichier Json que j’avais créé et avant d’importer celui-ci sur la base de donnée j’ai écrit un code capable de récupérer les informations correspondantes à chaque Jeux Paralympiques.
+J’ai aussi fait des tests pour pouvoir recréer la disposition des éléments sur un cercle polaire sans librairie mais je me suis rendu compte que c’était complexe et ai finalement décider d’utiliser la librairie D3.
