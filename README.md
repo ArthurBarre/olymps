@@ -51,7 +51,9 @@ symfony serve
 
 ## Documentation Back-End
 
-( voir MCD )
+### MCD
+
+![MCD](./doc/image/MCD.png)
 
 - En adéquation avec les besoins du front, nous avons organisé une architecture simple en 3 blocs distincts, tout d'abord la table Location qui répertorie les données relatives aux infrastructures sportives accessibles aux personnes en situation de handicap, associée à une table de jointure ( location_type ), permettant de rencenser la liste des accessibilités par lieu.
   Ensuite la table Event qui, elle, répertorie les différentes données relatives à l'historique des jeux paralympiques par année, elle aussi liée avec une table de jointure, permettant la récupération des sports présents pour chaque édition des jeux paralympiques, et enfin la table BestDistrict qui, elle, répertorie les donnée sur la partie "jeux paralympiques et pratique du sport pour les personnes en situation de handicap à Paris".
@@ -65,3 +67,53 @@ symfony serve
 - Ensuite, le endpoint /event/, lié à l'entité Event en GET également qui permet de récupérer, par année, les données relatives aux jeux paralympiques de l'année sélectionné, et de la même manière que pour Location l'endpoint /events/ retourne tous les Events.
 - Enfin, le endpoint district_info, qui permet de nourrir la data-viz de la partie Map, du front de notre projet, et fonctionne de la même manière avec la méthode GET.
 - Nous n'avons pas protégé notre API car les données la constituant sont toutes récupérées et remodelées depuis les API et données existantes sur le web et ne représente qu'une source de data existante et non confidentielle.
+
+## Documentation Technique
+
+### Entité
+
+- Location
+
+### Url
+
+- http://localhost:8000/district?district=75019
+
+### Méthode
+
+- GET
+
+### Schema
+
+![schema data location](./doc/image/location.png)
+
+### Entité
+
+- Event
+
+### Url
+
+- http://localhost:8000/event?district=75019
+
+### Méthode
+
+- GET
+
+### Schema
+
+![schema data event](./doc/image/event.png)
+
+### Entité
+
+- BestDistrict
+
+### Url
+
+- http://localhost:8000/district_info
+
+### Méthode
+
+- GET
+
+### Schema
+
+![schema data bestDistrict](./doc/image/bestDistrict.png)
